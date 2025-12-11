@@ -1,13 +1,15 @@
-function InfoPage({ title, subtitle, sections = [] }) {
+function InfoPage({ title, subtitle, sections = [], hideHeader = false }) {
   return (
     <div className="space-y-10 pb-16">
-      <section className="bg-[#1e4294] text-white">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-14">
-          <p className="text-xs uppercase tracking-[0.14em] text-[#ff7f00]">HYD Point</p>
-          <h1 className="text-3xl font-semibold sm:text-4xl">{title}</h1>
-          {subtitle ? <p className="max-w-3xl text-slate-100/80">{subtitle}</p> : null}
-        </div>
-      </section>
+      {!hideHeader ? (
+        <section className="bg-slate-900 text-white">
+          <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-14">
+            <p className="text-xs uppercase tracking-[0.14em] text-red-200">Metosan</p>
+            <h1 className="text-3xl font-semibold sm:text-4xl">{title}</h1>
+            {subtitle ? <p className="max-w-3xl text-slate-100/80">{subtitle}</p> : null}
+          </div>
+        </section>
+      ) : null}
 
       <section className="mx-auto max-w-6xl space-y-8 px-6">
         {sections.length === 0 ? (
@@ -29,7 +31,7 @@ function InfoPage({ title, subtitle, sections = [] }) {
                 <ul className="mt-4 space-y-2 text-sm text-slate-700">
                   {section.items.map((item) => (
                     <li key={item} className="flex items-start gap-2">
-                      <span className="mt-1 inline-block h-2 w-2 rounded-full bg-[#ff7f00]" />
+                      <span className="mt-1 inline-block h-2 w-2 rounded-full bg-red-500" />
                       <span>{item}</span>
                     </li>
                   ))}

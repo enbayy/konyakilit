@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import hydLogo3 from './assets/hydLogo3.png'
 import Home from './pages/Home'
 import InfoPage from './pages/InfoPage'
+import Products from './pages/Products'
+import Contact from './pages/Contact'
 
 const footerSections = [
   {
@@ -31,29 +33,12 @@ const footerSections = [
 
 const navItems = [
   { label: 'Anasayfa', path: '/' },
-  { label: 'Kurumsal', path: '/kurumsal' },
   { label: 'Ürünler', path: '/urunler' },
   { label: 'Markalar', path: '/markalar' },
-  { label: 'Projeler', path: '/projeler' },
-  { label: 'Medya', path: '/medya' },
   { label: 'İletişim', path: '/iletisim' },
 ]
 
 const pageContent = {
-  kurumsal: {
-    title: 'Kurumsal',
-    subtitle: 'HYD Point’in tarihçesi, değerleri, misyonu ve sürdürülebilirlik yaklaşımı.',
-    sections: [
-      {
-        heading: '1978’den Bugüne',
-        body: 'Kuruluşumuzdan bu yana endüstriyel hidrolik ve pnömatik çözümlerle Türkiye ve bölge pazarında büyüdük.',
-      },
-      {
-        heading: 'Misyon & Vizyon',
-        body: 'Güvenilir, yenilikçi ve müşteri odaklı çözümler üretmek; mühendislik gücümüzü teknoloji ile birleştirmek.',
-      },
-    ],
-  },
   urunler: {
     title: 'Ürünler',
     subtitle: 'Hidrolik, pnömatik, elektronik ve tesisat ürün gamımızı inceleyin.',
@@ -112,7 +97,23 @@ const secondaryNav = [
     label: 'Hidrolik',
     path: '/urunler',
     description: 'Pompalar, valfler, güç üniteleri, ağır iş uygulamaları.',
-    links: ['Pompalar', 'Valfler', 'Güç Üniteleri', 'Mobil Hidrolik', 'Endüstriyel Sistemler'],
+    links: [
+      'POMPA',
+      'ALÜMİNYUM GÖVDELİ DİŞLİ POMPALAR',
+      'DÖKÜM GÖVDELİ DİŞLİ POMPALAR',
+      'EL POMPASI',
+      'İÇTEN DİŞLİ POMPALAR',
+      'İŞ MAKİNESİ POMPALARI',
+      'PALETLİ POMPA',
+      'PİSTONLU POMPA',
+      'TANDEM POMPALAR',
+      'AKIŞ BÖLÜCÜLER',
+      'ALÜMİNYUM GÖVDE DİŞLİ AKIŞ BÖLÜCÜLER',
+      'DÖKÜM GÖVDE DİŞLİ AKIŞ BÖLÜCÜLER',
+      'AKÜLER',
+      'MEMBRANLI AKÜLER',
+      'BALONLU AKÜLER',
+    ],
   },
   {
     label: 'Pnömatik',
@@ -130,17 +131,117 @@ const secondaryNav = [
     label: 'Markalar',
     path: '/markalar',
     description: 'Kawasaki, Walvoil, Wika, Salami ve diğer iş ortaklarımız.',
-    links: ['Kawasaki', 'Walvoil', 'Wika', 'Salami', 'Hydrocar', 'Saip'],
+    links: ['Kawasaki', 'Walvoil', 'Wika', 'Salami', 'Hydrocar', 'Saip', 'Grimet', 'Zhenjiang', 'Gold', 'Hemko'],
   },
 ]
 
+const brandGallery = {
+  Kawasaki: 'https://metosan.com.tr/Storage/Upload/cache/637532341975657085-b-30kawasaki-175-90.png',
+  Walvoil: 'https://metosan.com.tr/Storage/Upload/cache/637661968877589422-b-67walvoil-175-90.png',
+  Wika: 'https://metosan.com.tr/Storage/Upload/cache/637635181100323594-b-58wika-175-90.png',
+  Salami: 'https://metosan.com.tr/Storage/Upload/cache/637333620284483912-b-11salami-175-90.png',
+  Hydrocar: 'https://metosan.com.tr/Storage/Upload/cache/637557325862393960-b-39hydrocar-175-90.png',
+  Saip: 'https://metosan.com.tr/Storage/Upload/cache/637607340096564042-b-43saip-175-90.png',
+  Grimet: 'https://metosan.com.tr/Storage/Upload/cache/638340098660595043-b-73grimet-175-90.png',
+  Zhenjiang: 'https://metosan.com.tr/Storage/Upload/cache/637613397761965452-b-46zhenjiang-175-90.png',
+  Gold: 'https://metosan.com.tr/Storage/Upload/cache/637532342525093881-b-33gold-175-90.png',
+  Hemko: 'https://metosan.com.tr/Storage/Upload/cache/637332590151054674-b75-15hemko-175-90.png',
+}
+
 function App() {
   const [openSecondary, setOpenSecondary] = useState(null)
+  const closeSecondaryTimer = useRef(null)
+  const pumpGroup = [
+    'POMPA',
+    'ALÜMİNYUM GÖVDELİ DİŞLİ POMPALAR',
+    'DÖKÜM GÖVDELİ DİŞLİ POMPALAR',
+    'EL POMPASI',
+    'İÇTEN DİŞLİ POMPALAR',
+    'İŞ MAKİNESİ POMPALARI',
+    'PALETLİ POMPA',
+    'PİSTONLU POMPA',
+    'TANDEM POMPALAR',
+  ]
+  const flowGroup = [
+    'AKIŞ BÖLÜCÜLER',
+    'ALÜMİNYUM GÖVDE DİŞLİ AKIŞ BÖLÜCÜLER',
+    'DÖKÜM GÖVDE DİŞLİ AKIŞ BÖLÜCÜLER',
+  ]
+  const batteryGroup = ['AKÜLER', 'MEMBRANLI AKÜLER', 'BALONLU AKÜLER']
+  const steeringGroup = [
+    'DİREKSİYON BEYİNLERİ',
+    'EMNİYETLİ NORMAL',
+    'EMNİYETLİ ANTİŞOKLU',
+    'EMNİYETSİZ NORMAL',
+    'EMNİYETSİZ KAPALI MERKEZ',
+    'EMNİYETSİZ ANTİŞOKLU',
+    'FORKLİFT İÇİN XY SERİSİ',
+  ]
+  const pressureGroup = [
+    'BASINÇ, ISI ÖLÇÜM VE KONTROL CİHAZLARI',
+    'BASINÇ ŞALTERLERİ',
+    'ISI (SICAKLIK) ÖLÇER',
+    'MANOMETRE KORUMA VALFLERİ',
+    'MANOMETRE TEST RAKORLARI',
+    'MANOMETRE VE VAKUMMETRELER',
+    'TRANSMİTTERLER',
+  ]
+  const motorGroup = [
+    'HİDROMOTORLAR',
+    'DİŞLİ MOTORLAR',
+    'EĞİK EKSENLİ HİDROMOTORLAR',
+    'GEROTOR MOTORLAR (ORBİT)',
+    'YILDIZ (RADIAL) MOTOR',
+  ]
+  const controlGroup = [
+    'HİDROLİK BAĞLANTI ELEMANLARI',
+    'HORTUM BAĞLANTI ELEMANLARI',
+    'DİŞLİ BAĞLANTI ELEMANLARI',
+    'HORTUMLAR',
+  ]
+  const cylinderGroup = ['HİDROLİK SİLİNDİR VE AKSESUARLARI', 'KROM KAPLI MİLLER']
+  const loaderGroup = [
+    'KUMANDA KOLLARI , JOİSTİK VE LOADER VALF',
+    'DİLİMLİ KUMANDA KOLU',
+    'MONOBLOK KUMANDA KOLU',
+    'ELEKTRİK KONTROLLÜ KUMANDA KOLLARI',
+    'JOİSTİK VE YÜKLEYİCİ VALF',
+  ]
+
+  const handleOpenSecondary = (label) => {
+    if (closeSecondaryTimer.current) {
+      clearTimeout(closeSecondaryTimer.current)
+      closeSecondaryTimer.current = null
+    }
+    setOpenSecondary(label)
+  }
+
+  const handleCloseSecondary = () => {
+    if (closeSecondaryTimer.current) {
+      clearTimeout(closeSecondaryTimer.current)
+    }
+    closeSecondaryTimer.current = setTimeout(() => setOpenSecondary(null), 120)
+  }
+
+  useEffect(() => {
+    return () => {
+      if (closeSecondaryTimer.current) {
+        clearTimeout(closeSecondaryTimer.current)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.classList.remove('dark')
+      localStorage.removeItem('theme')
+    }
+  }, [])
 
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-slate-50 text-slate-900">
-        <header className="sticky top-0 z-40 backdrop-blur bg-white/95 shadow-sm shadow-slate-200/70">
+        <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur bg-white/95 shadow-sm shadow-slate-200/70">
           <div className="border-b border-slate-100">
             <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-8 py-3 text-xs text-slate-500">
               <div className="flex items-center gap-4">
@@ -162,17 +263,16 @@ function App() {
             </div>
           </div>
 
-          <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-8 py-4">
+          <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-8 py-5">
             <div className="flex items-center gap-3">
               <img
                 src={hydLogo3}
                 alt="HYD Point logo"
                 className="h-10 w-auto"
               />
-              <span className="hidden text-sm font-medium text-slate-500 sm:block">Hidrolik & Pnömatik</span>
             </div>
 
-            <nav className="hidden items-center gap-10 text-sm font-semibold text-slate-700 lg:flex">
+            <nav className="hidden items-center gap-12 text-base font-semibold text-slate-700 lg:flex">
               {navItems.map((item) => (
                 <NavLink
                   key={item.path}
@@ -210,13 +310,13 @@ function App() {
           </div>
 
           <div className="border-t border-slate-100 bg-gradient-to-r from-slate-50 via-white to-slate-50">
-            <div className="mx-auto flex w-full max-w-7xl items-center justify-center gap-8 px-8 py-3 text-sm font-semibold text-slate-700">
+            <div className="relative mx-auto flex w-full max-w-7xl items-center justify-center gap-8 px-8 py-3 text-sm font-semibold text-slate-700">
               {secondaryNav.map((item) => (
                 <div
                   key={item.label}
-                  className="relative group"
-                  onMouseEnter={() => setOpenSecondary(item.label)}
-                  onMouseLeave={() => setOpenSecondary((prev) => (prev === item.label ? null : prev))}
+                  className="group"
+                  onMouseEnter={() => handleOpenSecondary(item.label)}
+                  onMouseLeave={handleCloseSecondary}
                 >
                   <NavLink
                     to={item.path}
@@ -226,24 +326,220 @@ function App() {
                     <span className="text-xs text-slate-400 group-hover:text-[#ff7f00]">▼</span>
                   </NavLink>
                   {openSecondary === item.label ? (
-                    <div className="absolute left-0 top-full mt-3 w-[360px] rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl">
-                      <div className="flex items-start justify-between gap-3">
-                        <div>
+                    <div
+                      onMouseEnter={() => handleOpenSecondary(item.label)}
+                      onMouseLeave={handleCloseSecondary}
+                      className="absolute left-0 right-0 top-full mt-1 w-full rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl"
+                    >
+                      {item.label !== 'Hidrolik' ? (
+                        <div className="flex items-start justify-between gap-3">
                           <p className="text-sm font-semibold text-slate-900">{item.label}</p>
-                          <p className="mt-1 text-xs text-slate-500">{item.description}</p>
                         </div>
-                        <span className="rounded-full bg-[#1e4294]/10 px-3 py-1 text-[11px] font-semibold text-[#1e4294]">
-                          Premium
-                        </span>
-                      </div>
-                      <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-slate-700">
-                        {item.links.map((link) => (
-                          <li key={link} className="flex items-start gap-2">
-                            <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
-                            <span>{link}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      ) : null}
+                      {item.label === 'Hidrolik' ? (
+                        <div className="mt-4 grid grid-cols-6 gap-x-8 gap-y-2 text-sm text-slate-700">
+                          <div className="space-y-2">
+                            {pumpGroup.map((link) => {
+                              const isHeading = link === 'POMPA'
+                              return (
+                                <div key={link} className="flex items-start gap-2">
+                                  {!isHeading && (
+                                    <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
+                                  )}
+                                  <a
+                                    href="#"
+                                    className={`transition hover:text-[#1e4294] ${
+                                      isHeading ? 'text-[#ff7f00] font-semibold' : ''
+                                    }`}
+                                  >
+                                    {link}
+                                  </a>
+                                </div>
+                              )
+                            })}
+                          </div>
+                          <div className="space-y-2">
+                            {flowGroup.map((link) => {
+                              const isHeading = link === 'AKIŞ BÖLÜCÜLER'
+                              return (
+                                <div key={link} className="flex items-start gap-2">
+                                  {!isHeading && (
+                                    <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
+                                  )}
+                                  <a
+                                    href="#"
+                                    className={`transition hover:text-[#1e4294] ${
+                                      isHeading ? 'text-[#ff7f00] font-semibold' : ''
+                                    }`}
+                                  >
+                                    {link}
+                                  </a>
+                                </div>
+                              )
+                            })}
+                            {batteryGroup.map((link) => {
+                              const isHeading = link === 'AKÜLER'
+                              return (
+                                <div key={link} className="flex items-start gap-2">
+                                  {!isHeading && (
+                                    <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
+                                  )}
+                                  <a
+                                    href="#"
+                                    className={`transition hover:text-[#1e4294] ${
+                                      isHeading ? 'text-[#ff7f00] font-semibold' : ''
+                                    }`}
+                                  >
+                                    {link}
+                                  </a>
+                                </div>
+                              )
+                            })}
+                            {motorGroup.map((link) => {
+                              const isHeading = link === 'HİDROMOTORLAR'
+                              return (
+                                <div key={link} className="flex items-start gap-2">
+                                  {!isHeading && (
+                                    <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
+                                  )}
+                                  <a
+                                    href="#"
+                                    className={`transition hover:text-[#1e4294] ${
+                                      isHeading ? 'text-[#ff7f00] font-semibold' : ''
+                                    }`}
+                                  >
+                                    {link}
+                                  </a>
+                                </div>
+                              )
+                            })}
+                          </div>
+                          <div className="space-y-2">
+                            {steeringGroup.map((link) => {
+                              const isHeading = link === 'DİREKSİYON BEYİNLERİ'
+                              return (
+                                <div key={link} className="flex items-start gap-2">
+                                  {!isHeading && (
+                                    <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
+                                  )}
+                                  <a
+                                    href="#"
+                                    className={`transition hover:text-[#1e4294] ${
+                                      isHeading ? 'text-[#ff7f00] font-semibold' : ''
+                                    }`}
+                                  >
+                                    {link}
+                                  </a>
+                                </div>
+                              )
+                            })}
+                          </div>
+                          <div className="space-y-2">
+                            {pressureGroup.map((link) => {
+                              const isHeading = link === 'BASINÇ, ISI ÖLÇÜM VE KONTROL CİHAZLARI'
+                              return (
+                                <div key={link} className="flex items-start gap-2">
+                                  {!isHeading && (
+                                    <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
+                                  )}
+                                  <a
+                                    href="#"
+                                    className={`transition hover:text-[#1e4294] ${
+                                      isHeading ? 'text-[#ff7f00] font-semibold' : ''
+                                    }`}
+                                  >
+                                    {link}
+                                  </a>
+                                </div>
+                              )
+                            })}
+                          </div>
+                          <div className="space-y-2">
+                            {loaderGroup.map((link) => {
+                              const isHeading = link === 'KUMANDA KOLLARI , JOİSTİK VE LOADER VALF'
+                              return (
+                                <div key={link} className="flex items-start gap-2">
+                                  {!isHeading && (
+                                    <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
+                                  )}
+                                  <a
+                                    href="#"
+                                    className={`transition hover:text-[#1e4294] ${
+                                      isHeading ? 'text-[#ff7f00] font-semibold' : ''
+                                    }`}
+                                  >
+                                    {link}
+                                  </a>
+                                </div>
+                              )
+                            })}
+                          </div>
+                          <div className="space-y-2">
+                            {controlGroup.map((link) => {
+                              const isHeading = link === 'HİDROLİK BAĞLANTI ELEMANLARI'
+                              return (
+                                <div key={link} className="flex items-start gap-2">
+                                  {!isHeading && (
+                                    <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
+                                  )}
+                                  <a
+                                    href="#"
+                                    className={`transition hover:text-[#1e4294] ${
+                                      isHeading ? 'text-[#ff7f00] font-semibold' : ''
+                                    }`}
+                                  >
+                                    {link}
+                                  </a>
+                                </div>
+                              )
+                            })}
+                            {cylinderGroup.map((link) => {
+                              const isHeading = link === 'HİDROLİK SİLİNDİR VE AKSESUARLARI'
+                              return (
+                                <div key={link} className="flex items-start gap-2">
+                                  {!isHeading && (
+                                    <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
+                                  )}
+                                  <a
+                                    href="#"
+                                    className={`transition hover:text-[#1e4294] ${
+                                      isHeading ? 'text-[#ff7f00] font-semibold' : ''
+                                    }`}
+                                  >
+                                    {link}
+                                  </a>
+                                </div>
+                              )
+                            })}
+                          </div>
+                        </div>
+                      ) : item.label === 'Markalar' ? (
+                        <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-6">
+                          {item.links.map((link) => (
+                            <div
+                              key={link}
+                              className="flex items-center justify-center rounded-lg border border-slate-200 bg-white p-3 shadow-sm transition hover:-translate-y-1 hover:border-[#ff7f00]/60 hover:shadow-md"
+                            >
+                              <img
+                                src={brandGallery[link]}
+                                alt={link}
+                                className="max-h-10 w-auto object-contain"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <ul className="mt-4 grid grid-cols-2 gap-y-2 gap-x-4 text-sm text-slate-700 dark:text-slate-200">
+                          {item.links.map((link) => (
+                            <li key={link} className="flex items-start gap-2">
+                              <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
+                              <a href="#" className="transition hover:text-[#1e4294] dark:hover:text-[#ffb347]">
+                                {link}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   ) : null}
                 </div>
@@ -252,20 +548,16 @@ function App() {
           </div>
         </header>
 
-        <main className="pt-2">
+        <main className="pt-[190px]">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
-              path="/kurumsal"
-              element={<InfoPage {...pageContent.kurumsal} />}
-            />
-            <Route
               path="/urunler"
-              element={<InfoPage {...pageContent.urunler} />}
+              element={<Products />}
             />
             <Route
               path="/markalar"
-              element={<InfoPage {...pageContent.markalar} />}
+              element={<InfoPage hideHeader {...pageContent.markalar} />}
             />
             <Route
               path="/projeler"
@@ -277,7 +569,7 @@ function App() {
             />
             <Route
               path="/iletisim"
-              element={<InfoPage {...pageContent.iletisim} />}
+              element={<Contact />}
             />
           </Routes>
         </main>
