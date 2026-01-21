@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
-import hydLogo3 from './assets/hydLogo3.png'
 import Home from './pages/Home'
 import InfoPage from './pages/InfoPage'
 import ProductDetail from './pages/ProductDetail'
 import Products from './pages/Products'
+import SectionProducts from './pages/SectionProducts'
 import Contact from './pages/Contact'
 
 const footerSections = [
@@ -33,13 +33,42 @@ const footerSections = [
 ]
 
 const navItems = [
-  { label: 'Anasayfa', path: '/' },
-  { label: 'Ürünler', path: '/urunler' },
-  { label: 'Markalar', path: '/markalar' },
-  { label: 'İletişim', path: '/iletisim' },
+  { label: 'ANASAYFA', path: '/' },
+  { label: 'ÜRÜNLER', path: '/urunler' },
+  { label: 'HAKKIMIZDA', path: '/hakkimizda' },
+  { label: 'İLETİŞİM', path: '/iletisim' },
 ]
 
 const pageContent = {
+  hakkimizda: {
+    title: 'Hakkımızda',
+    subtitle: '1978\'den bu yana hidrolik ve pnömatik sektöründe güçlü markalar ve mühendislik çözümleri sunuyoruz.',
+    sections: [
+      {
+        heading: 'Şirketimiz',
+        body: 'Konya Kilit, 1978 yılından beri hidrolik ve pnömatik sektöründe faaliyet gösteren köklü bir firmadır. Yılların getirdiği deneyim ve uzman kadromuzla, endüstriyel ve mobil uygulamalar için en kaliteli ürünleri ve çözümleri sunmaktayız.',
+      },
+      {
+        heading: 'Misyonumuz',
+        body: 'Müşterilerimize en yüksek kalitede hidrolik ve pnömatik ürünleri sunarak, sektörde öncü bir konumda yer almak. Teknik destek ve mühendislik çözümlerimizle müşteri memnuniyetini en üst seviyede tutmak.',
+      },
+      {
+        heading: 'Vizyonumuz',
+        body: 'Türkiye\'nin önde gelen hidrolik ve pnömatik sistem tedarikçisi olmak, uluslararası standartlarda hizmet vermek ve sürekli gelişen teknolojiye ayak uydurarak sektörde lider konumda kalmak.',
+      },
+      {
+        heading: 'Değerlerimiz',
+        body: 'İşimizi yaparken öncelik verdiğimiz temel değerlerimiz:',
+        items: [
+          'Kalite ve güvenilirlik',
+          'Müşteri odaklılık',
+          'Teknik uzmanlık',
+          'Sürekli gelişim',
+          'Etik değerler',
+        ],
+      },
+    ],
+  },
   urunler: {
     title: 'Ürünler',
     subtitle: 'Hidrolik, pnömatik, elektronik ve tesisat ürün gamımızı inceleyin.',
@@ -136,103 +165,11 @@ const secondaryNav = [
   },
 ]
 
-const brandGallery = {
-  Kawasaki: 'https://metosan.com.tr/Storage/Upload/cache/637532341975657085-b-30kawasaki-175-90.png',
-  Walvoil: 'https://metosan.com.tr/Storage/Upload/cache/637661968877589422-b-67walvoil-175-90.png',
-  Wika: 'https://metosan.com.tr/Storage/Upload/cache/637635181100323594-b-58wika-175-90.png',
-  Salami: 'https://metosan.com.tr/Storage/Upload/cache/637333620284483912-b-11salami-175-90.png',
-  Hydrocar: 'https://metosan.com.tr/Storage/Upload/cache/637557325862393960-b-39hydrocar-175-90.png',
-  Saip: 'https://metosan.com.tr/Storage/Upload/cache/637607340096564042-b-43saip-175-90.png',
-  Grimet: 'https://metosan.com.tr/Storage/Upload/cache/638340098660595043-b-73grimet-175-90.png',
-  Zhenjiang: 'https://metosan.com.tr/Storage/Upload/cache/637613397761965452-b-46zhenjiang-175-90.png',
-  Gold: 'https://metosan.com.tr/Storage/Upload/cache/637532342525093881-b-33gold-175-90.png',
-  Hemko: 'https://metosan.com.tr/Storage/Upload/cache/637332590151054674-b75-15hemko-175-90.png',
-}
 
 function App() {
-  const [openSecondary, setOpenSecondary] = useState(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileSubOpen, setMobileSubOpen] = useState(null)
-  const closeSecondaryTimer = useRef(null)
-  const pumpGroup = [
-    'POMPA',
-    'ALÜMİNYUM GÖVDELİ DİŞLİ POMPALAR',
-    'DÖKÜM GÖVDELİ DİŞLİ POMPALAR',
-    'EL POMPASI',
-    'İÇTEN DİŞLİ POMPALAR',
-    'İŞ MAKİNESİ POMPALARI',
-    'PALETLİ POMPA',
-    'PİSTONLU POMPA',
-    'TANDEM POMPALAR',
-  ]
-  const flowGroup = [
-    'AKIŞ BÖLÜCÜLER',
-    'ALÜMİNYUM GÖVDE DİŞLİ AKIŞ BÖLÜCÜLER',
-    'DÖKÜM GÖVDE DİŞLİ AKIŞ BÖLÜCÜLER',
-  ]
-  const batteryGroup = ['AKÜLER', 'MEMBRANLI AKÜLER', 'BALONLU AKÜLER']
-  const steeringGroup = [
-    'DİREKSİYON BEYİNLERİ',
-    'EMNİYETLİ NORMAL',
-    'EMNİYETLİ ANTİŞOKLU',
-    'EMNİYETSİZ NORMAL',
-    'EMNİYETSİZ KAPALI MERKEZ',
-    'EMNİYETSİZ ANTİŞOKLU',
-    'FORKLİFT İÇİN XY SERİSİ',
-  ]
-  const pressureGroup = [
-    'BASINÇ, ISI ÖLÇÜM VE KONTROL CİHAZLARI',
-    'BASINÇ ŞALTERLERİ',
-    'ISI (SICAKLIK) ÖLÇER',
-    'MANOMETRE KORUMA VALFLERİ',
-    'MANOMETRE TEST RAKORLARI',
-    'MANOMETRE VE VAKUMMETRELER',
-    'TRANSMİTTERLER',
-  ]
-  const motorGroup = [
-    'HİDROMOTORLAR',
-    'DİŞLİ MOTORLAR',
-    'EĞİK EKSENLİ HİDROMOTORLAR',
-    'GEROTOR MOTORLAR (ORBİT)',
-    'YILDIZ (RADIAL) MOTOR',
-  ]
-  const controlGroup = [
-    'HİDROLİK BAĞLANTI ELEMANLARI',
-    'HORTUM BAĞLANTI ELEMANLARI',
-    'DİŞLİ BAĞLANTI ELEMANLARI',
-    'HORTUMLAR',
-  ]
-  const cylinderGroup = ['HİDROLİK SİLİNDİR VE AKSESUARLARI', 'KROM KAPLI MİLLER']
-  const loaderGroup = [
-    'KUMANDA KOLLARI , JOİSTİK VE LOADER VALF',
-    'DİLİMLİ KUMANDA KOLU',
-    'MONOBLOK KUMANDA KOLU',
-    'ELEKTRİK KONTROLLÜ KUMANDA KOLLARI',
-    'JOİSTİK VE YÜKLEYİCİ VALF',
-  ]
-
-  const handleOpenSecondary = (label) => {
-    if (closeSecondaryTimer.current) {
-      clearTimeout(closeSecondaryTimer.current)
-      closeSecondaryTimer.current = null
-    }
-    setOpenSecondary(label)
-  }
-
-  const handleCloseSecondary = () => {
-    if (closeSecondaryTimer.current) {
-      clearTimeout(closeSecondaryTimer.current)
-    }
-    closeSecondaryTimer.current = setTimeout(() => setOpenSecondary(null), 120)
-  }
-
-  useEffect(() => {
-    return () => {
-      if (closeSecondaryTimer.current) {
-        clearTimeout(closeSecondaryTimer.current)
-      }
-    }
-  }, [])
+  const [searchQuery, setSearchQuery] = useState('')
 
   useEffect(() => {
     if (typeof document !== 'undefined') {
@@ -246,33 +183,64 @@ function App() {
       <div className="min-h-screen bg-slate-50 text-slate-900">
         <header className="relative z-40 backdrop-blur bg-white/95 shadow-sm shadow-slate-200/70">
           <div className="border-b border-slate-100">
-            <div className="mx-auto flex w-full max-w-[95%] items-center justify-between px-4 py-3 text-xs text-slate-500">
+            <div className="relative mx-auto flex w-full max-w-[95%] items-center justify-between px-4 py-1.5 text-xs text-slate-500">
               <div className="flex items-center gap-4">
                 <span className="hidden sm:inline-flex items-center gap-1">
                   📞 +90 212 000 00 00
                 </span>
                 <span className="hidden md:inline-flex items-center gap-1">
-                  ✉️ info@hydpoint.com
+                  ✉️ info@konyakilit.com
                 </span>
               </div>
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                <div className="relative hidden lg:block">
+                  <input
+                    type="text"
+                    placeholder="Ürün ara..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-64 rounded-lg border border-slate-200 bg-white px-4 py-1.5 pr-10 text-sm text-slate-700 placeholder-slate-400 shadow-sm transition focus:border-[#16a34a] focus:outline-none focus:ring-2 focus:ring-[#16a34a]/20"
+                  />
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">🔍</span>
+                </div>
+              </div>
               <div className="flex items-center gap-3">
-                <button className="rounded-full bg-[#ff7f00] px-3 py-1 text-[11px] font-semibold uppercase text-slate-900 shadow-sm">
-                  TR
-                </button>
-                <button className="rounded-full px-3 py-1 text-[11px] font-semibold uppercase text-slate-500 transition hover:text-[#1e4294]">
-                  EN
-                </button>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white text-slate-600 transition hover:bg-[#16a34a] hover:text-white"
+                  aria-label="Instagram"
+                >
+                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </a>
+                <a
+                  href="https://wa.me/902120000000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white text-slate-600 transition hover:bg-[#16a34a] hover:text-white"
+                  aria-label="WhatsApp"
+                >
+                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
 
           <div className="mx-auto flex w-full max-w-[95%] items-center justify-between px-4 py-5">
             <div className="flex items-center gap-3">
-              <img
-                src={hydLogo3}
-                alt="HYD Point logo"
-                className="h-10 w-auto"
-              />
+              <NavLink to="/" className="flex items-center gap-3">
+                <img
+                  src="/konyakilitlogo.png"
+                  alt="Konya Kilit logo"
+                  className="h-10 w-auto"
+                />
+                <span className="text-xl font-bold text-slate-900">KONYA KİLİT</span>
+              </NavLink>
             </div>
 
             <nav className="hidden items-center gap-12 text-base font-semibold text-slate-700 lg:flex">
@@ -281,7 +249,7 @@ function App() {
                   key={item.path}
                   to={item.path}
                   className={({ isActive }) =>
-                    `group relative pb-1 transition hover:text-[#1e4294] ${isActive ? 'text-[#1e4294]' : ''}`
+                    `group relative pb-1 transition hover:text-[#16a34a] ${isActive ? 'text-[#16a34a]' : ''}`
                   }
                   end={item.path === '/'}
                 >
@@ -289,7 +257,7 @@ function App() {
                     <>
                       <span>{item.label}</span>
                       <span
-                        className={`absolute -bottom-1 left-0 h-[2px] w-full rounded-full bg-[#ff7f00] transition ${
+                        className={`absolute -bottom-1 left-0 h-[2px] w-full rounded-full bg-[#16a34a] transition ${
                           isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-50'
                         }`}
                       />
@@ -300,18 +268,9 @@ function App() {
             </nav>
 
             <div className="flex items-center gap-3">
-              <button className="hidden items-center gap-2 rounded-full border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 transition hover:border-[#ff7f00]/40 hover:text-[#1e4294] sm:flex">
-                <span role="img" aria-label="Ara">
-                  🔍
-                </span>
-                Ara
-              </button>
-              <button className="rounded-full bg-[#ff7f00] px-4 py-2 text-xs font-semibold uppercase text-slate-900 shadow-sm transition hover:bg-[#e07000]">
-                Teklif Al
-              </button>
               <button
                 onClick={() => setMobileOpen((prev) => !prev)}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-[#1e4294]/40 hover:text-[#1e4294] lg:hidden"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-[#16a34a]/40 hover:text-[#16a34a] lg:hidden"
                 aria-label="Menüyü aç/kapat"
               >
                 <span className="relative block h-4 w-5">
@@ -335,289 +294,14 @@ function App() {
             </div>
           </div>
 
-          <div className="border-t border-slate-200/80 bg-gradient-to-b from-white via-slate-50/50 to-white backdrop-blur-sm shadow-sm">
-            <div className="relative mx-auto flex w-full max-w-[95%] flex-wrap items-center justify-center gap-3 px-4 py-4 text-sm font-semibold text-slate-700">
-              {secondaryNav.map((item) => (
-                <div
-                  key={item.label}
-                  className="group relative"
-                  onMouseEnter={() => handleOpenSecondary(item.label)}
-                  onMouseLeave={handleCloseSecondary}
-                >
-                  <NavLink
-                    to={item.path}
-                    className="relative flex items-center gap-2 rounded-xl px-5 py-2.5 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#ff7f00]/10 hover:to-[#1e4294]/5 hover:text-[#1e4294] hover:shadow-sm"
-                  >
-                    <span className="relative z-10">{item.label}</span>
-                    <span className="relative z-10 text-xs text-slate-400 transition-all duration-200 group-hover:translate-y-0.5 group-hover:text-[#ff7f00]">▼</span>
-                    <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#ff7f00]/5 to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-                  </NavLink>
-                  {openSecondary === item.label ? (
-                    <div
-                      onMouseEnter={() => handleOpenSecondary(item.label)}
-                      onMouseLeave={handleCloseSecondary}
-                      className="absolute left-1/2 top-full z-50 mt-2 w-[95vw] max-w-6xl -translate-x-1/2 rounded-2xl border border-slate-200/80 bg-white p-8 shadow-2xl backdrop-blur-sm transition-all duration-200"
-                      style={{
-                        boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                      }}
-                    >
-                      {item.label !== 'Hidrolik' && item.label !== 'Markalar' ? (
-                        <div className="mb-4 border-b border-slate-100 pb-4">
-                          <h3 className="text-lg font-bold text-slate-900">{item.label}</h3>
-                          <p className="mt-1 text-sm text-slate-600">{item.description}</p>
-                        </div>
-                      ) : null}
-                      {item.label === 'Hidrolik' ? (
-                        <div className="mt-2 grid grid-cols-6 gap-x-8 gap-y-2 text-sm text-slate-700">
-                          <div className="space-y-2">
-                            {pumpGroup.map((link) => {
-                              const isHeading = link === 'POMPA'
-                              return (
-                                <div key={link} className="flex items-start gap-2">
-                                  {!isHeading && (
-                                    <span className="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
-                                  )}
-                                  <a
-                                    href="#"
-                                    className={`transition-all duration-150 hover:text-[#1e4294] hover:translate-x-1 ${
-                                      isHeading ? 'font-bold text-[#ff7f00] text-base' : ''
-                                    }`}
-                                  >
-                                    {link}
-                                  </a>
-                                </div>
-                              )
-                            })}
-                          </div>
-                          <div className="space-y-2">
-                            {flowGroup.map((link) => {
-                              const isHeading = link === 'AKIŞ BÖLÜCÜLER'
-                              return (
-                                <div key={link} className="flex items-start gap-2">
-                                  {!isHeading && (
-                                    <span className="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
-                                  )}
-                                  <a
-                                    href="#"
-                                    className={`transition-all duration-150 hover:text-[#1e4294] hover:translate-x-1 ${
-                                      isHeading ? 'font-bold text-[#ff7f00] text-base' : ''
-                                    }`}
-                                  >
-                                    {link}
-                                  </a>
-                                </div>
-                              )
-                            })}
-                            {batteryGroup.map((link) => {
-                              const isHeading = link === 'AKÜLER'
-                              return (
-                                <div key={link} className="flex items-start gap-2">
-                                  {!isHeading && (
-                                    <span className="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
-                                  )}
-                                  <a
-                                    href="#"
-                                    className={`transition-all duration-150 hover:text-[#1e4294] hover:translate-x-1 ${
-                                      isHeading ? 'font-bold text-[#ff7f00] text-base' : ''
-                                    }`}
-                                  >
-                                    {link}
-                                  </a>
-                                </div>
-                              )
-                            })}
-                            {motorGroup.map((link) => {
-                              const isHeading = link === 'HİDROMOTORLAR'
-                              return (
-                                <div key={link} className="flex items-start gap-2">
-                                  {!isHeading && (
-                                    <span className="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
-                                  )}
-                                  <a
-                                    href="#"
-                                    className={`transition-all duration-150 hover:text-[#1e4294] hover:translate-x-1 ${
-                                      isHeading ? 'font-bold text-[#ff7f00] text-base' : ''
-                                    }`}
-                                  >
-                                    {link}
-                                  </a>
-                                </div>
-                              )
-                            })}
-                          </div>
-                          <div className="space-y-2">
-                            {steeringGroup.map((link) => {
-                              const isHeading = link === 'DİREKSİYON BEYİNLERİ'
-                              return (
-                                <div key={link} className="flex items-start gap-2">
-                                  {!isHeading && (
-                                    <span className="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
-                                  )}
-                                  <a
-                                    href="#"
-                                    className={`transition-all duration-150 hover:text-[#1e4294] hover:translate-x-1 ${
-                                      isHeading ? 'font-bold text-[#ff7f00] text-base' : ''
-                                    }`}
-                                  >
-                                    {link}
-                                  </a>
-                                </div>
-                              )
-                            })}
-                          </div>
-                          <div className="space-y-2">
-                            {pressureGroup.map((link) => {
-                              const isHeading = link === 'BASINÇ, ISI ÖLÇÜM VE KONTROL CİHAZLARI'
-                              return (
-                                <div key={link} className="flex items-start gap-2">
-                                  {!isHeading && (
-                                    <span className="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
-                                  )}
-                                  <a
-                                    href="#"
-                                    className={`transition-all duration-150 hover:text-[#1e4294] hover:translate-x-1 ${
-                                      isHeading ? 'font-bold text-[#ff7f00] text-base' : ''
-                                    }`}
-                                  >
-                                    {link}
-                                  </a>
-                                </div>
-                              )
-                            })}
-                          </div>
-                          <div className="space-y-2">
-                            {loaderGroup.map((link) => {
-                              const isHeading = link === 'KUMANDA KOLLARI , JOİSTİK VE LOADER VALF'
-                              return (
-                                <div key={link} className="flex items-start gap-2">
-                                  {!isHeading && (
-                                    <span className="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
-                                  )}
-                                  <a
-                                    href="#"
-                                    className={`transition-all duration-150 hover:text-[#1e4294] hover:translate-x-1 ${
-                                      isHeading ? 'font-bold text-[#ff7f00] text-base' : ''
-                                    }`}
-                                  >
-                                    {link}
-                                  </a>
-                                </div>
-                              )
-                            })}
-                          </div>
-                          <div className="space-y-2">
-                            {controlGroup.map((link) => {
-                              const isHeading = link === 'HİDROLİK BAĞLANTI ELEMANLARI'
-                              return (
-                                <div key={link} className="flex items-start gap-2">
-                                  {!isHeading && (
-                                    <span className="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
-                                  )}
-                                  <a
-                                    href="#"
-                                    className={`transition-all duration-150 hover:text-[#1e4294] hover:translate-x-1 ${
-                                      isHeading ? 'font-bold text-[#ff7f00] text-base' : ''
-                                    }`}
-                                  >
-                                    {link}
-                                  </a>
-                                </div>
-                              )
-                            })}
-                            {cylinderGroup.map((link) => {
-                              const isHeading = link === 'HİDROLİK SİLİNDİR VE AKSESUARLARI'
-                              return (
-                                <div key={link} className="flex items-start gap-2">
-                                  {!isHeading && (
-                                    <span className="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00]" />
-                                  )}
-                                  <a
-                                    href="#"
-                                    className={`transition-all duration-150 hover:text-[#1e4294] hover:translate-x-1 ${
-                                      isHeading ? 'font-bold text-[#ff7f00] text-base' : ''
-                                    }`}
-                                  >
-                                    {link}
-                                  </a>
-                                </div>
-                              )
-                            })}
-                          </div>
-                        </div>
-                      ) : item.label === 'Markalar' ? (
-                        <div className="mt-2">
-                          <div className="mb-6 border-b border-slate-100 pb-4">
-                            <h3 className="text-xl font-bold text-slate-900">Güvenilir Markalarımız</h3>
-                            <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
-                              Dünya çapında tanınmış hidrolik, pnömatik ve sızdırmazlık markalarını tek çatı altında sunuyoruz.
-                            </p>
-                          </div>
-                          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                            {item.links.map((link) => (
-                              <div
-                                key={link}
-                                className="group relative flex flex-col items-center justify-center rounded-xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/50 p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#ff7f00]/40 hover:shadow-xl hover:shadow-[#ff7f00]/10"
-                              >
-                                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#ff7f00]/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                                <div className="relative z-10 flex h-20 w-full items-center justify-center">
-                                  <img
-                                    src={brandGallery[link]}
-                                    alt={link}
-                                    className="max-h-14 w-auto object-contain transition-all duration-300 group-hover:scale-110"
-                                  />
-                                </div>
-                                <span className="relative z-10 mt-3 text-xs font-semibold text-slate-600 transition-colors duration-300 group-hover:text-[#1e4294]">
-                                  {link}
-                                </span>
-                              </div>
-                            ))}
-                          </div>
-                          <div className="mt-6 flex items-center justify-center">
-                            <a
-                              href="/markalar"
-                              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#ff7f00] to-[#e07000] px-6 py-2.5 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:shadow-lg hover:shadow-[#ff7f00]/30"
-                            >
-                              Tüm Markaları Görüntüle
-                              <span className="text-base">→</span>
-                            </a>
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="mt-2">
-                          <div className="mb-4 border-b border-slate-100 pb-4">
-                            <h3 className="text-lg font-bold text-slate-900">{item.label}</h3>
-                            <p className="mt-1 text-sm text-slate-600">{item.description}</p>
-                          </div>
-                          <ul className="grid grid-cols-2 gap-y-2.5 gap-x-6 text-sm text-slate-700">
-                            {item.links.map((link) => (
-                              <li key={link}>
-                                <a
-                                  href="#"
-                                  className="group flex items-center gap-2.5 transition-all duration-150 hover:text-[#1e4294]"
-                                >
-                                  <span className="mt-0.5 inline-block h-1.5 w-1.5 rounded-full bg-[#ff7f00] transition-all duration-150 group-hover:scale-125" />
-                                  <span className="transition-all duration-150 group-hover:translate-x-1">{link}</span>
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
-                  ) : null}
-                </div>
-              ))}
-            </div>
-          </div>
-
         {mobileOpen ? (
           <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-label="Mobil menü">
             <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
             <div className="relative ml-auto h-full w-[90vw] max-w-sm overflow-y-auto border-l border-slate-200 bg-white shadow-2xl">
               <div className="flex items-center justify-between px-6 py-5">
                 <div className="flex items-center gap-2">
-                  <img src={hydLogo3} alt="HYD Point logo" className="h-8 w-auto" />
-                  <span className="text-sm font-semibold text-slate-700">HYD Point</span>
+                  <img src="/konyakilitlogo.png" alt="Konya Kilit logo" className="h-8 w-auto" />
+                  <span className="text-lg font-bold text-slate-700">KONYA KİLİT</span>
                 </div>
                 <button
                   onClick={() => setMobileOpen(false)}
@@ -636,7 +320,7 @@ function App() {
                     onClick={() => setMobileOpen(false)}
                     className={({ isActive }) =>
                       `flex items-center justify-between rounded-xl px-4 py-3 text-base font-semibold transition ${
-                        isActive ? 'bg-[#1e4294] text-white' : 'text-slate-800 hover:bg-slate-100'
+                        isActive ? 'bg-[#16a34a] text-white' : 'text-slate-800 hover:bg-slate-100'
                       }`
                     }
                     end={item.path === '/'}
@@ -677,16 +361,6 @@ function App() {
                 </div>
               </div>
 
-              <div className="mt-6 border-t border-slate-100 px-4 py-4">
-                <div className="flex flex-col gap-2">
-                  <button className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-[#ff7f00]/40 hover:text-[#1e4294]">
-                    🔍 Ara
-                  </button>
-                  <button className="inline-flex items-center justify-center gap-2 rounded-full bg-[#ff7f00] px-4 py-3 text-sm font-semibold uppercase text-slate-900 shadow-sm transition hover:bg-[#e07000]">
-                    Teklif Al
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
         ) : null}
@@ -696,8 +370,16 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
+              path="/hakkimizda"
+              element={<InfoPage {...pageContent.hakkimizda} />}
+            />
+            <Route
               path="/urunler"
               element={<Products />}
+            />
+            <Route
+              path="/urunler/:sectionSlug"
+              element={<SectionProducts />}
             />
             <Route
               path="/markalar"
@@ -722,13 +404,13 @@ function App() {
           </Routes>
         </main>
 
-        <footer className="mt-16 bg-[#1e4294] text-slate-200">
+        <footer className="mt-16 bg-[#166534] text-slate-200">
           <div className="mx-auto max-w-[95%] px-4 py-12">
             <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
               <div className="space-y-4">
                 <img
-                  src={hydLogo3}
-                  alt="HYD Point footer logo"
+                  src="/konyakilitlogo.png"
+                  alt="Konya Kilit footer logo"
                   className="h-10 w-auto"
                 />
                 <p className="text-sm text-slate-300">
@@ -757,7 +439,7 @@ function App() {
               ))}
             </div>
           </div>
-          <div className="border-t border-white/10 bg-[#142f73]">
+          <div className="border-t border-white/10 bg-[#14532d]">
             <div className="mx-auto flex max-w-[95%] flex-col items-center justify-between gap-3 px-4 py-4 text-xs text-slate-400 sm:flex-row">
               <p>Copyrights © 2020. HYD Point all rights reserved.</p>
               <a href="https://atlikarinca.net/" className="font-semibold text-slate-300 hover:text-white">

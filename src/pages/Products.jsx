@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useMemo, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 const hydraulicSections = [
   {
@@ -42,27 +42,335 @@ const sealingSections = [
   { title: 'SIZDIRMAZLIK', items: ['O-RING', 'KEÇE', 'HİDROLİK CONTALAR', 'FLANŞ CONTALARI', 'BAKIM KİTLERİ'] },
 ]
 
+const lockSections = [
+  {
+    title: 'KOLLU KİLİTLER',
+    items: [
+      '001 > Kollu Kilit (Küçük Versiyon)',
+      '201 > Kollu Kilit',
+      '001 > Kollu Kilit',
+      '101 > Kollu Kilit',
+      '501 > Kollu Kilit',
+      '601 > Kollu Kilit',
+      '408 > Kollu Kilit',
+      '408 > Kollu Kilit',
+      '306 > Kollu Kilit',
+      'Dikey Hareketli Kollu Kilit',
+      '504 > Dikey Hareketli Kollu Kilit',
+      '504 > Dikey Hareketli Kollu Kilit',
+      '206 > Kollu Kilit',
+      '406 > Kollu Kilit',
+      '106 > Kollu Kilit',
+      '808 > Kollu Kilit',
+      '008 > Kollu Kilit',
+      '908 > Kollu Kilit',
+      '108 > Kollu Kilit',
+      '108 > Kollu Kilit',
+      '208 > Kollu Kilit',
+      '308 > Kollu Kilit',
+      '708 > Kollu Kilit',
+      '508 > Kollu Kilit',
+      '006 > Kollu Kilit',
+      '205 > Kollu Kilit',
+    ],
+  },
+  {
+    title: 'İSPANYOLET SİSTEMLİ KİLİTLER',
+    items: [
+      '002 > İspanyolet Sistemli Kollu Kilit',
+      'İspanyolet Sistemli Kollu Kilit',
+      '102 > İspanyolet Sistemli Kollu Kilit',
+      '502 > İspanyolet Sistemli Kollu Kilit',
+      '602 > İspanyolet Sistemli Kollu Kilit',
+      '409 > İspanyolet Sistemli Kollu Kilit',
+      '107 > İspanyolet Sistemli Kollu Kilit',
+      'Dikey Hareketli Kollu Kilit',
+      '504 > Dikey Hareketli Kollu Kilit',
+      '207 > İspanyolet Sistemli Kollu Kilit',
+      '307 > İspanyolet Sistemli Kollu Kilit',
+      '407 > İspanyolet Sistemli Kollu Kilit',
+      '204 > Dikey Hareketli Kollu Kilit',
+      'Dikey Mekanizmalı Kollu Kilit',
+      '104 > Dikey Mekanizmalı Kollu Kilit',
+      '109 > İspanyolet Sistemli Kollu Kilit',
+      '909 > İspanyolet Sistemli Kollu Kilit',
+      '309 > İspanyolet Sistemli Kollu Kilit',
+      '209 > İspanyolet Sistemli Kollu Kilit',
+      '007 > İspanyolet Sistemli Kollu Kilit',
+      '809 > İspanyolet Sistemli Kollu Kilit',
+      '103 > İspanyolet Sistemli Kollu Kilit',
+      '203 > İspanyolet Sistemli Kollu Kilit',
+      'İspanyolet Sistemli Pano Kilit',
+      '203 > İspanyolet Sistemli Pano Kilit',
+      'İspanyolet Sistemli Pano Kilidi',
+      '003 > İspanyolet Sistemli Pano Kilidi',
+      '103 > İspanyolet Sistemli Pano Kilidi',
+    ],
+  },
+  {
+    title: 'TRAFO VE KABİN KİLİTLERİ',
+    items: [
+      'Kabin Kilitleri',
+      'T Kollu Kabin Kilitleri',
+    ],
+  },
+  {
+    title: 'KİLİMA SANTRAL ÜRÜNLERİ',
+    items: [
+      '012 > Klima Santral Kilidi',
+      '012 > Klima Santral Kilidi',
+      '012 > Klima Santral Kilidi',
+      'Klima Santral Kilidi Aksesuarı',
+      '012 > Klima Santral Kilidi Aksesuarı',
+      'Klima Santral Kilidi',
+      '012 > Klima Santral Kilidi',
+      'Klima Santral Kilidi',
+      '112 > Klima Santral Kilidi',
+      'Klima Santral Kilidi',
+      '112 > Klima Santral Kilidi',
+      'Klima Santral Kilidi Aksesuarları',
+      '112 > Klima Santral Kilidi Aksesuarları',
+      'Klima Santral Kilidi',
+      '112 > Klima Santral Kilidi',
+      'Klima Santral Kilidi',
+      '112 > Klima Santral Kilidi',
+      'Fonsiyonel Kilit Menteşe',
+      '712 > Fonsiyonel Kilit Menteşe',
+      'Klima Santral Kilidi',
+      '612 > Klima Santral Kilidi',
+      'Klima Santral Kilidi \'T\' Kollu',
+      '612 > Klima Santral Kilidi \'T\' Kollu',
+      'Klima Kabin Kilidi \'L\' Kollu',
+      '612 > Klima Kabin Kilidi \'L\' Kollu',
+      'Profil Bağlantı Parçası (3D)',
+      '078 > Profil Bağlantı Parçası (3D)',
+      'Sıkıştırmalı Kilit',
+      '462 > Sıkıştırmalı Kilit',
+    ],
+  },
+  {
+    title: 'ÇEŞİTLİ ÜRÜNLER',
+    items: [
+      'Sıkıştırmalı Kilitler',
+      'Sürgü Kilitler',
+      'Diğer Ürünler',
+    ],
+  },
+  {
+    title: 'DİLLER - ANAHTARLAR ÇUBUK VE LAMALAR',
+    items: [
+      'Diller',
+      'İspanyolet Çubuk ve Aksesuarları',
+      'İspanyolet Lama ve Aksesuarları',
+      'Paslanmaz İspanyolet Çubuk ve Aksesuarları',
+      'Paslanmaz İspanyolet Lama ve Aksesuarları',
+      'Anahtarlar',
+    ],
+  },
+  {
+    title: 'ÇEYREK DÖNÜŞLÜ KİLİTLER',
+    items: [
+      'Sıkıştırmalı Kilitler',
+      'Kolay Montaj Ç.D. Kilitler',
+    ],
+  },
+  {
+    title: 'SİLİNDİRLİ KİLİTLER',
+    items: [
+      '163 > Silindirli Kilit Yaylı Dilli',
+      'Silindirli Kilit',
+      '063 > Silindirli Kilit',
+      '761 > Silindirli Kilit Kolay Montaj',
+      '261 > Silindirli Tutamaklı Kilit',
+      '065 > Silindirli Kelebek Kilit',
+      '165 > Mini Silindirli Kelebek Kilit',
+      '110 > Silindirli "T" Kollu Kilit',
+      '111 > Silindirli "L" Kollu Kilit',
+      '064 > Silindirli "T" Kollu Kilit',
+      '064 > Silindirli "L" Kollu Kilit',
+      '240 > Sıkıştırmalı',
+      '240 > Sıkıştırmalı T Kollu Kilit',
+      '340 > Sıkıştırmalı Kelebek Kilit',
+      '340 > Sıkıştırmalı Kelebek Kilit',
+      '050 > Silindirli Kilit',
+      '050 > Silindirli Kilit',
+      '050 A3 > Kilit Tutamağı',
+      '050 A4 > Toz Kapağı',
+      '050 A1 > Cam Bağlantı Sacı',
+      '030 A1 > Kilit Karşılık Sacı',
+      '055 A1 > Ahşap Bağlantı Sacı',
+      '550 > Silindirli Kilit Kolay Montaj',
+      '450 > Yaylı Silindirli Kilit',
+      '150 > Silindirli Kilit',
+      '250 > Silindirli Kilit',
+      '057 > Mini Silindirli Kilit',
+      '157 > Mini Silindirli Kilit',
+      '257 > Mini Silindirli Kilit',
+      '056 > Silindirli Kilit',
+    ],
+  },
+  {
+    title: 'MOBİLYA VE ÇELİK EŞYA KİLİTLERİ',
+    items: [
+      '010 > Silindirli "T" Kollu Kilit',
+      '011 > Silindirli "L" Kollu Kilit',
+      '021 > Cam Kapak Kilidi',
+      '020 > Sürgülü Cam Kilidi',
+      '132 > Çekmece Kilidi',
+      '032 > Çekmece Kilidi',
+      '033 > Çekmece Kilidi',
+      '030 > Çekmece Kilidi',
+      '159 > Sürgülü Kapak Kilidi',
+      '059 > Sürgülü Kapak Kilidi',
+      '4150 > Şifreli Kilit',
+      '035 > Dosya Dolabı Kilidi',
+      '058 > Çelik Eşya Kilidi',
+      '158 > Çelik Eşya Kilidi',
+      '013 > Yangın Dolabı Kilidi',
+      '113 > Yangın Dolabı Kilidi',
+    ],
+  },
+]
+
+const hingeSections = [
+  { title: 'KENAR MENTEŞELER', items: [] },
+  { title: 'GİZLİ MENTEŞELER', items: [] },
+  { title: 'KÖŞE MENTEŞELER', items: [] },
+  { title: 'DÜZ MENTEŞELER', items: [] },
+]
+
+const sealSections = [
+  { title: 'SIZDIRMAZLIK PROFİLLERİ VE KENAR KORUMA', items: [] },
+  { title: 'YAPIŞKANLI CONTALAR', items: [] },
+]
+
+const accessorySections = [
+  { title: 'KULPLAR', items: [] },
+  { title: 'AKSESUARLAR', items: [] },
+]
+
+const stainlessSteelSections = [
+  { title: 'KİLİTLER', items: [] },
+  { title: 'MENTEŞELER', items: [] },
+  { title: 'AKSESUARLAR', items: [] },
+]
+
+const electronicSections = [
+  { title: 'ELEKTRONİK KOLLU KİLİTLER', items: [] },
+  { title: 'İZLEME VE ERİŞİM KONTROL SİSTEMİ', items: [] },
+  { title: 'ELEKTRONİK DOLAP KİLİTLERİ', items: [] },
+  { title: 'DİĞER ELEKTRONİK KİLİTLER', items: [] },
+]
+
 const catalogGroups = [
-  { title: 'HİDROLİK', sections: hydraulicSections },
-  { title: 'PNÖMATİK', sections: pneumaticSections },
-  { title: 'SIZDIRMAZLIK', sections: sealingSections },
+  { title: 'KİLİTLER', sections: lockSections },
+  { title: 'MENTEŞELER', sections: hingeSections },
+  { title: 'CONTALAR', sections: sealSections },
+  { title: 'AKSESUARLAR VE KULPLAR', sections: accessorySections },
+  { title: 'PASLANMAZ ÇELİK ÜRÜNLER', sections: stainlessSteelSections },
+  { title: 'ELEKTRONİK', sections: electronicSections },
 ]
 
 function Products() {
-  const [activeSection, setActiveSection] = useState('POMPA')
-  const [openGroups, setOpenGroups] = useState(['HİDROLİK'])
+  const navigate = useNavigate()
+  const [activeSection, setActiveSection] = useState(null)
+  const [activeGroup, setActiveGroup] = useState(null)
+  const [openGroups, setOpenGroups] = useState([])
+
+  useEffect(() => {
+    // Sayfa açıldığında KİLİTLER kategorisini açık olarak getir
+    setOpenGroups(['KİLİTLER'])
+  }, [])
 
   const currentItems = useMemo(() => {
     if (!activeSection) return []
+    // activeSection benzersiz olduğu için tüm gruplarda ara
+    // Kesinlikle doğru section'ı bulmak için tam eşleşme kontrolü yap
+    // String karşılaştırması için trim ve case-sensitive kontrol yap
+    const normalizedActiveSection = activeSection.trim()
+    
     for (const group of catalogGroups) {
-      const found = group.sections.find((section) => section.title === activeSection)
-      if (found) return found.items
+      for (const section of group.sections) {
+        // Tam eşleşme kontrolü - kesinlikle doğru section'ı bul
+        const normalizedSectionTitle = section.title.trim()
+        if (normalizedSectionTitle === normalizedActiveSection) {
+          // Bulunan section'ın items'ını döndür - kesinlikle doğru section'ın items'ı
+          return Array.isArray(section.items) ? section.items : []
+        }
+      }
     }
     return []
   }, [activeSection])
 
+  const currentGroupSections = useMemo(() => {
+    if (!activeGroup) return []
+    const group = catalogGroups.find((g) => g.title === activeGroup)
+    return group ? group.sections : []
+  }, [activeGroup])
+
   const toggleGroup = (title) => {
+    if (activeGroup === title) {
+      // Aynı gruba tekrar tıklanırsa kapat
+      setActiveGroup(null)
+      setActiveSection(null)
+    } else {
+      // Yeni grup seçilirse
+      setActiveGroup(title)
+      setActiveSection(null)
+    }
     setOpenGroups((prev) => (prev.includes(title) ? prev.filter((t) => t !== title) : [...prev, title]))
+  }
+
+  const handleSectionClick = (sectionTitle) => {
+    // Belirli alt başlıklar için ayrı sayfaya yönlendir
+    const slugMap = {
+      'KOLLU KİLİTLER': 'kollu-kilitler',
+      'İSPANYOLET SİSTEMLİ KİLİTLER': 'ispanyolet-sistemli-kilitler',
+      'TRAFO VE KABİN KİLİTLERİ': 'trafo-ve-kabin-kilitleri',
+      'KİLİMA SANTRAL ÜRÜNLERİ': 'kilima-santral-urunleri',
+      'ÇEŞİTLİ ÜRÜNLER': 'cesitli-urunler',
+      'DİLLER - ANAHTARLAR ÇUBUK VE LAMALAR': 'diller-anahtarlar-cubuk-ve-lamalar',
+      'ÇEYREK DÖNÜŞLÜ KİLİTLER': 'ceyrek-donuslu-kilitler',
+      'SİLİNDİRLİ KİLİTLER': 'silindirli-kilitler',
+      'MOBİLYA VE ÇELİK EŞYA KİLİTLERİ': 'mobilya-ve-celik-esya-kilitleri',
+      'KENAR MENTEŞELER': 'kenar-menteseler',
+      'GİZLİ MENTEŞELER': 'gizli-menteseler',
+      'KÖŞE MENTEŞELER': 'kose-menteseler',
+      'DÜZ MENTEŞELER': 'duz-menteseler',
+    }
+    const slug = slugMap[sectionTitle]
+    if (slug) {
+      navigate(`/urunler/${slug}`)
+      return
+    }
+    
+    // Diğer KİLİTLER alt başlıkları için ürün gösterme
+    const lockGroup = catalogGroups.find((g) => g.title === 'KİLİTLER')
+    if (lockGroup) {
+      const isLockSection = lockGroup.sections.some((section) => section.title === sectionTitle)
+      if (isLockSection && sectionTitle !== 'KOLLU KİLİTLER' && sectionTitle !== 'İSPANYOLET SİSTEMLİ KİLİTLER') {
+        // KİLİTLER grubundaki diğer alt başlıklara tıklandığında activeSection'ı temizle
+        setActiveSection(null)
+        return
+      }
+    }
+    
+    // Diğer gruplar için normal işlem
+    for (const group of catalogGroups) {
+      const found = group.sections.find((section) => section.title === sectionTitle)
+      if (found) {
+        // Grubu açık tut
+        if (!openGroups.includes(group.title)) {
+          setOpenGroups((prev) => [...prev, group.title])
+        }
+        // activeGroup'u ve activeSection'ı set et
+        setActiveGroup(group.title)
+        setActiveSection(sectionTitle)
+        return
+      }
+    }
+    // Bulunamazsa da set et
+    setActiveSection(sectionTitle)
   }
 
   // Pompa resimleri mapping
@@ -76,6 +384,30 @@ function Products() {
       'PALETLİ POMPA': '/paletli-pompa.png',
       'PİSTONLU POMPA': '/pistonlu-pompa.png',
       'TANDEM POMPALAR': '/tandem-pompalar.png',
+      // Kollu Kilitler
+      '001 > Kollu Kilit (Küçük Versiyon)': '/kollukilitler.png',
+      '201 > Kollu Kilit': '/kollukilitler.png',
+      '001 > Kollu Kilit': '/kollukilitler.png',
+      '101 > Kollu Kilit': '/kollukilitler.png',
+      '501 > Kollu Kilit': '/kollukilitler.png',
+      '601 > Kollu Kilit': '/kollukilitler.png',
+      '408 > Kollu Kilit': '/kollukilitler.png',
+      '306 > Kollu Kilit': '/kollukilitler.png',
+      'Dikey Hareketli Kollu Kilit': '/kollukilitler.png',
+      '504 > Dikey Hareketli Kollu Kilit': '/kollukilitler.png',
+      '206 > Kollu Kilit': '/kollukilitler.png',
+      '406 > Kollu Kilit': '/kollukilitler.png',
+      '106 > Kollu Kilit': '/kollukilitler.png',
+      '808 > Kollu Kilit': '/kollukilitler.png',
+      '008 > Kollu Kilit': '/kollukilitler.png',
+      '908 > Kollu Kilit': '/kollukilitler.png',
+      '108 > Kollu Kilit': '/kollukilitler.png',
+      '208 > Kollu Kilit': '/kollukilitler.png',
+      '308 > Kollu Kilit': '/kollukilitler.png',
+      '708 > Kollu Kilit': '/kollukilitler.png',
+      '508 > Kollu Kilit': '/kollukilitler.png',
+      '006 > Kollu Kilit': '/kollukilitler.png',
+      '205 > Kollu Kilit': '/kollukilitler.png',
     }
     return imageMap[itemName] || `https://via.placeholder.com/320x200.png?text=${encodeURIComponent(itemName)}`
   }
@@ -112,19 +444,26 @@ function Products() {
     return logoMap[itemName] || logos[itemName.length % logos.length]
   }
 
+  // Alt başlık resimleri için placeholder
+  const getSectionImage = (sectionTitle) => {
+    return `https://via.placeholder.com/320x200.png?text=${encodeURIComponent(sectionTitle)}`
+  }
+
   return (
     <div className="bg-slate-50 pb-16 text-slate-900">
       <section className="mx-auto flex w-full max-w-[95%] flex-col gap-6 px-3 pt-8 sm:gap-8 sm:px-4 lg:flex-row">
         <aside className="w-full lg:w-96">
           <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-28">
+            <h3 className="text-base font-bold text-slate-900">KATEGORİLER</h3>
             {catalogGroups.map((group) => {
               const groupOpen = openGroups.includes(group.title)
+              const isActiveGroup = activeGroup === group.title
               return (
                 <div key={group.title} className="space-y-2">
                   <button
                     onClick={() => toggleGroup(group.title)}
-                    className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-base font-semibold transition ${
-                      groupOpen ? 'bg-[#ff7f00]/10 text-[#ff7f00]' : 'text-slate-800 hover:bg-slate-100'
+                    className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm font-semibold transition ${
+                      isActiveGroup ? 'bg-[#16a34a]/10 text-[#16a34a]' : groupOpen ? 'bg-slate-50 text-slate-800' : 'text-slate-800 hover:bg-slate-100'
                     }`}
                   >
                     <span>{group.title}</span>
@@ -137,33 +476,19 @@ function Products() {
                         return (
                           <div key={section.title} className="space-y-1">
                             <button
-                              onClick={() => setActiveSection(section.title)}
-                              className={`flex w-full items-center justify-between rounded-lg px-2 py-1 text-left text-base font-semibold transition ${
-                                isActive ? 'text-[#ff7f00]' : 'text-slate-700 hover:text-[#ff7f00]'
+                              onClick={() => handleSectionClick(section.title)}
+                              className={`flex w-full items-center justify-between rounded-lg px-2 py-1 text-left text-sm font-semibold transition ${
+                                isActive ? 'text-[#16a34a]' : 'text-slate-700 hover:text-[#16a34a]'
                               }`}
                             >
                               <span>{section.title}</span>
                               <span
-                                className={`text-xs transition ${isActive ? 'text-[#ff7f00]' : 'text-slate-400'}`}
+                                className={`text-xs transition ${isActive ? 'text-[#16a34a]' : 'text-slate-400'}`}
                                 aria-hidden
                               >
                                 ›
                               </span>
                             </button>
-                            {isActive ? (
-                              <ul className="space-y-1 pl-3 text-sm text-slate-600">
-                                {section.items.map((item) => (
-                                  <li key={item}>
-                                    <button
-                                      onClick={() => setActiveSection(section.title)}
-                                      className="w-full rounded-lg px-2 py-1 text-left text-sm hover:text-[#ff7f00]"
-                                    >
-                                      {item}
-                                    </button>
-                                  </li>
-                                ))}
-                              </ul>
-                            ) : null}
                           </div>
                         )
                       })}
@@ -178,33 +503,75 @@ function Products() {
         <div className="flex-1 space-y-5">
           <div className="flex flex-col gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.12em] text-[#ff7f00]">Seçilen grup</p>
-              <h2 className="text-xl font-semibold">{activeSection ?? 'Henüz seçilmedi'}</h2>
+              <p className="text-xs uppercase tracking-[0.12em] text-[#16a34a]">
+                {activeGroup ? 'Ana Kategori' : activeSection ? 'Alt Kategori' : 'Seçim'}
+              </p>
+              <h2 className="text-xl font-semibold">
+                {activeSection ?? activeGroup ?? 'Henüz seçilmedi'}
+              </h2>
             </div>
             <span className="text-sm text-slate-500">
-              {activeSection ? `${currentItems.length} ürün` : 'Seçim yapın'}
+              {activeSection
+                ? `${currentItems.length} ürün`
+                : activeGroup
+                  ? `${currentGroupSections.length} alt kategori`
+                  : 'Seçim yapın'}
             </span>
           </div>
 
-          {!activeSection ? (
+          {!activeGroup && !activeSection ? (
             <div className="rounded-2xl border border-dashed border-slate-200 bg-white p-8 text-sm text-slate-500 shadow-sm">
               Bir kategori seçin, ürünleri listeleyelim.
             </div>
-          ) : currentItems.length === 0 ? (
+          ) : activeGroup && !activeSection ? (
+            // Ana başlık seçilmiş, alt başlıkları kartlar halinde göster
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {currentGroupSections.map((section) => {
+                const img = getSectionImage(section.title)
+                return (
+                  <button
+                    key={section.title}
+                    onClick={() => handleSectionClick(section.title)}
+                    className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-[#16a34a]/50 hover:shadow-xl"
+                  >
+                    {/* Alt Başlık Görseli */}
+                    <div className="relative flex h-64 items-center justify-center overflow-hidden bg-white p-6">
+                      <img 
+                        src={img} 
+                        alt={section.title} 
+                        className="h-full w-full object-contain transition-all duration-500 group-hover:scale-105" 
+                      />
+                    </div>
+                    
+                    {/* Alt Başlık Bilgileri */}
+                    <div className="flex flex-1 flex-col justify-between border-t border-slate-100 bg-white p-5">
+                      <div>
+                        {/* Alt Başlık Adı */}
+                        <h3 className="mb-3 line-clamp-2 min-h-[3rem] text-base font-semibold leading-tight text-slate-900 transition-colors duration-300 group-hover:text-[#16a34a]">
+                          {section.title}
+                        </h3>
+                      </div>
+                    </div>
+                  </button>
+                )
+              })}
+            </div>
+          ) : activeSection && currentItems.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-slate-200 bg-white p-8 text-sm text-slate-500 shadow-sm">
               Bu grup için ürün bulunamadı.
             </div>
-          ) : (
+          ) : activeSection ? (
+            // Alt başlık seçilmiş, ürünleri göster
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {currentItems.map((item) => {
-                const img = activeSection === 'POMPA' ? getPumpImage(item) : `https://via.placeholder.com/320x200.png?text=${encodeURIComponent(item)}`
+                const img = getPumpImage(item)
                 const productSlug = encodeURIComponent(item.toLowerCase().replace(/\s+/g, '-'))
                 return (
                   <Link
                     key={item}
                     to={`/urun-detay/${productSlug}`}
                     state={{ productName: item, productImage: img, productLogo: getProductLogo(item) }}
-                    className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-[#ff7f00]/50 hover:shadow-xl"
+                    className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-[#16a34a]/50 hover:shadow-xl"
                   >
                     {/* Ürün Görseli */}
                     <div className="relative flex h-64 items-center justify-center overflow-hidden bg-white p-6">
@@ -219,29 +586,20 @@ function Products() {
                     <div className="flex flex-1 flex-col justify-between border-t border-slate-100 bg-white p-5">
                       <div>
                         {/* Ürün Adı */}
-                        <h3 className="mb-3 line-clamp-2 min-h-[3rem] text-base font-semibold leading-tight text-slate-900 transition-colors duration-300 group-hover:text-[#ff7f00]">
+                        <h3 className="mb-2 line-clamp-2 min-h-[3rem] text-base font-semibold leading-tight text-slate-900 transition-colors duration-300 group-hover:text-[#16a34a]">
                           {item}
                         </h3>
-                      </div>
-                      
-                      {/* Detaylar için tıklayın */}
-                      <div className="mt-auto flex items-center">
-                        <span className="text-xs text-slate-500 transition-colors duration-300 group-hover:text-slate-700">Detaylar için tıklayın</span>
-                        <svg 
-                          className="ml-2 h-4 w-4 text-[#ff7f00] opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
+                        {/* ÇEŞİTLİ ÜRÜNLER için Ürün Grup Çeşitleri yazısı */}
+                        {activeSection === 'ÇEŞİTLİ ÜRÜNLER' && (
+                          <p className="mb-3 text-xs text-slate-500">Ürün Grup Çeşitleri</p>
+                        )}
                       </div>
                     </div>
                   </Link>
                 )
               })}
             </div>
-          )}
+          ) : null}
         </div>
       </section>
     </div>

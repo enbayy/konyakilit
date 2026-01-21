@@ -1,0 +1,594 @@
+import { useMemo } from 'react'
+import { Link, useParams, useNavigate } from 'react-router-dom'
+
+// Tüm section'ları import et
+const lockSections = [
+  {
+    title: 'KOLLU KİLİTLER',
+    items: [
+      '001 > Kollu Kilit (Küçük Versiyon)',
+      '201 > Kollu Kilit',
+      '001 > Kollu Kilit',
+      '101 > Kollu Kilit',
+      '501 > Kollu Kilit',
+      '601 > Kollu Kilit',
+      '408 > Kollu Kilit',
+      '408 > Kollu Kilit',
+      '306 > Kollu Kilit',
+      'Dikey Hareketli Kollu Kilit',
+      '504 > Dikey Hareketli Kollu Kilit',
+      '504 > Dikey Hareketli Kollu Kilit',
+      '206 > Kollu Kilit',
+      '406 > Kollu Kilit',
+      '106 > Kollu Kilit',
+      '808 > Kollu Kilit',
+      '008 > Kollu Kilit',
+      '908 > Kollu Kilit',
+      '108 > Kollu Kilit',
+      '108 > Kollu Kilit',
+      '208 > Kollu Kilit',
+      '308 > Kollu Kilit',
+      '708 > Kollu Kilit',
+      '508 > Kollu Kilit',
+      '006 > Kollu Kilit',
+      '205 > Kollu Kilit',
+    ],
+  },
+  {
+    title: 'İSPANYOLET SİSTEMLİ KİLİTLER',
+    items: [
+      '002 > İspanyolet Sistemli Kollu Kilit',
+      'İspanyolet Sistemli Kollu Kilit',
+      '102 > İspanyolet Sistemli Kollu Kilit',
+      '502 > İspanyolet Sistemli Kollu Kilit',
+      '602 > İspanyolet Sistemli Kollu Kilit',
+      '409 > İspanyolet Sistemli Kollu Kilit',
+      '107 > İspanyolet Sistemli Kollu Kilit',
+      'Dikey Hareketli Kollu Kilit',
+      '504 > Dikey Hareketli Kollu Kilit',
+      '207 > İspanyolet Sistemli Kollu Kilit',
+      '307 > İspanyolet Sistemli Kollu Kilit',
+      '407 > İspanyolet Sistemli Kollu Kilit',
+      '204 > Dikey Hareketli Kollu Kilit',
+      'Dikey Mekanizmalı Kollu Kilit',
+      '104 > Dikey Mekanizmalı Kollu Kilit',
+      '109 > İspanyolet Sistemli Kollu Kilit',
+      '909 > İspanyolet Sistemli Kollu Kilit',
+      '309 > İspanyolet Sistemli Kollu Kilit',
+      '209 > İspanyolet Sistemli Kollu Kilit',
+      '007 > İspanyolet Sistemli Kollu Kilit',
+      '809 > İspanyolet Sistemli Kollu Kilit',
+      '103 > İspanyolet Sistemli Kollu Kilit',
+      '203 > İspanyolet Sistemli Kollu Kilit',
+      'İspanyolet Sistemli Pano Kilit',
+      '203 > İspanyolet Sistemli Pano Kilit',
+      'İspanyolet Sistemli Pano Kilidi',
+      '003 > İspanyolet Sistemli Pano Kilidi',
+      '103 > İspanyolet Sistemli Pano Kilidi',
+    ],
+  },
+  {
+    title: 'TRAFO VE KABİN KİLİTLERİ',
+    items: [
+      'Kabin Kilitleri',
+      'T Kollu Kabin Kilitleri',
+    ],
+  },
+  {
+    title: 'KİLİMA SANTRAL ÜRÜNLERİ',
+    items: [
+      '012 > Klima Santral Kilidi',
+      '012 > Klima Santral Kilidi',
+      '012 > Klima Santral Kilidi',
+      'Klima Santral Kilidi Aksesuarı',
+      '012 > Klima Santral Kilidi Aksesuarı',
+      'Klima Santral Kilidi',
+      '012 > Klima Santral Kilidi',
+      'Klima Santral Kilidi',
+      '112 > Klima Santral Kilidi',
+      'Klima Santral Kilidi',
+      '112 > Klima Santral Kilidi',
+      'Klima Santral Kilidi Aksesuarları',
+      '112 > Klima Santral Kilidi Aksesuarları',
+      'Klima Santral Kilidi',
+      '112 > Klima Santral Kilidi',
+      'Klima Santral Kilidi',
+      '112 > Klima Santral Kilidi',
+      'Fonsiyonel Kilit Menteşe',
+      '712 > Fonsiyonel Kilit Menteşe',
+      'Klima Santral Kilidi',
+      '612 > Klima Santral Kilidi',
+      'Klima Santral Kilidi \'T\' Kollu',
+      '612 > Klima Santral Kilidi \'T\' Kollu',
+      'Klima Kabin Kilidi \'L\' Kollu',
+      '612 > Klima Kabin Kilidi \'L\' Kollu',
+      'Profil Bağlantı Parçası (3D)',
+      '078 > Profil Bağlantı Parçası (3D)',
+      'Sıkıştırmalı Kilit',
+      '462 > Sıkıştırmalı Kilit',
+    ],
+  },
+  {
+    title: 'ÇEŞİTLİ ÜRÜNLER',
+    items: [
+      'Sıkıştırmalı Kilitler',
+      'Sürgü Kilitler',
+      'Diğer Ürünler',
+    ],
+  },
+  {
+    title: 'DİLLER - ANAHTARLAR ÇUBUK VE LAMALAR',
+    items: [
+      'Diller',
+      'İspanyolet Çubuk ve Aksesuarları',
+      'İspanyolet Lama ve Aksesuarları',
+      'Paslanmaz İspanyolet Çubuk ve Aksesuarları',
+      'Paslanmaz İspanyolet Lama ve Aksesuarları',
+      'Anahtarlar',
+    ],
+  },
+  {
+    title: 'ÇEYREK DÖNÜŞLÜ KİLİTLER',
+    items: [
+      'Sıkıştırmalı Kilitler',
+      'Kolay Montaj Ç.D. Kilitler',
+    ],
+  },
+  {
+    title: 'SİLİNDİRLİ KİLİTLER',
+    items: [
+      '163 > Silindirli Kilit Yaylı Dilli',
+      'Silindirli Kilit',
+      '063 > Silindirli Kilit',
+      '761 > Silindirli Kilit Kolay Montaj',
+      '261 > Silindirli Tutamaklı Kilit',
+      '065 > Silindirli Kelebek Kilit',
+      '165 > Mini Silindirli Kelebek Kilit',
+      '110 > Silindirli "T" Kollu Kilit',
+      '111 > Silindirli "L" Kollu Kilit',
+      '064 > Silindirli "T" Kollu Kilit',
+      '064 > Silindirli "L" Kollu Kilit',
+      '240 > Sıkıştırmalı',
+      '240 > Sıkıştırmalı T Kollu Kilit',
+      '340 > Sıkıştırmalı Kelebek Kilit',
+      '340 > Sıkıştırmalı Kelebek Kilit',
+      '050 > Silindirli Kilit',
+      '050 > Silindirli Kilit',
+      '050 A3 > Kilit Tutamağı',
+      '050 A4 > Toz Kapağı',
+      '050 A1 > Cam Bağlantı Sacı',
+      '030 A1 > Kilit Karşılık Sacı',
+      '055 A1 > Ahşap Bağlantı Sacı',
+      '550 > Silindirli Kilit Kolay Montaj',
+      '450 > Yaylı Silindirli Kilit',
+      '150 > Silindirli Kilit',
+      '250 > Silindirli Kilit',
+      '057 > Mini Silindirli Kilit',
+      '157 > Mini Silindirli Kilit',
+      '257 > Mini Silindirli Kilit',
+      '056 > Silindirli Kilit',
+    ],
+  },
+  {
+    title: 'MOBİLYA VE ÇELİK EŞYA KİLİTLERİ',
+    items: [
+      '010 > Silindirli "T" Kollu Kilit',
+      '011 > Silindirli "L" Kollu Kilit',
+      '021 > Cam Kapak Kilidi',
+      '020 > Sürgülü Cam Kilidi',
+      '132 > Çekmece Kilidi',
+      '032 > Çekmece Kilidi',
+      '033 > Çekmece Kilidi',
+      '030 > Çekmece Kilidi',
+      '159 > Sürgülü Kapak Kilidi',
+      '059 > Sürgülü Kapak Kilidi',
+      '4150 > Şifreli Kilit',
+      '035 > Dosya Dolabı Kilidi',
+      '058 > Çelik Eşya Kilidi',
+      '158 > Çelik Eşya Kilidi',
+      '013 > Yangın Dolabı Kilidi',
+      '113 > Yangın Dolabı Kilidi',
+    ],
+  },
+]
+
+const hingeSections = [
+  {
+    title: 'KENAR MENTEŞELER',
+    items: [
+      '090 > Kenar Menteşe (10mm)',
+      '091 > Kenar Menteşe (12mm)',
+      '092 > Kenar Menteşe (12mm)',
+      '192 > Kenar Menteşe (12mm)',
+      '093 > Kenar Menteşe (14mm)',
+      '193 > Kenar Menteşe (16mm)',
+      '793 > Kenar Menteşe',
+      '893 > Kenar Menteşe',
+      '191 > Kenar Menteşe (10mm)',
+      '1093 > Kenar Menteşe',
+      '993 > Kenar Menteşe',
+      '1193 > Kenar Menteşe',
+      '393 > Kenar Menteşe',
+      '293 > Kenar Menteşe',
+      '493 > Kenar Menteşe',
+      '593 > Kenar Menteşe',
+      '693 > Kenar Menteşe',
+    ],
+  },
+  {
+    title: 'GİZLİ MENTEŞELER',
+    items: [
+      '094 > Gizli Menteşe',
+      '194 > Gizli Menteşe',
+      '096 > Gizli Menteşe',
+      '196 > Gizli Menteşe',
+      '294 > Gizli Menteşe',
+      '296 > Gizli Menteşe',
+      '095 > Gizli Menteşe',
+      '195 > Gizli Menteşe',
+      '295 > Gizli Menteşe',
+      '395 > Gizli Menteşe',
+      '695 > Gizli Menteşe',
+      '795 > Gizli Menteşe',
+      '1795 > Gizli Menteşe',
+      '895 > Gizli Menteşe',
+      '1095 > Gizli Menteşe',
+      '995 > Gizli Menteşe',
+      '995 > Gizli Menteşe',
+      '1995 > Gizli Menteşe',
+      '595 > Gizli Menteşe',
+      '189 > Yaylı Mil Menteşe',
+      '389 > Gizli Menteşe',
+      '089 > Yaylı Mil Menteşe',
+      '289 > Gizli Menteşe',
+      '394 > Gizli Menteşe',
+      '1495 > Gizli Menteşe',
+    ],
+  },
+  {
+    title: 'KÖŞE MENTEŞELER',
+    items: [
+      '097 > Köşe Menteşe',
+      '197 > Köşe Menteşe',
+      '297 > Köşe Menteşe',
+      '397 > Köşe Menteşe',
+      '298 > Köşe Menteşe',
+      '098 > Köşe Menteşe',
+      '398 > Köşe Menteşe',
+      '497 > Köşe Menteşe',
+      '498 > Köşe Menteşe',
+      '400 > Köşe Menteşe',
+      '200 > Köşe Menteşe',
+      '100 > Köşe Menteşe',
+      '600 > Klima Santral Menteşesi',
+      '600 > Köşe Menteşe',
+      '700 > Klima Santral Menteşesi',
+    ],
+  },
+  {
+    title: 'DÜZ MENTEŞELER',
+    items: [
+      '1299 > Mini Yaprak Menteşe',
+      '299 > Yaprak Menteşe',
+      '199 > Yaprak Menteşe',
+      '099 > Yaprak Menteşe',
+      '399 > Yaprak Menteşe',
+      '1399 > Yaprak Menteşe',
+      '1699 > Kaldır - Çıkar Menteşe',
+      '1499 > Kaldır - Çıkar Menteşe',
+      '900 > Yaprak Menteşe',
+      '899 > Kaldır - Çıkar Menteşe',
+      '499 > Yaprak Menteşe',
+      '599 > Yaprak Menteşe',
+      '1599 > Yaprak Menteşe',
+      '799 > Yaprak Menteşe',
+      '4599 > Yaprak Menteşe',
+      '2899 > Yaprak Menteşe',
+      '4299 > Kaldır - Çıkar Menteşe',
+      '1199 > Yaprak Menteşe',
+      '2099 > Tork Menteşe',
+      '2199 > Tork Menteşe',
+      '2599 > Yaprak Menteşe',
+      '2399 > Ayarlı Tork Menteşe',
+      '2499 > Ayarlı Tork Menteşe',
+      '699 > Kaldır - Çıkar Menteşe',
+      '693 > Yataklı Menteşe',
+      '800 > Klima Santral Menteşesi (3D)',
+      '500 > Klima Santral Menteşesi',
+      '300 > Klima Santral Menteşesi',
+      '1500 > Klima Santral Menteşesi',
+      '0000 > Karoser Menteşe',
+    ],
+  },
+]
+
+const catalogGroups = [
+  { title: 'KİLİTLER', sections: lockSections },
+  { title: 'MENTEŞELER', sections: hingeSections },
+]
+
+function SectionProducts() {
+  const { sectionSlug } = useParams()
+  const navigate = useNavigate()
+
+  // Slug'dan section title'ı bul
+  const sectionTitle = useMemo(() => {
+    const slugToTitle = {
+      'kollu-kilitler': 'KOLLU KİLİTLER',
+      'ispanyolet-sistemli-kilitler': 'İSPANYOLET SİSTEMLİ KİLİTLER',
+      'trafo-ve-kabin-kilitleri': 'TRAFO VE KABİN KİLİTLERİ',
+      'kilima-santral-urunleri': 'KİLİMA SANTRAL ÜRÜNLERİ',
+      'cesitli-urunler': 'ÇEŞİTLİ ÜRÜNLER',
+      'diller-anahtarlar-cubuk-ve-lamalar': 'DİLLER - ANAHTARLAR ÇUBUK VE LAMALAR',
+      'ceyrek-donuslu-kilitler': 'ÇEYREK DÖNÜŞLÜ KİLİTLER',
+      'silindirli-kilitler': 'SİLİNDİRLİ KİLİTLER',
+      'mobilya-ve-celik-esya-kilitleri': 'MOBİLYA VE ÇELİK EŞYA KİLİTLERİ',
+      'kenar-menteseler': 'KENAR MENTEŞELER',
+      'gizli-menteseler': 'GİZLİ MENTEŞELER',
+      'kose-menteseler': 'KÖŞE MENTEŞELER',
+      'duz-menteseler': 'DÜZ MENTEŞELER',
+    }
+    return slugToTitle[sectionSlug] || null
+  }, [sectionSlug])
+
+  // Section'ın ürünlerini bul
+  const currentItems = useMemo(() => {
+    if (!sectionTitle) return []
+    for (const group of catalogGroups) {
+      for (const section of group.sections) {
+        if (section.title === sectionTitle) {
+          return section.items || []
+        }
+      }
+    }
+    return []
+  }, [sectionTitle])
+
+  // Pompa resimleri mapping
+  const getPumpImage = (itemName) => {
+    const imageMap = {
+      'ALÜMİNYUM GÖVDELİ DİŞLİ POMPALAR': '/aligodi.png',
+      'DÖKÜM GÖVDELİ DİŞLİ POMPALAR': '/dokum-govdeli-disli-pompal.png',
+      'EL POMPASI': '/el-pompasi.png',
+      'İÇTEN DİŞLİ POMPALAR': '/icten-disli-pompalar.png',
+      'İŞ MAKİNESİ POMPALARI': '/is-makinesi-pompalari.png',
+      'PALETLİ POMPA': '/paletli-pompa.png',
+      'PİSTONLU POMPA': '/pistonlu-pompa.png',
+      'TANDEM POMPALAR': '/tandem-pompalar.png',
+      // Kollu Kilitler
+      '001 > Kollu Kilit (Küçük Versiyon)': '/kollukilitler.png',
+      '201 > Kollu Kilit': '/kollukilitler.png',
+      '001 > Kollu Kilit': '/kollukilitler.png',
+      '101 > Kollu Kilit': '/kollukilitler.png',
+      '501 > Kollu Kilit': '/kollukilitler.png',
+      '601 > Kollu Kilit': '/kollukilitler.png',
+      '408 > Kollu Kilit': '/kollukilitler.png',
+      '306 > Kollu Kilit': '/kollukilitler.png',
+      'Dikey Hareketli Kollu Kilit': '/kollukilitler.png',
+      '504 > Dikey Hareketli Kollu Kilit': '/kollukilitler.png',
+      '206 > Kollu Kilit': '/kollukilitler.png',
+      '406 > Kollu Kilit': '/kollukilitler.png',
+      '106 > Kollu Kilit': '/kollukilitler.png',
+      '808 > Kollu Kilit': '/kollukilitler.png',
+      '008 > Kollu Kilit': '/kollukilitler.png',
+      '908 > Kollu Kilit': '/kollukilitler.png',
+      '108 > Kollu Kilit': '/kollukilitler.png',
+      '208 > Kollu Kilit': '/kollukilitler.png',
+      '308 > Kollu Kilit': '/kollukilitler.png',
+      '708 > Kollu Kilit': '/kollukilitler.png',
+      '508 > Kollu Kilit': '/kollukilitler.png',
+      '006 > Kollu Kilit': '/kollukilitler.png',
+      '205 > Kollu Kilit': '/kollukilitler.png',
+      // Kenar Menteşeler
+      '090 > Kenar Menteşe (10mm)': 'https://via.placeholder.com/320x200.png?text=090+Kenar+Menteşe',
+      '091 > Kenar Menteşe (12mm)': 'https://via.placeholder.com/320x200.png?text=091+Kenar+Menteşe',
+      '092 > Kenar Menteşe (12mm)': 'https://via.placeholder.com/320x200.png?text=092+Kenar+Menteşe',
+      '192 > Kenar Menteşe (12mm)': 'https://via.placeholder.com/320x200.png?text=192+Kenar+Menteşe',
+      '093 > Kenar Menteşe (14mm)': 'https://via.placeholder.com/320x200.png?text=093+Kenar+Menteşe',
+      '193 > Kenar Menteşe (16mm)': 'https://via.placeholder.com/320x200.png?text=193+Kenar+Menteşe',
+      '793 > Kenar Menteşe': 'https://via.placeholder.com/320x200.png?text=793+Kenar+Menteşe',
+      '893 > Kenar Menteşe': 'https://via.placeholder.com/320x200.png?text=893+Kenar+Menteşe',
+      '191 > Kenar Menteşe (10mm)': 'https://via.placeholder.com/320x200.png?text=191+Kenar+Menteşe',
+      '1093 > Kenar Menteşe': 'https://via.placeholder.com/320x200.png?text=1093+Kenar+Menteşe',
+      '993 > Kenar Menteşe': 'https://via.placeholder.com/320x200.png?text=993+Kenar+Menteşe',
+      '1193 > Kenar Menteşe': 'https://via.placeholder.com/320x200.png?text=1193+Kenar+Menteşe',
+      '393 > Kenar Menteşe': 'https://via.placeholder.com/320x200.png?text=393+Kenar+Menteşe',
+      '293 > Kenar Menteşe': 'https://via.placeholder.com/320x200.png?text=293+Kenar+Menteşe',
+      '493 > Kenar Menteşe': 'https://via.placeholder.com/320x200.png?text=493+Kenar+Menteşe',
+      '593 > Kenar Menteşe': 'https://via.placeholder.com/320x200.png?text=593+Kenar+Menteşe',
+      '693 > Kenar Menteşe': 'https://via.placeholder.com/320x200.png?text=693+Kenar+Menteşe',
+      // Gizli Menteşeler
+      '094 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=094+Gizli+Menteşe',
+      '194 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=194+Gizli+Menteşe',
+      '096 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=096+Gizli+Menteşe',
+      '196 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=196+Gizli+Menteşe',
+      '294 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=294+Gizli+Menteşe',
+      '296 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=296+Gizli+Menteşe',
+      '095 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=095+Gizli+Menteşe',
+      '195 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=195+Gizli+Menteşe',
+      '295 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=295+Gizli+Menteşe',
+      '395 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=395+Gizli+Menteşe',
+      '695 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=695+Gizli+Menteşe',
+      '795 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=795+Gizli+Menteşe',
+      '1795 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=1795+Gizli+Menteşe',
+      '895 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=895+Gizli+Menteşe',
+      '1095 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=1095+Gizli+Menteşe',
+      '995 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=995+Gizli+Menteşe',
+      '1995 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=1995+Gizli+Menteşe',
+      '595 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=595+Gizli+Menteşe',
+      '189 > Yaylı Mil Menteşe': 'https://via.placeholder.com/320x200.png?text=189+Yaylı+Mil+Menteşe',
+      '389 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=389+Gizli+Menteşe',
+      '089 > Yaylı Mil Menteşe': 'https://via.placeholder.com/320x200.png?text=089+Yaylı+Mil+Menteşe',
+      '289 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=289+Gizli+Menteşe',
+      '394 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=394+Gizli+Menteşe',
+      '1495 > Gizli Menteşe': 'https://via.placeholder.com/320x200.png?text=1495+Gizli+Menteşe',
+      // Köşe Menteşeler
+      '097 > Köşe Menteşe': 'https://via.placeholder.com/320x200.png?text=097+Köşe+Menteşe',
+      '197 > Köşe Menteşe': 'https://via.placeholder.com/320x200.png?text=197+Köşe+Menteşe',
+      '297 > Köşe Menteşe': 'https://via.placeholder.com/320x200.png?text=297+Köşe+Menteşe',
+      '397 > Köşe Menteşe': 'https://via.placeholder.com/320x200.png?text=397+Köşe+Menteşe',
+      '298 > Köşe Menteşe': 'https://via.placeholder.com/320x200.png?text=298+Köşe+Menteşe',
+      '098 > Köşe Menteşe': 'https://via.placeholder.com/320x200.png?text=098+Köşe+Menteşe',
+      '398 > Köşe Menteşe': 'https://via.placeholder.com/320x200.png?text=398+Köşe+Menteşe',
+      '497 > Köşe Menteşe': 'https://via.placeholder.com/320x200.png?text=497+Köşe+Menteşe',
+      '498 > Köşe Menteşe': 'https://via.placeholder.com/320x200.png?text=498+Köşe+Menteşe',
+      '400 > Köşe Menteşe': 'https://via.placeholder.com/320x200.png?text=400+Köşe+Menteşe',
+      '200 > Köşe Menteşe': 'https://via.placeholder.com/320x200.png?text=200+Köşe+Menteşe',
+      '100 > Köşe Menteşe': 'https://via.placeholder.com/320x200.png?text=100+Köşe+Menteşe',
+      '600 > Klima Santral Menteşesi': 'https://via.placeholder.com/320x200.png?text=600+Klima+Santral+Menteşesi',
+      '600 > Köşe Menteşe': 'https://via.placeholder.com/320x200.png?text=600+Köşe+Menteşe',
+      '700 > Klima Santral Menteşesi': 'https://via.placeholder.com/320x200.png?text=700+Klima+Santral+Menteşesi',
+      // Düz Menteşeler
+      '1299 > Mini Yaprak Menteşe': 'https://via.placeholder.com/320x200.png?text=1299+Mini+Yaprak+Menteşe',
+      '299 > Yaprak Menteşe': 'https://via.placeholder.com/320x200.png?text=299+Yaprak+Menteşe',
+      '199 > Yaprak Menteşe': 'https://via.placeholder.com/320x200.png?text=199+Yaprak+Menteşe',
+      '099 > Yaprak Menteşe': 'https://via.placeholder.com/320x200.png?text=099+Yaprak+Menteşe',
+      '399 > Yaprak Menteşe': 'https://via.placeholder.com/320x200.png?text=399+Yaprak+Menteşe',
+      '1399 > Yaprak Menteşe': 'https://via.placeholder.com/320x200.png?text=1399+Yaprak+Menteşe',
+      '1699 > Kaldır - Çıkar Menteşe': 'https://via.placeholder.com/320x200.png?text=1699+Kaldır+Çıkar+Menteşe',
+      '1499 > Kaldır - Çıkar Menteşe': 'https://via.placeholder.com/320x200.png?text=1499+Kaldır+Çıkar+Menteşe',
+      '900 > Yaprak Menteşe': 'https://via.placeholder.com/320x200.png?text=900+Yaprak+Menteşe',
+      '899 > Kaldır - Çıkar Menteşe': 'https://via.placeholder.com/320x200.png?text=899+Kaldır+Çıkar+Menteşe',
+      '499 > Yaprak Menteşe': 'https://via.placeholder.com/320x200.png?text=499+Yaprak+Menteşe',
+      '599 > Yaprak Menteşe': 'https://via.placeholder.com/320x200.png?text=599+Yaprak+Menteşe',
+      '1599 > Yaprak Menteşe': 'https://via.placeholder.com/320x200.png?text=1599+Yaprak+Menteşe',
+      '799 > Yaprak Menteşe': 'https://via.placeholder.com/320x200.png?text=799+Yaprak+Menteşe',
+      '4599 > Yaprak Menteşe': 'https://via.placeholder.com/320x200.png?text=4599+Yaprak+Menteşe',
+      '2899 > Yaprak Menteşe': 'https://via.placeholder.com/320x200.png?text=2899+Yaprak+Menteşe',
+      '4299 > Kaldır - Çıkar Menteşe': 'https://via.placeholder.com/320x200.png?text=4299+Kaldır+Çıkar+Menteşe',
+      '1199 > Yaprak Menteşe': 'https://via.placeholder.com/320x200.png?text=1199+Yaprak+Menteşe',
+      '2099 > Tork Menteşe': 'https://via.placeholder.com/320x200.png?text=2099+Tork+Menteşe',
+      '2199 > Tork Menteşe': 'https://via.placeholder.com/320x200.png?text=2199+Tork+Menteşe',
+      '2599 > Yaprak Menteşe': 'https://via.placeholder.com/320x200.png?text=2599+Yaprak+Menteşe',
+      '2399 > Ayarlı Tork Menteşe': 'https://via.placeholder.com/320x200.png?text=2399+Ayarlı+Tork+Menteşe',
+      '2499 > Ayarlı Tork Menteşe': 'https://via.placeholder.com/320x200.png?text=2499+Ayarlı+Tork+Menteşe',
+      '699 > Kaldır - Çıkar Menteşe': 'https://via.placeholder.com/320x200.png?text=699+Kaldır+Çıkar+Menteşe',
+      '693 > Yataklı Menteşe': 'https://via.placeholder.com/320x200.png?text=693+Yataklı+Menteşe',
+      '800 > Klima Santral Menteşesi (3D)': 'https://via.placeholder.com/320x200.png?text=800+Klima+Santral+Menteşesi+3D',
+      '500 > Klima Santral Menteşesi': 'https://via.placeholder.com/320x200.png?text=500+Klima+Santral+Menteşesi',
+      '300 > Klima Santral Menteşesi': 'https://via.placeholder.com/320x200.png?text=300+Klima+Santral+Menteşesi',
+      '1500 > Klima Santral Menteşesi': 'https://via.placeholder.com/320x200.png?text=1500+Klima+Santral+Menteşesi',
+      '0000 > Karoser Menteşe': 'https://via.placeholder.com/320x200.png?text=0000+Karoser+Menteşe',
+    }
+    return imageMap[itemName] || `https://via.placeholder.com/320x200.png?text=${encodeURIComponent(itemName)}`
+  }
+
+  // Ürün logoları mapping
+  const getProductLogo = (itemName) => {
+    const logoMap = {
+      'ALÜMİNYUM GÖVDELİ DİŞLİ POMPALAR': 'https://metosan.com.tr/Storage/Upload/cache/637557325862393960-b-39hydrocar-175-90.png',
+      'DÖKÜM GÖVDELİ DİŞLİ POMPALAR': 'https://metosan.com.tr/Storage/Upload/cache/638340098660595043-b-73grimet-175-90.png',
+      'EL POMPASI': 'https://metosan.com.tr/Storage/Upload/cache/637333620284483912-b-11salami-175-90.png',
+      'İÇTEN DİŞLİ POMPALAR': 'https://metosan.com.tr/Storage/Upload/cache/637661968877589422-b-67walvoil-175-90.png',
+      'İŞ MAKİNESİ POMPALARI': 'https://metosan.com.tr/Storage/Upload/cache/637532341975657085-b-30kawasaki-175-90.png',
+      'PALETLİ POMPA': 'https://metosan.com.tr/Storage/Upload/cache/637635181100323594-b-58wika-175-90.png',
+      'PİSTONLU POMPA': 'https://metosan.com.tr/Storage/Upload/cache/637613397761965452-b-46zhenjiang-175-90.png',
+      'TANDEM POMPALAR': 'https://metosan.com.tr/Storage/Upload/cache/637607340096564042-b-43saip-175-90.png',
+      'ALÜMİNYUM GÖVDE DİŞLİ AKIŞ BÖLÜCÜLER': 'https://metosan.com.tr/Storage/Upload/cache/637532342525093881-b-33gold-175-90.png',
+      'DÖKÜM GÖVDE DİŞLİ AKIŞ BÖLÜCÜLER': 'https://metosan.com.tr/Storage/Upload/cache/637332590151054674-b75-15hemko-175-90.png',
+      'MEMBRANLI AKÜLER': 'https://metosan.com.tr/Storage/Upload/cache/637557325862393960-b-39hydrocar-175-90.png',
+      'BALONLU AKÜLER': 'https://metosan.com.tr/Storage/Upload/cache/638340098660595043-b-73grimet-175-90.png',
+    }
+    const logos = [
+      'https://metosan.com.tr/Storage/Upload/cache/637557325862393960-b-39hydrocar-175-90.png',
+      'https://metosan.com.tr/Storage/Upload/cache/638340098660595043-b-73grimet-175-90.png',
+      'https://metosan.com.tr/Storage/Upload/cache/637333620284483912-b-11salami-175-90.png',
+      'https://metosan.com.tr/Storage/Upload/cache/637661968877589422-b-67walvoil-175-90.png',
+      'https://metosan.com.tr/Storage/Upload/cache/637532341975657085-b-30kawasaki-175-90.png',
+      'https://metosan.com.tr/Storage/Upload/cache/637635181100323594-b-58wika-175-90.png',
+      'https://metosan.com.tr/Storage/Upload/cache/637613397761965452-b-46zhenjiang-175-90.png',
+      'https://metosan.com.tr/Storage/Upload/cache/637607340096564042-b-43saip-175-90.png',
+      'https://metosan.com.tr/Storage/Upload/cache/637532342525093881-b-33gold-175-90.png',
+      'https://metosan.com.tr/Storage/Upload/cache/637332590151054674-b75-15hemko-175-90.png',
+    ]
+    return logoMap[itemName] || logos[itemName.length % logos.length]
+  }
+
+  if (!sectionTitle || currentItems.length === 0) {
+    return (
+      <div className="bg-slate-50 pb-16 text-slate-900">
+        <div className="mx-auto max-w-[95%] px-3 pt-10 sm:px-4">
+          <button
+            onClick={() => navigate('/urunler')}
+            className="mb-6 flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors hover:text-[#16a34a]"
+          >
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Geri Dön
+          </button>
+          <div className="rounded-2xl border border-dashed border-slate-200 bg-white p-8 text-center shadow-sm">
+            <p className="text-base text-slate-600">Ürün bulunamadı.</p>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="bg-slate-50 pb-16 text-slate-900">
+      <section className="mx-auto w-full max-w-[95%] px-3 pt-8 sm:px-4">
+        {/* Geri Dön Butonu */}
+        <button
+          onClick={() => navigate('/urunler')}
+          className="mb-6 flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors hover:text-[#16a34a]"
+        >
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Geri Dön
+        </button>
+
+        {/* Başlık */}
+        <div className="mb-8 flex flex-col gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-[0.12em] text-[#16a34a]">Kategori</p>
+            <h2 className="text-xl font-semibold">{sectionTitle}</h2>
+          </div>
+          <span className="text-sm text-slate-500">{currentItems.length} ürün</span>
+        </div>
+
+        {/* Ürünler */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {currentItems.map((item) => {
+            const img = getPumpImage(item)
+            const productSlug = encodeURIComponent(item.toLowerCase().replace(/\s+/g, '-'))
+            return (
+              <Link
+                key={item}
+                to={`/urun-detay/${productSlug}`}
+                state={{ productName: item, productImage: img, productLogo: getProductLogo(item) }}
+                className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-[#16a34a]/50 hover:shadow-xl"
+              >
+                {/* Ürün Görseli */}
+                <div className="relative flex h-64 items-center justify-center overflow-hidden bg-white p-6">
+                  <img 
+                    src={img} 
+                    alt={item} 
+                    className="h-full w-full object-contain transition-all duration-500 group-hover:scale-105" 
+                  />
+                </div>
+                
+                {/* Ürün Bilgileri */}
+                <div className="flex flex-1 flex-col justify-between border-t border-slate-100 bg-white p-5">
+                  <div>
+                    {/* Ürün Adı */}
+                    <h3 className="mb-2 line-clamp-2 min-h-[3rem] text-base font-semibold leading-tight text-slate-900 transition-colors duration-300 group-hover:text-[#16a34a]">
+                      {item}
+                    </h3>
+                    {/* ÇEŞİTLİ ÜRÜNLER, TRAFO VE KABİN KİLİTLERİ, DİLLER ve ÇEYREK DÖNÜŞLÜ KİLİTLER için Ürün Grup Çeşitleri yazısı */}
+                    {(sectionTitle === 'ÇEŞİTLİ ÜRÜNLER' || sectionTitle === 'TRAFO VE KABİN KİLİTLERİ' || sectionTitle === 'DİLLER - ANAHTARLAR ÇUBUK VE LAMALAR' || sectionTitle === 'ÇEYREK DÖNÜŞLÜ KİLİTLER') && (
+                      <p className="mb-3 text-xs text-slate-500">Ürün Grup Çeşitleri</p>
+                    )}
+                  </div>
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+      </section>
+    </div>
+  )
+}
+
+export default SectionProducts

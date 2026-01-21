@@ -17,7 +17,7 @@ function Contact() {
     () => [
       { title: 'Satış ve Teklif', detail: '+90 212 000 00 00', helper: 'Hafta içi 08:30 - 18:00' },
       { title: 'Teknik Destek', detail: '+90 212 000 00 01', helper: 'Uygulama ve arıza desteği' },
-      { title: 'E-posta', detail: 'info@hydpoint.com', helper: '24 saat içinde geri dönüş' },
+      { title: 'E-posta', detail: 'info@konyakilit.com', helper: '24 saat içinde geri dönüş' },
       { title: 'Adres', detail: 'İOSB Mah. 1234. Cad. No:45 Başakşehir / İstanbul', helper: 'Merkez ofis & showroom' },
     ],
     []
@@ -57,7 +57,7 @@ function Contact() {
               key={card.title}
               className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
             >
-              <p className="text-sm font-semibold text-[#1e4294]">{card.title}</p>
+              <p className="text-sm font-semibold text-[#16a34a]">{card.title}</p>
               <p className="mt-2 text-base font-semibold text-slate-900">{card.detail}</p>
               <p className="mt-1 text-sm text-slate-500">{card.helper}</p>
             </div>
@@ -74,7 +74,7 @@ function Contact() {
                   Talebinizi ilgili ekibe yönlendirelim. Zorunlu alanlar işaretlidir.
                 </p>
               </div>
-              <span className="rounded-full bg-[#ff7f00]/15 px-3 py-1 text-xs font-semibold uppercase text-[#b65a00]">
+              <span className="rounded-full bg-[#16a34a]/15 px-3 py-1 text-xs font-semibold uppercase text-[#15803d]">
                 7/24
               </span>
             </div>
@@ -83,8 +83,8 @@ function Contact() {
               <div
                 className={`rounded-2xl border px-4 py-3 text-sm ${
                   status.type === 'success'
-                    ? 'border-emerald-200 bg-emerald-50 text-emerald-800'
-                    : 'border-rose-200 bg-rose-50 text-rose-800'
+                    ? 'border-green-200 bg-green-50 text-green-800'
+                    : 'border-yellow-200 bg-yellow-50 text-yellow-800'
                 }`}
               >
                 {status.message}
@@ -95,7 +95,7 @@ function Contact() {
               <label className="space-y-1 text-sm font-medium text-slate-700">
                 Ad Soyad*
                 <input
-                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-[#1e4294] focus:ring-2 focus:ring-[#ff7f00]/40"
+                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-[#16a34a] focus:ring-2 focus:ring-[#16a34a]/40"
                   value={form.name}
                   onChange={(e) => updateField('name', e.target.value)}
                   placeholder="Ör. Elif Yılmaz"
@@ -104,17 +104,17 @@ function Contact() {
               <label className="space-y-1 text-sm font-medium text-slate-700">
                 E-posta*
                 <input
-                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-[#1e4294] focus:ring-2 focus:ring-[#ff7f00]/40"
+                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-[#16a34a] focus:ring-2 focus:ring-[#16a34a]/40"
                   value={form.email}
                   onChange={(e) => updateField('email', e.target.value)}
                   type="email"
-                  placeholder="ornek@hydpoint.com"
+                  placeholder="ornek@konyakilit.com"
                 />
               </label>
               <label className="space-y-1 text-sm font-medium text-slate-700">
                 Telefon
                 <input
-                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-[#1e4294] focus:ring-2 focus:ring-[#ff7f00]/40"
+                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-[#16a34a] focus:ring-2 focus:ring-[#16a34a]/40"
                   value={form.phone}
                   onChange={(e) => updateField('phone', e.target.value)}
                   placeholder="+90 5xx xxx xx xx"
@@ -123,7 +123,7 @@ function Contact() {
               <label className="space-y-1 text-sm font-medium text-slate-700">
                 Firma
                 <input
-                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-[#1e4294] focus:ring-2 focus:ring-[#ff7f00]/40"
+                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-[#16a34a] focus:ring-2 focus:ring-[#16a34a]/40"
                   value={form.company}
                   onChange={(e) => updateField('company', e.target.value)}
                   placeholder="Şirket adı"
@@ -132,7 +132,7 @@ function Contact() {
               <label className="md:col-span-2 space-y-1 text-sm font-medium text-slate-700">
                 Konu
                 <select
-                  className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-[#1e4294] focus:ring-2 focus:ring-[#ff7f00]/40"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-[#16a34a] focus:ring-2 focus:ring-[#16a34a]/40"
                   value={form.topic}
                   onChange={(e) => updateField('topic', e.target.value)}
                 >
@@ -147,7 +147,7 @@ function Contact() {
               <label className="md:col-span-2 space-y-1 text-sm font-medium text-slate-700">
                 Mesaj*
                 <textarea
-                  className="min-h-[140px] w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-[#1e4294] focus:ring-2 focus:ring-[#ff7f00]/40"
+                  className="min-h-[140px] w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-[#16a34a] focus:ring-2 focus:ring-[#16a34a]/40"
                   value={form.message}
                   onChange={(e) => updateField('message', e.target.value)}
                   placeholder="İhtiyacınızı kısaca anlatabilirsiniz."
@@ -157,7 +157,7 @@ function Contact() {
                 <p className="text-xs text-slate-500">* Zorunlu alanlar</p>
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center rounded-full bg-[#ff7f00] px-5 py-3 text-sm font-semibold uppercase text-slate-900 shadow-sm transition hover:bg-[#e07000]"
+                  className="inline-flex items-center justify-center rounded-full bg-[#16a34a] px-5 py-3 text-sm font-semibold uppercase text-white shadow-sm transition hover:bg-[#15803d]"
                 >
                   Gönder
                 </button>
@@ -180,14 +180,14 @@ function Contact() {
                 </li>
                 <li className="flex items-center justify-between">
                   <span>Destek</span>
-                  <span className="font-semibold text-[#1e4294]">7/24 e-posta</span>
+                  <span className="font-semibold text-[#16a34a]">7/24 e-posta</span>
                 </li>
               </ul>
             </div>
 
             <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
               <iframe
-                title="HYD Point Konum"
+                title="Konya Kilit Konum"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12034.926068632275!2d28.80000000000001!3d41.07000000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDA0JzEyLjAiTiAyOMKwNDgnMDAuMCJF!5e0!3m2!1str!2str!4v1714078800000!5m2!1str!2str"
                 className="h-[320px] w-full border-0"
                 allowFullScreen=""

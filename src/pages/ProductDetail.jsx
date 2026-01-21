@@ -45,7 +45,7 @@ function ProductDetail() {
             <p className="text-base text-slate-600">Ürün bulunamadı.</p>
             <button
               onClick={() => navigate('/urunler')}
-              className="mt-4 rounded-lg bg-[#ff7f00] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#e07000]"
+              className="mt-4 rounded-lg bg-[#16a34a] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#15803d]"
             >
               Ürünlere Dön
             </button>
@@ -80,7 +80,7 @@ function ProductDetail() {
         {/* Geri Dön Butonu */}
         <button
           onClick={() => navigate(-1)}
-          className="mb-6 flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors hover:text-[#ff7f00]"
+          className="mb-6 flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors hover:text-[#16a34a]"
         >
           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -99,7 +99,7 @@ function ProductDetail() {
             {allBrandLogos.map((logo, index) => (
               <div
                 key={index}
-                className="flex h-28 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 p-3 transition hover:border-[#ff7f00] hover:bg-white hover:shadow-md sm:h-32 sm:p-4 md:h-36 md:p-5 lg:h-40 lg:p-6"
+                className="flex h-28 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 p-3 transition hover:border-[#16a34a] hover:bg-white hover:shadow-md sm:h-32 sm:p-4 md:h-36 md:p-5 lg:h-40 lg:p-6"
               >
                 <img 
                   src={logo} 

@@ -1,25 +1,25 @@
 export const heroSlides = [
   {
-    title: 'SINIFININ EN GÜÇLÜ POMPASI',
+    title: 'ESSENTRA\'YA HOŞ GELDİNİZ',
     description:
-      'Yüksek verimlilik, düşük kayıp ve maksimum dayanım için geliştirilen yeni nesil pompalarımızla üretiminize güç katın.',
-    image: 'https://metosan.com.tr/Storage/Upload/cache/637695442382333208-b75-1hakkimizda-494-632.jpeg',
+      'Yüzlerce pazar ve binlerce ürün için yaşamsal bileşen aksamının küresel üreticisi ve distribütörüyüz. Yaptığımız işten gurur duyuyor ve en küçük parçaların bile oynayacak büyük rolü olduğuna inanıyoruz.',
+    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1920',
   },
   {
-    title: 'GÜÇ ONUN İŞİ',
+    title: 'KALİTELİ KİLİT ÇÖZÜMLERİ',
     description:
-      'Metosan ürün gamındaki hidrolik çözümler; ağır iş, endüstri, tarım ve mobil uygulamalarda sahada kendini kanıtladı.',
-    image: 'https://metosan.com.tr/Storage/Upload/cache/637286938676461652-b75-1turkiye-nin-hidrolik-marketi--800-547.jpeg',
+      'Konya Kilit olarak, endüstriyel ve ticari uygulamalar için güvenilir kilit sistemleri sunuyoruz. Modern teknoloji ve geleneksel kaliteyi bir araya getiriyoruz.',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920',
   },
   {
-    title: "METOSAN'LA ŞAH-MAT!",
-    description: '40 yılı aşkın tecrübe, güçlü stok ve uzman mühendislik desteğiyle her zaman yanınızdayız.',
-    image: 'https://metosan.com.tr/Storage/Upload/cache/637310364767955696-b75-2covid19-icin-aldigimiz-tedbir-800-547.jpeg',
+    title: 'GÜVENLİK İÇİN HER ŞEY',
+    description: '1978\'den bu yana güvenlik sektöründe hizmet veren firmamız, geniş ürün yelpazesi ve uzman ekibiyle yanınızdayız.',
+    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1920',
   },
   {
-    title: 'TESİSAT İÇİN HER ŞEY!',
-    description: 'Tesisat, sızdırmazlık ve elektronik kontrol ürünlerinde dünya markalarını aynı çatı altında sunuyoruz.',
-    image: 'https://metosan.com.tr/Storage/Upload/cache/637607340096564042-b-43saip-175-90.png',
+    title: 'YENİLİKÇİ ÇÖZÜMLER',
+    description: 'Elektronik kilit sistemlerinden geleneksel çözümlere kadar geniş bir yelpazede hizmet sunuyoruz.',
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1920',
   },
 ]
 
