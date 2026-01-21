@@ -15,10 +15,9 @@ function Contact() {
 
   const contactCards = useMemo(
     () => [
-      { title: 'Satış ve Teklif', detail: '+90 212 000 00 00', helper: 'Hafta içi 08:30 - 18:00' },
-      { title: 'Teknik Destek', detail: '+90 212 000 00 01', helper: 'Uygulama ve arıza desteği' },
-      { title: 'E-posta', detail: 'info@konyakilit.com', helper: '24 saat içinde geri dönüş' },
-      { title: 'Adres', detail: 'İOSB Mah. 1234. Cad. No:45 Başakşehir / İstanbul', helper: 'Merkez ofis & showroom' },
+      { title: 'Satış ve Teklif', detail: ['+90 506 875 03 58', '+90 506 092 03 42']},
+      { title: 'E-posta', detail: 'info@konyakilit.com'},
+      { title: 'Adres', detail: 'Fevziçakmak, Medcezir Cd. no:8/B D:06, 42050 Karatay/Konya'},
     ],
     []
   )
@@ -51,15 +50,19 @@ function Contact() {
   return (
     <div className="bg-slate-50 pb-16 text-slate-900">
       <section className="mx-auto max-w-[95%] space-y-10 px-3 pt-10 sm:px-4">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {contactCards.map((card) => (
-            <div
-              key={card.title}
-              className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
-            >
-              <p className="text-sm font-semibold text-[#16a34a]">{card.title}</p>
-              <p className="mt-2 text-base font-semibold text-slate-900">{card.detail}</p>
-              <p className="mt-1 text-sm text-slate-500">{card.helper}</p>
+            <div key={card.title} className="text-center">
+              <p className="text-base font-semibold text-slate-900">{card.title}</p>
+              {Array.isArray(card.detail) ? (
+                <div className="mt-2 space-y-1">
+                  {card.detail.map((item, idx) => (
+                    <p key={idx} className="text-base text-slate-900">{item}</p>
+                  ))}
+                </div>
+              ) : (
+                <p className="mt-2 text-base text-slate-900">{card.detail}</p>
+              )}
             </div>
           ))}
         </div>
@@ -117,7 +120,7 @@ function Contact() {
                   className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-[#16a34a] focus:ring-2 focus:ring-[#16a34a]/40"
                   value={form.phone}
                   onChange={(e) => updateField('phone', e.target.value)}
-                  placeholder="+90 5xx xxx xx xx"
+                  placeholder="0506 092 03 42"
                 />
               </label>
               <label className="space-y-1 text-sm font-medium text-slate-700">
@@ -178,17 +181,13 @@ function Contact() {
                   <span>Cumartesi</span>
                   <span className="font-semibold text-slate-900">09:00 - 13:00</span>
                 </li>
-                <li className="flex items-center justify-between">
-                  <span>Destek</span>
-                  <span className="font-semibold text-[#16a34a]">7/24 e-posta</span>
-                </li>
               </ul>
             </div>
 
             <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
               <iframe
                 title="Konya Kilit Konum"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12034.926068632275!2d28.80000000000001!3d41.07000000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDA0JzEyLjAiTiAyOMKwNDgnMDAuMCJF!5e0!3m2!1str!2str!4v1714078800000!5m2!1str!2str"
+                src="https://www.google.com/maps?q=Fevziçakmak,+Medcezir+Cd.+no:8/B+D:06,+42050+Karatay/Konya&hl=tr&z=15&output=embed"
                 className="h-[320px] w-full border-0"
                 allowFullScreen=""
                 loading="lazy"

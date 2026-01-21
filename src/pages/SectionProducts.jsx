@@ -777,6 +777,10 @@ function SectionProducts() {
           {currentItems.map((item) => {
             const img = getPumpImage(item)
             const productSlug = encodeURIComponent(item.toLowerCase().replace(/\s+/g, '-'))
+            // Ürün adından sayıyı çıkar (örn: "001 > Kollu Kilit" -> code: "001", name: "Kollu Kilit")
+            const match = item.match(/^(\d+(?:\s*[A-Z]\d+)?)\s*>\s*(.+)$/)
+            const productCode = match ? match[1] : null
+            const productName = match ? match[2] : item
             return (
               <Link
                 key={item}
@@ -796,10 +800,17 @@ function SectionProducts() {
                 {/* Ürün Bilgileri */}
                 <div className="flex flex-1 flex-col justify-between border-t border-slate-100 bg-white p-5">
                   <div>
-                    {/* Ürün Adı */}
-                    <h3 className="mb-2 line-clamp-2 min-h-[3rem] text-base font-semibold leading-tight text-slate-900 transition-colors duration-300 group-hover:text-[#16a34a]">
-                      {item}
-                    </h3>
+                    {/* Ürün Kodu ve Adı */}
+                    <div className="mb-2 flex flex-wrap items-center gap-2">
+                      {productCode && (
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#16a34a]/10 text-[#16a34a] text-xs font-semibold">
+                          {productCode}
+                        </span>
+                      )}
+                      <h3 className="line-clamp-2 flex-1 text-base font-semibold leading-tight text-slate-900 transition-colors duration-300 group-hover:text-[#16a34a]">
+                        {productName}
+                      </h3>
+                    </div>
                     {/* ÇEŞİTLİ ÜRÜNLER, TRAFO VE KABİN KİLİTLERİ, DİLLER ve ÇEYREK DÖNÜŞLÜ KİLİTLER için Ürün Grup Çeşitleri yazısı */}
                     {(sectionTitle === 'ÇEŞİTLİ ÜRÜNLER' || sectionTitle === 'TRAFO VE KABİN KİLİTLERİ' || sectionTitle === 'DİLLER - ANAHTARLAR ÇUBUK VE LAMALAR' || sectionTitle === 'ÇEYREK DÖNÜŞLÜ KİLİTLER') && (
                       <p className="mb-3 text-xs text-slate-500">Ürün Grup Çeşitleri</p>
