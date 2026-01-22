@@ -169,18 +169,6 @@ function App() {
                   ✉️ info@konyakilit.com
                 </span>
               </div>
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div className="relative hidden lg:block">
-                  <input
-                    type="text"
-                    placeholder="Ürün ara..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-64 rounded-lg border border-slate-200 bg-white px-4 py-1.5 pr-10 text-sm text-slate-700 placeholder-slate-400 shadow-sm transition focus:border-[#16a34a] focus:outline-none focus:ring-2 focus:ring-[#16a34a]/20"
-                  />
-                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">🔍</span>
-                </div>
-              </div>
               <div className="flex items-center gap-3">
                 <a
                   href="https://instagram.com"
@@ -245,6 +233,16 @@ function App() {
             </nav>
 
             <div className="flex items-center gap-3">
+              <div className="relative hidden lg:block">
+                <input
+                  type="text"
+                  placeholder="Ürün ara..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-64 rounded-lg border border-slate-200 bg-white px-4 py-2 pr-10 text-sm text-slate-700 placeholder-slate-400 shadow-sm transition focus:border-[#16a34a] focus:outline-none focus:ring-2 focus:ring-[#16a34a]/20"
+                />
+                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">🔍</span>
+              </div>
               <button
                 onClick={() => setMobileOpen((prev) => !prev)}
                 className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-[#16a34a]/40 hover:text-[#16a34a] lg:hidden"
