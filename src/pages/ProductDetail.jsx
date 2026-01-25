@@ -170,6 +170,199 @@ const productDetails = {
       { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
     ],
   },
+  '406 > Kollu Kilit': {
+    code: '406',
+    name: 'Kollu Kilit',
+    description: '• Kilitleme sistemi modüler olup uygulama esnasında isteğe göre değiştirilebilir.\n• Kilitleme modülleri bağımsız sipariş edilebilir.\n• Tek noktadan veya 3 noktadan kilitleme aynı gövde üzerinde yapılabilir.\n• Asma kilit uygulaması opsiyoneldir.\n• Gövde alt kısmında klips uygulaması ile hızlı montaj yapılabilir.',
+    materials: {
+      'GÖVDE': 'PA6 GFR 30',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '106 > Kollu Kilit': {
+    code: '106',
+    name: 'Kollu Kilit',
+    description: '• Yaylı kol açılırken dışarı hareket eder çarpmalı şekilde kapanır.\n• Sürgülü toz kapağına sahiptir.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '808 > Kollu Kilit': {
+    code: '808',
+    name: 'Kollu Kilit',
+    description: '',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'DİL': 'Çelik –PA6 GFR 30',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '008 > Kollu Kilit': {
+    code: '008',
+    name: 'Kollu Kilit',
+    description: '• Geçiş ölçüsü 25x150 mm dir.\n• Montaj sacı yüksek bağlantı güvenliği ve topraklama sağlar.\n• 8 mm lik yüzey çıkıntısı ile estetik bir görünüme sahiptir.\n• Kolda yay uygulaması vardır.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik veya PA6 GFR 30',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '908 > Kollu Kilit': {
+    code: '908',
+    name: 'Kollu Kilit',
+    description: '• Basmalı tip kollu kilit\n• Kolda yay uygulaması vardır.',
+    materials: {
+      'GÖVDE': 'Zamak DIN-EN 1774-ZnAl4Cu1 veya PA6 GFR 30',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik veya PA6 GFR30',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '108 > Kollu Kilit': {
+    code: '108',
+    name: 'Kollu Kilit',
+    description: '• Dış ortam kullanımı için yüksek korozyon dayanımına sahiptir\n• Anahtarı kopyalanamaz yüksek güvenlikli barel seçeneği vardır.\n• Kilit bölgesini kapatan hareketli kapak ve iç yüzeyindeki conta sayesinde yüksek seviyede sızdırmazlık sağlar.',
+    materials: {
+      'GÖVDE': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik veya PA6 GFR 30',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '208 > Kollu Kilit': {
+    code: '208',
+    name: 'Kollu Kilit',
+    description: '• Kolda yay uygulaması yoktur.\n• İç mekan panolarda kullanılabilir.',
+    materials: {
+      'GÖVDE': 'Zamak DIN-EN 1774-ZnAl4Cu1 veya PA6 GFR 30',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1 veya PA6 GFR 30',
+      'DİL': 'Çelik veya PA6 GFR30',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '308 > Kollu Kilit': {
+    code: '308',
+    name: 'Kollu Kilit',
+    description: '• İç mekan panolarda kullanılabilir.\n• Geçiş ölçüsü 25x100 mm dir.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1 yada PA6 GFR 30',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '708 > Kollu Kilit': {
+    code: '708',
+    name: 'Kollu Kilit',
+    description: '• İç mekan panolarda kullanılabilir.\n• Geçiş ölçüsü 25x75 mm dir.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'SİLİNDİR': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'BUTON': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '508 > Kollu Kilit': {
+    code: '508',
+    name: 'Kollu Kilit',
+    description: '• Komple metal.\n• Basmalı tip kollu kilit\n• Kilit montajı tek bir bağlantı sacı ile yapılır.',
+    materials: {
+      'GÖVDE': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik veya PA6 GFR30',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '006 > Kollu Kilit': {
+    code: '006',
+    name: 'Kollu Kilit',
+    description: '• Kolda yay uygulaması mevcuttur.\n• İç ve dış mekan panolarda kullanılabilir.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'DİL': 'Çelik veya PA6 GFR 30',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '205 > Kollu Kilit': {
+    code: '205',
+    name: 'Kollu Kilit',
+    description: '',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
 }
 
 // Ürün logoları mapping
@@ -261,12 +454,84 @@ function ProductDetail() {
   const isLockProduct = productInfo && (productInfo.name.includes('Kollu Kilit') || productInfo.name.includes('Dikey Hareketli'))
   const hasDetail = !!productDetail || isLockProduct
   
+  // Kollu kilit resim mapping (ürün koduna göre)
+  const getKolluKilitImage = () => {
+    const code = productDetail?.code || productInfo?.code
+    if (!code) return productImage || '/kollukilitler.png'
+    
+    // Özel durumlar
+    if (code === '001') {
+      // Küçük versiyon kontrolü
+      if (productDetail?.name?.includes('Küçük Versiyon') || productName?.includes('Küçük Versiyon')) {
+        return '/001kollukilit.jpg'
+      }
+      return '/001kollukilit.jpg'
+    }
+    
+    // Kod bazlı resim mapping
+    const imageMap = {
+      '006': '/006kollukilit.jpg',
+      '008': '/008kollukilit.jpg',
+      '101': '/101kollukilit.jpg',
+      '106': '/106kollukilit.jpg',
+      '108': '/108kollukilit.jpg',
+      '201': '/201kollukilit.jpg',
+      '205': '/205kollukilit.jpg',
+      '206': '/206kollukilit.jpg',
+      '208': '/208kollukilit.jpg',
+      '306': '/306kollukilit.jpg',
+      '308': '/308kollukilit.jpg',
+      '406': '/406kollukilit.jpg',
+      '408': '/408kollukilit.jpg',
+      '501': '/501kollukilit.jpg',
+      '504': '/504kollukilit.jpg',
+      '508': '/508kollukilit.jpg',
+      '601': '/601kollukilit.jpg',
+      '708': '/708kollukilit.jpg',
+      '808': '/808kollukilit.jpg',
+      '908': '/908kollukilit.jpg',
+    }
+    
+    return imageMap[code] || productImage || '/kollukilitler.png'
+  }
+  
+  const kolluKilitImage = getKolluKilitImage()
+  
   // PDF dosya adını belirle
   const getPdfPath = () => {
     const code = productDetail?.code || productInfo?.code
-    if (code === '001') return '/001-kollu-kilit-kucuk-versiyon.pdf'
-    if (code === '201') return '/201-kollu-kilit.pdf'
-    return null
+    const name = productDetail?.name || productInfo?.name || productName
+    
+    // Özel durumlar
+    if (code === '001' && name?.includes('Küçük Versiyon')) {
+      return '/001-kollu-kilit-kucuk-versiyon.pdf'
+    }
+    
+    // Kod bazlı PDF mapping
+    const pdfMap = {
+      '001': '/001-kollu-kilit.pdf',
+      '006': '/006-kollu-kilit.pdf',
+      '008': '/008-kollu-kilit.pdf',
+      '101': '/101-kollu-kilit.pdf',
+      '106': '/106-kollu-kilit.pdf',
+      '108': '/108-kollu-kilit.pdf',
+      '201': '/201-kollu-kilit.pdf',
+      '205': '/205-kollu-kilit.pdf',
+      '206': '/206-kollu-kilit.pdf',
+      '208': '/208-kollu-kilit.pdf',
+      '308': '/308-kollu-kilit.pdf',
+      '406': '/406-kollu-kilit.pdf',
+      '408': '/408-kollu-kilit.pdf',
+      '501': '/501-kollu-kilit.pdf',
+      '504': '/504-dikey-hareketli-kollu-kilit.pdf',
+      '508': '/508-kollu-kilit.pdf',
+      '601': '/601-kollu-kilit.pdf',
+      '708': '/708-kollu-kilit.pdf',
+      '808': '/808-kollu-kilit.pdf',
+      '908': '/908-kollu-kilit.pdf',
+    }
+    
+    return code ? pdfMap[code] || null : null
   }
   
   const pdfPath = getPdfPath()
@@ -325,7 +590,7 @@ function ProductDetail() {
                 <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                   <div className="aspect-square flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl overflow-hidden">
                     <img 
-                      src={productImage || '/kollukilitler.png'} 
+                      src={kolluKilitImage} 
                       alt={productDetail?.name || productInfo?.name || productName} 
                       className="max-h-full max-w-full object-contain p-4" 
                     />

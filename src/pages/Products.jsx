@@ -470,6 +470,19 @@ function Products() {
   const [activeGroup, setActiveGroup] = useState(null)
   const [openGroups, setOpenGroups] = useState([])
 
+  // Kategori resim mapping
+  const categoryImageMap = {
+    'KOLLU KİLİTLER': '/kollukilit.png',
+    'İSPANYOLET SİSTEMLİ KİLİTLER': '/ispanyoletsistemlikilitler.png',
+    'TRAFO VE KABİN KİLİTLERİ': '/trafovekabinkilitleri.png',
+    'KİLİMA SANTRAL ÜRÜNLERİ': '/klimasantralurunleri.png',
+    'ÇEŞİTLİ ÜRÜNLER': '/cesitliurunler.jpg',
+    'DİLLER - ANAHTARLAR ÇUBUK VE LAMALAR': '/dilleranahtarlarcubuklarve.png',
+    'ÇEYREK DÖNÜŞLÜ KİLİTLER': '/ceyrekdonuslukilitler.png',
+    'SİLİNDİRLİ KİLİTLER': '/silindirlikilitler.png',
+    'MOBİLYA VE ÇELİK EŞYA KİLİTLERİ': '/mobilyavecelikesya.png',
+  }
+
   useEffect(() => {
     // Sayfa açıldığında KİLİTLER kategorisini açık olarak getir
     setOpenGroups(['KİLİTLER'])
@@ -577,6 +590,50 @@ function Products() {
 
   // Pompa resimleri mapping
   const getPumpImage = (itemName) => {
+    // Kollu kilit ürünleri için özel resim mapping (ürün koduna göre)
+    const extractCode = (name) => {
+      const match = name.match(/^(\d+(?:\s*[A-Z]\d+)?)\s*>\s*(.+)$/)
+      return match ? match[1] : null
+    }
+    
+    const code = extractCode(itemName)
+    if (code && itemName.includes('Kollu Kilit')) {
+      // Özel durumlar
+      if (code === '001' && itemName.includes('Küçük Versiyon')) {
+        return '/001kollukilit.jpg'
+      }
+      
+      // Kod bazlı resim mapping
+      const kolluKilitImageMap = {
+        '001': '/001kollukilit.jpg',
+        '006': '/006kollukilit.jpg',
+        '008': '/008kollukilit.jpg',
+        '101': '/101kollukilit.jpg',
+        '106': '/106kollukilit.jpg',
+        '108': '/108kollukilit.jpg',
+        '201': '/201kollukilit.jpg',
+        '205': '/205kollukilit.jpg',
+        '206': '/206kollukilit.jpg',
+        '208': '/208kollukilit.jpg',
+        '306': '/306kollukilit.jpg',
+        '308': '/308kollukilit.jpg',
+        '406': '/406kollukilit.jpg',
+        '408': '/408kollukilit.jpg',
+        '501': '/501kollukilit.jpg',
+        '504': '/504kollukilit.jpg',
+        '508': '/508kollukilit.jpg',
+        '601': '/601kollukilit.jpg',
+        '708': '/708kollukilit.jpg',
+        '808': '/808kollukilit.jpg',
+        '908': '/908kollukilit.jpg',
+      }
+      
+      if (kolluKilitImageMap[code]) {
+        return kolluKilitImageMap[code]
+      }
+    }
+    
+    // Ürün bazlı özel mapping
     const imageMap = {
       'ALÜMİNYUM GÖVDELİ DİŞLİ POMPALAR': '/aligodi.png',
       'DÖKÜM GÖVDELİ DİŞLİ POMPALAR': '/dokum-govdeli-disli-pompal.png',
@@ -586,29 +643,18 @@ function Products() {
       'PALETLİ POMPA': '/paletli-pompa.png',
       'PİSTONLU POMPA': '/pistonlu-pompa.png',
       'TANDEM POMPALAR': '/tandem-pompalar.png',
-      // Kollu Kilitler
-      '001 > Kollu Kilit (Küçük Versiyon)': '/kollukilitler.png',
-      '201 > Kollu Kilit': '/kollukilitler.png',
-      '001 > Kollu Kilit': '/kollukilitler.png',
-      '101 > Kollu Kilit': '/kollukilitler.png',
-      '501 > Kollu Kilit': '/kollukilitler.png',
-      '601 > Kollu Kilit': '/kollukilitler.png',
-      '408 > Kollu Kilit': '/kollukilitler.png',
-      '306 > Kollu Kilit': '/kollukilitler.png',
-      '504 > Dikey Hareketli Kollu Kilit': '/kollukilitler.png',
-      '206 > Kollu Kilit': '/kollukilitler.png',
-      '406 > Kollu Kilit': '/kollukilitler.png',
-      '106 > Kollu Kilit': '/kollukilitler.png',
-      '808 > Kollu Kilit': '/kollukilitler.png',
-      '008 > Kollu Kilit': '/kollukilitler.png',
-      '908 > Kollu Kilit': '/kollukilitler.png',
-      '108 > Kollu Kilit': '/kollukilitler.png',
-      '208 > Kollu Kilit': '/kollukilitler.png',
-      '308 > Kollu Kilit': '/kollukilitler.png',
-      '708 > Kollu Kilit': '/kollukilitler.png',
-      '508 > Kollu Kilit': '/kollukilitler.png',
-      '006 > Kollu Kilit': '/kollukilitler.png',
-      '205 > Kollu Kilit': '/kollukilitler.png',
+    }
+    
+    // Kategori bazlı resim atama (kollu kilitler için özel resim yoksa)
+    for (const section of lockSections) {
+      const categoryImage = categoryImageMap[section.title]
+      if (categoryImage) {
+        section.items.forEach(item => {
+          if (!imageMap[item]) {
+            imageMap[item] = categoryImage
+          }
+        })
+      }
     }
     return imageMap[itemName] || `https://via.placeholder.com/320x200.png?text=${encodeURIComponent(itemName)}`
   }
@@ -647,7 +693,7 @@ function Products() {
 
   // Alt başlık resimleri için placeholder
   const getSectionImage = (sectionTitle) => {
-    return `https://via.placeholder.com/320x200.png?text=${encodeURIComponent(sectionTitle)}`
+    return categoryImageMap[sectionTitle] || `https://via.placeholder.com/320x200.png?text=${encodeURIComponent(sectionTitle)}`
   }
 
   return (
@@ -674,15 +720,25 @@ function Products() {
                     <div className="ml-3 space-y-2 border-l border-slate-200 pl-3">
                       {group.sections.map((section) => {
                         const isActive = activeSection === section.title
+                        const categoryImage = categoryImageMap[section.title]
                         return (
                           <div key={section.title} className="space-y-1">
                             <button
                               onClick={() => handleSectionClick(section.title)}
-                              className={`flex w-full items-center justify-between rounded-lg px-2 py-1 text-left text-sm font-light transition ${
+                              className={`flex w-full items-center justify-between rounded-lg px-2 py-1.5 text-left text-sm font-light transition ${
                                 isActive ? 'text-[#16a34a]' : 'text-slate-700 hover:text-[#16a34a]'
                               }`}
                             >
-                              <span>{section.title}</span>
+                              <div className="flex items-center gap-2">
+                                {categoryImage && (
+                                  <img 
+                                    src={categoryImage} 
+                                    alt={section.title}
+                                    className="h-8 w-8 rounded object-cover"
+                                  />
+                                )}
+                                <span>{section.title}</span>
+                              </div>
                               <span
                                 className={`text-xs transition ${isActive ? 'text-[#16a34a]' : 'text-slate-400'}`}
                                 aria-hidden
@@ -736,7 +792,7 @@ function Products() {
                     className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-[#16a34a]/50 hover:shadow-xl"
                   >
                     {/* Alt Başlık Görseli */}
-                    <div className="relative flex h-64 items-center justify-center overflow-hidden bg-white p-6">
+                    <div className="relative flex h-80 items-center justify-center overflow-hidden bg-white p-6">
                       <img 
                         src={img} 
                         alt={section.title} 
@@ -775,7 +831,7 @@ function Products() {
                     className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-[#16a34a]/50 hover:shadow-xl"
                   >
                     {/* Ürün Görseli */}
-                    <div className="relative flex h-64 items-center justify-center overflow-hidden bg-white p-6">
+                    <div className="relative flex h-80 items-center justify-center overflow-hidden bg-white p-6">
                       <img 
                         src={img} 
                         alt={item} 
