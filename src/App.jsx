@@ -12,6 +12,7 @@ import Contact from './pages/Contact'
 const navItems = [
   { label: 'ANASAYFA', path: '/' },
   { label: 'ÜRÜNLER', path: '/urunler' },
+  { label: 'MEDYA', path: '/medya' },
   { label: 'HAKKIMIZDA', path: '/hakkimizda' },
   { label: 'İLETİŞİM', path: '/iletisim' },
 ]
@@ -196,15 +197,16 @@ function App() {
             </div>
           </div>
 
-          <div className="mx-auto flex w-full max-w-[95%] items-center justify-between px-4 py-5">
-            <div className="flex items-center gap-3">
-              <NavLink to="/" className="flex items-center gap-3">
-                <img
-                  src="/konyakilitlogo.png"
-                  alt="Konya Kilit logo"
-                  className="h-10 w-auto"
-                />
-                <span className="text-xl font-bold text-slate-900">KONYA KİLİT</span>
+          <div className="mx-auto flex w-full max-w-[95%] items-center justify-between px-4 py-2">
+            <div className="flex items-center">
+              <NavLink to="/" className="flex items-center">
+                <div className="flex items-center justify-center rounded-lg bg-gradient-to-br from-black via-gray-900 to-gray-800 p-2.5 shadow-lg">
+                  <img
+                    src="/konyakilitlogo.png"
+                    alt="Konya Kilit logo"
+                    className="h-16 w-auto"
+                  />
+                </div>
               </NavLink>
             </div>
 
@@ -241,7 +243,6 @@ function App() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-64 rounded-lg border border-slate-200 bg-white px-4 py-2 pr-10 text-sm text-slate-700 placeholder-slate-400 shadow-sm transition focus:border-[#16a34a] focus:outline-none focus:ring-2 focus:ring-[#16a34a]/20"
                 />
-                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">🔍</span>
               </div>
               <button
                 onClick={() => setMobileOpen((prev) => !prev)}
@@ -273,10 +274,11 @@ function App() {
           <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-label="Mobil menü">
             <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
             <div className="relative ml-auto h-full w-[90vw] max-w-sm overflow-y-auto border-l border-slate-200 bg-white shadow-2xl">
-              <div className="flex items-center justify-between px-6 py-5">
-                <div className="flex items-center gap-2">
-                  <img src="/konyakilitlogo.png" alt="Konya Kilit logo" className="h-8 w-auto" />
-                  <span className="text-lg font-bold text-slate-700">KONYA KİLİT</span>
+              <div className="flex items-center justify-between px-6 py-3">
+                <div className="flex items-center">
+                  <div className="flex items-center justify-center rounded-lg bg-gradient-to-br from-black via-gray-900 to-gray-800 p-2 shadow-lg">
+                    <img src="/konyakilitlogo.png" alt="Konya Kilit logo" className="h-12 w-auto" />
+                  </div>
                 </div>
                 <button
                   onClick={() => setMobileOpen(false)}
