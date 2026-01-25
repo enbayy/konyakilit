@@ -793,12 +793,12 @@ function Products() {
                   >
                     <div className="mb-6 flex items-center justify-center">
                       <div className="relative flex h-64 w-full items-center justify-center overflow-hidden rounded-xl">
-                        <img 
-                          src={img} 
-                          alt={section.title} 
-                          className="h-full w-full object-contain transition-all duration-500 group-hover:scale-105" 
-                        />
-                      </div>
+                      <img 
+                        src={img} 
+                        alt={section.title} 
+                        className="h-full w-full object-contain transition-all duration-500 group-hover:scale-105" 
+                      />
+                    </div>
                     </div>
                     <div className="flex flex-1 flex-col">
                       <h3 className="mb-2 text-xl font-bold text-slate-900">{section.title}</h3>
@@ -835,18 +835,18 @@ function Products() {
                   >
                     <div className="mb-6 flex items-center justify-center">
                       <div className="relative flex h-64 w-full items-center justify-center overflow-hidden rounded-xl">
-                        <img 
-                          src={img} 
-                          alt={item} 
-                          className="h-full w-full object-contain transition-all duration-500 group-hover:scale-105" 
-                        />
-                      </div>
+                      <img 
+                        src={img} 
+                        alt={item} 
+                        className="h-full w-full object-contain transition-all duration-500 group-hover:scale-105" 
+                      />
+                    </div>
                     </div>
                     <div className="flex flex-1 flex-col">
                       <h3 className="mb-2 text-xl font-bold text-slate-900">{item}</h3>
-                      {activeSection === 'ÇEŞİTLİ ÜRÜNLER' && (
+                        {activeSection === 'ÇEŞİTLİ ÜRÜNLER' && (
                         <p className="mb-4 text-sm leading-relaxed text-slate-600">Ürün Grup Çeşitleri</p>
-                      )}
+                        )}
                       <div className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#16a34a] transition-all duration-300 group-hover:gap-3">
                         Detayları Görüntüle
                         <span className="text-base">→</span>

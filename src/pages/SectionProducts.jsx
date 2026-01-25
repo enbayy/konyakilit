@@ -818,7 +818,7 @@ function SectionProducts() {
               <img 
                 src={categoryImageMap[sectionTitle]} 
                 alt={sectionTitle}
-                className="h-16 w-16 rounded-lg object-cover"
+                className="h-20 w-20 rounded-lg object-contain"
               />
             )}
             <div>
