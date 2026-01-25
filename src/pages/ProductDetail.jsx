@@ -419,7 +419,7 @@ function ProductDetail() {
   if (!productName) {
     return (
       <div className="bg-slate-50 pb-16 text-slate-900">
-        <div className="mx-auto max-w-[95%] px-3 pt-10 sm:px-4">
+        <div className="mx-auto max-w-7xl px-1.5 pt-10 sm:px-2 lg:px-3">
           <div className="rounded-2xl border border-dashed border-slate-200 bg-white p-8 text-center shadow-sm">
             <p className="text-base text-slate-600">Ürün bulunamadı.</p>
             <button
@@ -557,7 +557,7 @@ function ProductDetail() {
 
   return (
     <div className="bg-slate-50 pb-16 text-slate-900">
-      <section className="mx-auto max-w-[95%] px-3 pt-10 sm:px-4">
+      <section className="mx-auto max-w-7xl px-1.5 pt-10 sm:px-2 lg:px-3">
         {/* Geri Dön Butonu */}
         <button
           onClick={() => navigate(-1)}

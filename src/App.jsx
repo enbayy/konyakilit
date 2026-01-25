@@ -161,7 +161,7 @@ function App() {
       <div className="min-h-screen bg-slate-50 text-slate-900">
         <header className="relative z-40 backdrop-blur bg-white/95 shadow-sm shadow-slate-200/70">
           <div className="border-b border-slate-100">
-            <div className="relative mx-auto flex w-full max-w-[95%] items-center justify-between px-4 py-1.5 text-xs text-slate-500">
+            <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-1.5 py-1.5 text-xs text-slate-500">
               <div className="flex items-center gap-4">
                 <span className="hidden sm:inline-flex items-center gap-1">
                   📞 0506 092 03 42
@@ -197,7 +197,7 @@ function App() {
             </div>
           </div>
 
-          <div className="mx-auto flex w-full max-w-[95%] items-center justify-between px-4 py-2">
+          <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-1.5 py-2">
             <div className="flex items-center">
               <NavLink to="/" className="flex items-center">
                 <div className="flex items-center justify-center rounded-lg bg-gradient-to-br from-black via-gray-900 to-gray-800 p-2.5 shadow-lg">
@@ -382,7 +382,7 @@ function App() {
         </main>
 
         <footer className="mt-16 bg-[#166534] text-slate-200">
-          <div className="mx-auto max-w-[95%] px-4 py-12 lg:px-6">
+          <div className="mx-auto max-w-7xl px-1.5 py-12 lg:px-2">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
               {/* Şirket Bilgileri */}
               <div className="space-y-4 lg:col-span-1">
@@ -559,7 +559,7 @@ function App() {
 
           {/* Alt Kısım */}
           <div className="border-t border-white/10 bg-[#14532d]">
-            <div className="mx-auto max-w-[95%] px-4 py-6 text-center text-xs text-slate-400 lg:px-6">
+            <div className="mx-auto max-w-7xl px-1.5 py-6 text-center text-xs text-slate-400 lg:px-2">
               <p>© {new Date().getFullYear()} Konya Kilit. Tüm hakları saklıdır.</p>
             </div>
           </div>

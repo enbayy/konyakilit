@@ -1,6 +1,6 @@
 function NewsSection({ items }) {
   return (
-    <section className="mx-auto max-w-[95%] space-y-8 px-3 py-12 sm:px-4">
+    <section className="mx-auto max-w-7xl space-y-8 px-1.5 py-12 sm:px-2 lg:px-3">
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
           <span className="h-1 w-10 rounded-full bg-[#16a34a]" />

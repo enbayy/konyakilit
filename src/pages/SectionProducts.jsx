@@ -779,7 +779,7 @@ function SectionProducts() {
   if (!sectionTitle || currentItems.length === 0) {
     return (
       <div className="bg-slate-50 pb-16 text-slate-900">
-        <div className="mx-auto max-w-[95%] px-3 pt-10 sm:px-4">
+        <div className="mx-auto max-w-7xl px-1.5 pt-10 sm:px-2 lg:px-3">
           <button
             onClick={() => navigate('/urunler')}
             className="mb-6 flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors hover:text-[#16a34a]"
@@ -799,7 +799,7 @@ function SectionProducts() {
 
   return (
     <div className="bg-slate-50 pb-16 text-slate-900">
-      <section className="mx-auto w-full max-w-[95%] px-3 pt-8 sm:px-4">
+      <section className="mx-auto w-full max-w-7xl px-1.5 pt-8 sm:px-2 lg:px-3">
         {/* Geri Dön Butonu */}
         <button
           onClick={() => navigate('/urunler')}

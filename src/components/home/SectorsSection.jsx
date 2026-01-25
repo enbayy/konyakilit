@@ -34,7 +34,7 @@ function SectorsSection() {
 
   return (
     <section className="bg-slate-50 py-16">
-      <div className="mx-auto w-full max-w-[95%] px-3 sm:px-4">
+      <div className="mx-auto w-full max-w-7xl px-1.5 sm:px-2 lg:px-3">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold text-slate-900 sm:text-4xl">
             <span className="text-slate-700">Sizin</span> Uygulamalarınız, <span className="text-[#16a34a]">Bizim</span> Çözümlerimiz

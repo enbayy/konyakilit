@@ -63,7 +63,7 @@ function ProductCategoriesSection() {
   }
 
   return (
-    <section className="mx-auto w-full max-w-[95%] px-3 py-12 sm:px-4">
+    <section className="mx-auto w-full max-w-7xl px-1.5 py-12 sm:px-2 lg:px-3">
       <div className="mb-8 text-center">
         <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Ürün Grup Çeşitleri</h2>
       </div>

@@ -49,7 +49,7 @@ function Contact() {
 
   return (
     <div className="bg-slate-50 pb-16 text-slate-900">
-      <section className="mx-auto max-w-[95%] space-y-10 px-3 pt-10 sm:px-4">
+      <section className="mx-auto max-w-7xl space-y-10 px-1.5 pt-10 sm:px-2 lg:px-3">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {contactCards.map((card) => (
             <div key={card.title} className="text-center">

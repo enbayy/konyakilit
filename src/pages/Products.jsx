@@ -698,7 +698,7 @@ function Products() {
 
   return (
     <div className="bg-slate-50 pb-16 text-slate-900">
-      <section className="mx-auto flex w-full max-w-[95%] flex-col gap-6 px-3 pt-8 sm:gap-8 sm:px-4 lg:flex-row">
+      <section className="mx-auto flex w-full max-w-[85%] flex-col gap-6 px-1.5 pt-8 sm:gap-8 sm:px-2 lg:flex-row lg:px-3">
         <aside className="w-full lg:w-96">
           <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-28">
             <h3 className="text-base font-bold text-slate-900">KATEGORİLER</h3>
@@ -734,7 +734,7 @@ function Products() {
                                   <img 
                                     src={categoryImage} 
                                     alt={section.title}
-                                    className="h-8 w-8 rounded object-cover"
+                                    className="h-10 w-10 rounded object-contain"
                                   />
                                 )}
                                 <span>{section.title}</span>
@@ -782,31 +782,34 @@ function Products() {
             </div>
           ) : activeGroup && !activeSection ? (
             // Ana başlık seçilmiş, alt başlıkları kartlar halinde göster
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {currentGroupSections.map((section) => {
                 const img = getSectionImage(section.title)
                 return (
                   <button
                     key={section.title}
                     onClick={() => handleSectionClick(section.title)}
-                    className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-[#16a34a]/50 hover:shadow-xl"
+                    className="group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-slate-300 hover:shadow-xl"
                   >
-                    {/* Alt Başlık Görseli */}
-                    <div className="relative flex h-80 items-center justify-center overflow-hidden bg-white p-6">
-                      <img 
-                        src={img} 
-                        alt={section.title} 
-                        className="h-full w-full object-contain transition-all duration-500 group-hover:scale-105" 
-                      />
+                    <div className="mb-6 flex items-center justify-center">
+                      <div className="relative flex h-64 w-full items-center justify-center overflow-hidden rounded-xl">
+                        <img 
+                          src={img} 
+                          alt={section.title} 
+                          className="h-full w-full object-contain transition-all duration-500 group-hover:scale-105" 
+                        />
+                      </div>
                     </div>
-                    
-                    {/* Alt Başlık Bilgileri */}
-                    <div className="flex flex-1 flex-col justify-between border-t border-slate-100 bg-white p-5">
-                      <div>
-                        {/* Alt Başlık Adı */}
-                        <h3 className="mb-3 line-clamp-2 min-h-[3rem] text-base font-semibold leading-tight text-slate-900 transition-colors duration-300 group-hover:text-[#16a34a]">
-                          {section.title}
-                        </h3>
+                    <div className="flex flex-1 flex-col">
+                      <h3 className="mb-2 text-xl font-bold text-slate-900">{section.title}</h3>
+                      {section.items && section.items.length > 0 && (
+                        <p className="mb-4 text-sm leading-relaxed text-slate-600">
+                          {section.items.length} ürün çeşidi
+                        </p>
+                      )}
+                      <div className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#16a34a] transition-all duration-300 group-hover:gap-3">
+                        Detayları Görüntüle
+                        <span className="text-base">→</span>
                       </div>
                     </div>
                   </button>
@@ -819,7 +822,7 @@ function Products() {
             </div>
           ) : activeSection ? (
             // Alt başlık seçilmiş, ürünleri göster
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {currentItems.map((item) => {
                 const img = getPumpImage(item)
                 const productSlug = encodeURIComponent(item.toLowerCase().replace(/\s+/g, '-'))
@@ -828,28 +831,25 @@ function Products() {
                     key={item}
                     to={`/urun-detay/${productSlug}`}
                     state={{ productName: item, productImage: img, productLogo: getProductLogo(item) }}
-                    className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-[#16a34a]/50 hover:shadow-xl"
+                    className="group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-slate-300 hover:shadow-xl"
                   >
-                    {/* Ürün Görseli */}
-                    <div className="relative flex h-80 items-center justify-center overflow-hidden bg-white p-6">
-                      <img 
-                        src={img} 
-                        alt={item} 
-                        className="h-full w-full object-contain transition-all duration-500 group-hover:scale-105" 
-                      />
+                    <div className="mb-6 flex items-center justify-center">
+                      <div className="relative flex h-64 w-full items-center justify-center overflow-hidden rounded-xl">
+                        <img 
+                          src={img} 
+                          alt={item} 
+                          className="h-full w-full object-contain transition-all duration-500 group-hover:scale-105" 
+                        />
+                      </div>
                     </div>
-                    
-                    {/* Ürün Bilgileri */}
-                    <div className="flex flex-1 flex-col justify-between border-t border-slate-100 bg-white p-5">
-                      <div>
-                        {/* Ürün Adı */}
-                        <h3 className="mb-2 line-clamp-2 min-h-[3rem] text-base font-semibold leading-tight text-slate-900 transition-colors duration-300 group-hover:text-[#16a34a]">
-                          {item}
-                        </h3>
-                        {/* ÇEŞİTLİ ÜRÜNLER için Ürün Grup Çeşitleri yazısı */}
-                        {activeSection === 'ÇEŞİTLİ ÜRÜNLER' && (
-                          <p className="mb-3 text-xs text-slate-500">Ürün Grup Çeşitleri</p>
-                        )}
+                    <div className="flex flex-1 flex-col">
+                      <h3 className="mb-2 text-xl font-bold text-slate-900">{item}</h3>
+                      {activeSection === 'ÇEŞİTLİ ÜRÜNLER' && (
+                        <p className="mb-4 text-sm leading-relaxed text-slate-600">Ürün Grup Çeşitleri</p>
+                      )}
+                      <div className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#16a34a] transition-all duration-300 group-hover:gap-3">
+                        Detayları Görüntüle
+                        <span className="text-base">→</span>
                       </div>
                     </div>
                   </Link>
