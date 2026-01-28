@@ -581,7 +581,17 @@ function SectionProducts() {
         '012 > Klima Santral Kilidi (Versiyon 3)',
         '012 > Klima Santral Kilidi Aksesuarı',
         '012 > Klima Santral Kilidi',
-        '112 > Klima Santral Kilidi',
+        '112 > Klima Santral Kilidi (Versiyon 1)',
+        '112 > Klima Santral Kilidi Aksesuarları',
+        '112 > Klima Santral Kilidi (Versiyon 2)',
+        '112 > Klima Santral Kilidi (Versiyon 3)',
+        '112 > Klima Santral Kilidi (Versiyon 4)',
+        '712 > Fonsiyonel Kilit Menteşe',
+        '612 > Klima Santral Kilidi',
+        '612 > Klima Santral Kilidi \'T\' Kollu',
+        '612 > Klima Kabin Kilidi \'L\' Kollu',
+        '078 > Profil Bağlantı Parçası (3D)',
+        '462 > Sıkıştırmalı Kilit',
       ]
     }
     for (const group of catalogGroups) {
@@ -966,7 +976,34 @@ function SectionProducts() {
                 img = '/012_v4klimasantral.jpg'
               }
             } else if (sectionTitle === 'KİLİMA SANTRAL ÜRÜNLERİ' && item.includes('112 > Klima Santral Kilidi')) {
-              img = '/112_v1klimasantral.jpg'
+              if (item.includes('Aksesuarları')) {
+                img = '/112-klimasantralkilidiaksesuarlar.jpg'
+              } else if (item.includes('Versiyon 1')) {
+                img = '/112_v1klimasantral.jpg'
+              } else if (item.includes('Versiyon 2')) {
+                img = '/112_v2klimasantralkilidi.jpg'
+              } else if (item.includes('Versiyon 3')) {
+                img = '/112_v4klimasantralkilidi.jpg'
+              } else if (item.includes('Versiyon 4')) {
+                img = '/112_klimasantralkilidi_versiyon4.jpg'
+              } else {
+                // Genel durum için
+                img = '/112_v1klimasantral.jpg'
+              }
+            } else if (sectionTitle === 'KİLİMA SANTRAL ÜRÜNLERİ' && item.includes('712 > Fonsiyonel Kilit Menteşe')) {
+              img = '/712fonksiyonelkilitmentese.jpg'
+            } else if (sectionTitle === 'KİLİMA SANTRAL ÜRÜNLERİ' && item.includes('612 > Klima Santral Kilidi')) {
+              if (item.includes('T\' Kollu')) {
+                img = '/612klimasantralkilidi_tkollu.jpg'
+              } else if (item.includes('L\' Kollu')) {
+                img = '/612klimakabinkilidi_lkollu.jpg'
+              } else {
+                img = '/612klimasantralkilidi.jpg'
+              }
+            } else if (sectionTitle === 'KİLİMA SANTRAL ÜRÜNLERİ' && item.includes('078 > Profil Bağlantı Parçası')) {
+              img = '/078profilbaglantiparcasi.jpg'
+            } else if (sectionTitle === 'KİLİMA SANTRAL ÜRÜNLERİ' && item.includes('462 > Sıkıştırmalı Kilit')) {
+              img = '/462sikistirmalikilit.jpg'
             }
             const productSlug = encodeURIComponent(item.toLowerCase().replace(/\s+/g, '-'))
             // Ürün adından sayıyı çıkar (örn: "001 > Kollu Kilit" -> code: "001", name: "Kollu Kilit")

@@ -1123,6 +1123,95 @@ const productDetails = {
       { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
     ],
   },
+  '112 > Klima Santral Kilidi (Versiyon 2)': {
+    code: '112',
+    name: 'Klima Santral Kilidi (Versiyon 2)',
+    description: '• Ergonomik ve estetik kol\n• Hızlı montaj\n• Güçlü kilitleme yapısı\n• Ayarlı dil sayesinde ayarlanabilir kilitleme aralığı\n• İçe doğru açılan kapılar için uygundur.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'PA6 GFR 30',
+      'DİL': 'Çelik – PA6 GFR 30',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '112 > Klima Santral Kilidi (Versiyon 3)': {
+    code: '112',
+    name: 'Klima Santral Kilidi (Versiyon 3)',
+    description: '• Kolsuz uygulama\n• Hızlı montaj\n• Güçlü kilitleme yapısı\n• Ayarlanabilir kilitleme aralığı',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'DİL': 'Çelik – PA6 GFR 30',
+      'AYAR CİVATASI': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '112 > Klima Santral Kilidi (Versiyon 4)': {
+    code: '112',
+    name: 'Klima Santral Kilidi (Versiyon 4)',
+    description: '• Kolsuz uygulama\n• Hızlı montaj\n• Güçlü kilitleme yapısı\n• Ayarlanabilir kilitleme aralığı',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'DİL': 'Çelik – PA6 GFR 30',
+      'AYAR CİVATASI': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '112 > Klima Santral Kilidi Aksesuarları': {
+    code: '112',
+    name: 'Klima Santral Kilidi Aksesuarları',
+    description: '',
+    materials: {},
+    versions: [
+      { urunKodu: '112H.1.00', urunResmi: '', urunAdi: 'Tutamak', aciklama: 'Silindirsiz - Fişesiz' },
+      { urunKodu: '112H.1.03', urunResmi: '', urunAdi: 'Tutamak', aciklama: 'Aynı Şifre (Paslanmaz Çelik Kapaklı)' },
+      { urunKodu: '112H.1.32', urunResmi: '', urunAdi: 'Tutamak', aciklama: 'Farklı Şifre (Paslanmaz toz kapaklı)' },
+      { urunKodu: '112H.1.05', urunResmi: '', urunAdi: 'Tutamak', aciklama: 'Euro Key' },
+      { urunKodu: '112H.1.28', urunResmi: '', urunAdi: 'Tutamak', aciklama: '8 mm Kare' },
+      { urunKodu: '112H.1.20', urunResmi: '', urunAdi: 'Tutamak', aciklama: '10 mm Kare' },
+      { urunKodu: '112H.1.37', urunResmi: '', urunAdi: 'Tutamak', aciklama: '7 mm Üçgen' },
+      { urunKodu: '112H.1.68', urunResmi: '', urunAdi: 'Tutamak', aciklama: '8 mm Altıgen' },
+      { urunKodu: '112H.2.00', urunResmi: '', urunAdi: 'Tutamak', aciklama: 'Silindirsiz - Fişesiz' },
+      { urunKodu: '112H.2.03', urunResmi: '', urunAdi: 'Tutamak', aciklama: 'Aynı Şifre (Paslanmaz Çelik Kapaklı)' },
+      { urunKodu: '112H.2.32', urunResmi: '', urunAdi: 'Tutamak', aciklama: 'Farklı Şifre (Paslanmaz toz kapaklı)' },
+      { urunKodu: '112H.2.05', urunResmi: '', urunAdi: 'Tutamak', aciklama: 'Euro Key' },
+      { urunKodu: '112H.2.28', urunResmi: '', urunAdi: 'Tutamak', aciklama: '8mm Kare' },
+      { urunKodu: '112H.2.20', urunResmi: '', urunAdi: 'Tutamak', aciklama: '10 mm Kare' },
+      { urunKodu: '112H.2.37', urunResmi: '', urunAdi: 'Tutamak', aciklama: '7 mm Üçgen' },
+      { urunKodu: '112H.2.68', urunResmi: '', urunAdi: 'Tutamak', aciklama: '8 mm Altıgen' },
+      { urunKodu: '112C01', urunResmi: '', urunAdi: 'Sabit Dil', aciklama: 'Yuvarlak makaralı' },
+      { urunKodu: '112C02', urunResmi: '', urunAdi: 'Sabit Dil', aciklama: 'Üçgen makaralı' },
+      { urunKodu: '112C03', urunResmi: '', urunAdi: 'Ayarlı Dil', aciklama: 'Yuvarlak makaralı' },
+      { urunKodu: '112C04', urunResmi: '', urunAdi: 'Ayarlı Dil', aciklama: 'Üçgen makaralı' },
+      { urunKodu: '112A102', urunResmi: '', urunAdi: 'Emniyet Kolu', aciklama: 'Versiyon 4 de kullanılır' },
+      { urunKodu: '112A101', urunResmi: '', urunAdi: 'Emniyet Kolu', aciklama: 'Versiyon 1,2,3 de kullanılır' },
+      { urunKodu: '112A502', urunResmi: '', urunAdi: 'Çoklu kilitleme ünitesi', aciklama: 'Versiyon 4 de kullanılır' },
+      { urunKodu: '112A501', urunResmi: '', urunAdi: 'Çoklu kilitleme ünitesi', aciklama: 'Versiyon 1,2,3 de kullanılır' },
+      { urunKodu: '112A2', urunResmi: '', urunAdi: 'Emniyet Kilit Kolu', aciklama: 'Plastik' },
+      { urunKodu: '112A4', urunResmi: '', urunAdi: 'Çubuk tutucu', aciklama: 'Çoklu Kilitleme için kullanılır' },
+      { urunKodu: '112IC', urunResmi: '', urunAdi: 'Çubuk', aciklama: 'Çoklu Kilitleme için kullanılır' },
+      { urunKodu: '112A6', urunResmi: '', urunAdi: 'Kapak', aciklama: 'Plastik' },
+    ],
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
 }
 
 // Ürün logoları mapping
@@ -1238,28 +1327,46 @@ function ProductDetail() {
     
     // Klima Santral Kilidi için özel resim mapping
     if (productName?.includes('Klima Santral Kilidi')) {
-      if (productName?.includes('Versiyon 1')) {
-        return '/012klimasantralkilidi.jpg'
-      }
-      if (productName?.includes('Versiyon 2')) {
-        return '/012klimasantralkilidi2.jpg'
-      }
-      if (productName?.includes('Versiyon 3')) {
-        return '/012klimasantralkilidi3.jpg'
-      }
-      if (productName?.includes('Versiyon 4')) {
-        return '/012_v4klimasantral.jpg'
-      }
-      if (productName?.includes('Aksesuarı')) {
-        return '/012klimasantralkilidiaksesuar.jpg'
+      // Önce code kontrolü yapılmalı (112 ve 012 için farklı resimler)
+      if (code === '112') {
+        // 112 > Klima Santral Kilidi için - kartlardaki resimlerle aynı
+        if (productName?.includes('Aksesuarları')) {
+          return '/112-klimasantralkilidiaksesuarlar.jpg'
+        }
+        if (productName?.includes('Versiyon 1')) {
+          return '/112_v1klimasantral.jpg'
+        }
+        if (productName?.includes('Versiyon 2')) {
+          return '/112_v2klimasantralkilidi.jpg'
+        }
+        if (productName?.includes('Versiyon 3')) {
+          return '/112_v4klimasantralkilidi.jpg'
+        }
+        if (productName?.includes('Versiyon 4')) {
+          return '/112_klimasantralkilidi_versiyon4.jpg'
+        }
+        // Genel 112 > Klima Santral Kilidi için (Versiyon 1 ile aynı resim)
+        return '/112_v1klimasantral.jpg'
       }
       if (code === '012') {
+        // 012 > Klima Santral Kilidi için
+        if (productName?.includes('Versiyon 1')) {
+          return '/012klimasantralkilidi.jpg'
+        }
+        if (productName?.includes('Versiyon 2')) {
+          return '/012klimasantralkilidi2.jpg'
+        }
+        if (productName?.includes('Versiyon 3')) {
+          return '/012klimasantralkilidi3.jpg'
+        }
+        if (productName?.includes('Versiyon 4')) {
+          return '/012_v4klimasantral.jpg'
+        }
+        if (productName?.includes('Aksesuarı')) {
+          return '/012klimasantralkilidiaksesuar.jpg'
+        }
         // Genel 012 > Klima Santral Kilidi için
         return '/012_v4klimasantral.jpg'
-      }
-      if (code === '112') {
-        // 112 > Klima Santral Kilidi için
-        return '/112_v1klimasantral.jpg'
       }
       // Genel durum için
       return '/012klimasantralkilidi.jpg'
@@ -1387,6 +1494,24 @@ function ProductDetail() {
     
     // Klima Santral Kilidi için özel PDF mapping
     if (productName?.includes('Klima Santral Kilidi')) {
+      // 112 > Klima Santral Kilidi için özel mapping
+      if (code === '112') {
+        if (productName?.includes('Aksesuarları')) {
+          return '/112-klima-santral-kilidi-aksesuarlari.pdf'
+        }
+        if (productName?.includes('Versiyon 2')) {
+          return '/112-klima-santral-kilidiversiyon2.pdf'
+        }
+        if (productName?.includes('Versiyon 3')) {
+          return '/112-klima-santral-kilidiversiyon3.pdf'
+        }
+        if (productName?.includes('Versiyon 4')) {
+          return '/112-klima-santral-kilidi_Versiyon4.pdf'
+        }
+        // Versiyon 1 ve genel 112 > Klima Santral Kilidi için
+        return '/112-klima-santral-kilidi.pdf'
+      }
+      // 012 > Klima Santral Kilidi için
       if (productName?.includes('Versiyon 1')) {
         return '/012-klima-santral-kilidi.pdf'
       }
@@ -1402,11 +1527,8 @@ function ProductDetail() {
       if (productName?.includes('Aksesuarı')) {
         return '/012-klima-santral-kilidi-aksesuari.pdf'
       }
-      if (code === '112') {
-        return '/112-klima-santral-kilidi.pdf'
-      }
       // Genel 012 > Klima Santral Kilidi için
-      return '/012-klima-santral-kilidi.pdf'
+      return '/012-klima-santral-kilidi (3).pdf'
     }
     
     // T Kollu Kabin Kilitleri için özel PDF mapping
