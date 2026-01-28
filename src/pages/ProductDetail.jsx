@@ -127,7 +127,8 @@ const productDetails = {
     materials: {
       'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
       'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
-      'DİL': 'Çelik – PA6 GFR 30',
+      'MEKANİZMA': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
       'CONTA': 'Poliüretan',
     },
     relatedProducts: [
@@ -363,6 +364,397 @@ const productDetails = {
       { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
     ],
   },
+  '002 > İspanyolet Sistemli Kollu Kilit': {
+    code: '002',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• Sac ve polyester panolara uygulanır.\n• 40 mm pirinç barel uygulaması yapılabilir.\n• Asma kilit takılma özelliği opsiyoneldir.\n• Geçiş ölçüsüne dikkat ediniz.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'MEKANİZMA': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '102 > İspanyolet Sistemli Kollu Kilit': {
+    code: '102',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• Sac ve polyester panolara uygulanır.\n• 40 mm pirinç barel uygulaması yapılabilir.\n• Asma kilit takılma özelliği opsiyoneldir.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'MEKANİZMA': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '502 > İspanyolet Sistemli Kollu Kilit': {
+    code: '502',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• Güvenlik seviyesi yüksek bir kilittir.\n• 14.5 mm lik dış çıkıntı ile estetik bir görünüm sağlar.\n• Yüksek güvenlik için özel barel uygulaması yapılır.\n• Toz kapağı uygulaması opsiyoneldir.\n• Asma kilit hamili opsiyoneldir.',
+    materials: {
+      'GÖVDE': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'MEKANİZMA': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '602 > İspanyolet Sistemli Kollu Kilit': {
+    code: '602',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• Tamamı metal malzemeden üretilir.\n• Sac ve polyester panolara uygulanır.\n• 40 mm pirinç barel uygulaması yapılabilir.\n• Dış ortamlarda kullanıldığından yüksek korozyon dayanımına sahiptir.\n• Yüksek güvenlik için özel barel uygulaması yapılır.',
+    materials: {
+      'GÖVDE': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'KAPAK': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'MEKANİZMA': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '409 > İspanyolet Sistemli Kollu Kilit': {
+    code: '409',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• Özel geometrisi ile dış saldırılara karşı dayanıklıdır.\n• Yüksek korozyon dayanımına sahipir.\n• DIN EN 1627:2011-09 RC2 testine uygundur.\n• Mafsalda kullanılan çift oring sayesinde yüksek sızdırmazlık sağlar.\n• Hareketli toz kapağı ekstra güvenlik sağlar.\n• 40 mm pirinç barel uygulanılabilir.\n• Farklı kalınlıklarda sac kullanımı için iletişime geçiniz.',
+    materials: {
+      'GÖVDE': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'MEKANİZMA': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'CONTA': 'Poliüretan',
+      'KAPAK': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '107 > İspanyolet Sistemli Kollu Kilit': {
+    code: '107',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• İç ortam ve conta içi uygulumalarda kullanılır.\n• Yaylı kol açılırken dışarı hareket eder ve çarpmalı şekilde kapanır.\n• Sürgülü toz kapağına sahiptir.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'MEKANİZMA': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '207 > İspanyolet Sistemli Kollu Kilit': {
+    code: '207',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• Sürgü kapaklı uygulama\n• Ergonomik kola sahiptir.\n• Asma kilit uygulaması opsiyoneldir.\n• 40 mm pirinç barel uygulaması yapılabilir.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'PA6 GFR 30',
+      'MEKANİZMA': 'PA6 GFR 30',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '307 > İspanyolet Sistemli Kollu Kilit': {
+    code: '307',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• Sürgü kapaklı uygulama\n• Ergonomik kola sahiptir.\n• Asma kilit uygulaması opsiyoneldir.\n• Barelli versiyona göre daha ekonomik bir kilittir.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'PA6 GFR 30 veya Zamak',
+      'MEKANİZMA': 'PA6 GFR 30',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '407 > İspanyolet Sistemli Kollu Kilit': {
+    code: '407',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• Kilitleme sistemi modüler olup uygulama esnasında isteğe göre değiştirilebilir.\n• Kilitleme modülleri bağımsız sipariş edilebilir.\n• Tek noktadan veya 3 noktadan kilitleme aynı gövde üzerinde yapılabilir.\n• Asma kilit uygulaması opsiyoneldir.\n• Gövde alt kısmında klips uygulaması ile hızlı montaj yapılabilir.',
+    materials: {
+      'GÖVDE': 'PA6 GFR 30',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'MEKANİZMA': 'PA6 GFR 30',
+      'MODÜL': 'Zamak',
+      'DİL': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '204 > Dikey Hareketli Kollu Kilit': {
+    code: '204',
+    name: 'Dikey Hareketli Kollu Kilit',
+    description: '• Ergonomik ve modern tasarım,\n• Kolun dikey hareketi ile kilitleme ve açma sağlar.\n• Conta içi ve dışı uygulamalar için uygundur.\n• Standart mekanizma ile çoklu kilitleme olanağı sağlar.',
+    materials: {
+      'GÖVDE': 'PA6 GFR 30',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'MEKANİZMA': 'Çelik',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '104 > Dikey Mekanizmalı Kollu Kilit': {
+    code: '104',
+    name: 'Dikey Mekanizmalı Kollu Kilit',
+    description: '• Kolun dikey hareketi ile kilitleme ve açma sağlar.\n• Conta dışı uygulamalar için uygundur.',
+    materials: {
+      'GÖVDE': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'MEKANİZMA': 'Çelik',
+      'DİL': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '109 > İspanyolet Sistemli Kollu Kilit': {
+    code: '109',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• Korozyon dayanımı geliştirilmiştir.\n• Kullanılan özel kilit göbeği sayesinde yüksek güvenlik sağlar.\n• Kilit bölgesini kapatan hareketli kapak sayesinde yüksek seviyede sızdırmazlık sağlar.',
+    materials: {
+      'GÖVDE': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'MEKANİZMA': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '909 > İspanyolet Sistemli Kollu Kilit': {
+    code: '909',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• Basmalı tip kollu kilit\n• Özel renkler için Mesan ile iletişime geçiniz.\n• Kolda yay uygulaması vardır.\n• Asma kilit hamili versiyonlarda IP sağlanamamaktadır.',
+    materials: {
+      'GÖVDE': 'Zamak veya PA6 GFR 30',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'MEKANİZMA': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '309 > İspanyolet Sistemli Kollu Kilit': {
+    code: '309',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• Conta dışı uygulamalarda kullanılabilir.\n• Özel mekanizma uygulanmıştır.\n• Üç noktadan kilitlemeye de uygundur.\n• Geçiş ölçüsü 25 x100 mm dir.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'MEKANİZMA': 'PA66',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1 yada PA6 GFR 30',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '209 > İspanyolet Sistemli Kollu Kilit': {
+    code: '209',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• Yüksek güvenlik ve estetik sağlar.\n• Kolda ve fişe dilinde yay uygulaması yoktur.\n• Açık konumda anahtar çıkabilir ve kol gövdeye yerleşebilir.',
+    materials: {
+      'GÖVDE': 'Zamak DIN-EN 1774-ZnAl4Cu1 veya PA6 GFR 30',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1 veya PA6 GFR 30',
+      'MEKANİZMA': 'PA6 GFR 30',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '007 > İspanyolet Sistemli Kollu Kilit': {
+    code: '007',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• Kolda yay uygulaması mevcuttur.\n• İç ve dış mekan panolarda kullanılabilir.\n• Plastik mekanizma sayesinde rekabetçi bir üründür.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'PA6 GFR 30',
+      'MEKANİZMA': 'PA6 GFR 30',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '809 > İspanyolet Sistemli Kollu Kilit': {
+    code: '809',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• İç ve dış mekan panolarda kullanılabilir.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'MEKANİZMA': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'KOL': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '103 > İspanyolet Sistemli Kollu Kilit': {
+    code: '103',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• 3 noktadan kilitleme özelliği sayesinde Göbek, Kelebek , T ve L kol uygulanabilir.\n• Fişesiz uygulama özelliği vardır .\n• Standart geçiş ölçülerine uygundur.',
+    materials: {
+      'GÖVDE': 'Zamak yada PA6 GFR 30',
+      'KOL': 'Zamak yada PA6 GFR 30',
+      'MEKANİZMA': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '203 > İspanyolet Sistemli Kollu Kilit': {
+    code: '203',
+    name: 'İspanyolet Sistemli Kollu Kilit',
+    description: '• Gövdede bulunan klips sayesinde kolay montaj sağlanır.\n• 3 noktadan kilitleme özelliği sayesinde Göbek, kelebek , T ve L kol uygulanabilir.\n• Fişesiz uygulama özelliği vardır.\n• Standart geçiş ölçülerine uygunluğu sayesinde kollu kilitler için hazırlanmış pano kapaklarına uygulanabilir.',
+    materials: {
+      'GÖVDE': 'PA6 GFR 30',
+      'KOL': 'Zamak or PA6 GFR 30',
+      'MEKANİZMA': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '203 > İspanyolet Sistemli Pano Kilit': {
+    code: '203',
+    name: 'İspanyolet Sistemli Pano Kilit',
+    description: '• Gövdede bulunan klips sayesinde kolay montaj sağlanır.\n• Mekanizma uygulaması ile 3 noktadan kilitleme sağlar.',
+    materials: {
+      'GÖVDE': 'PA6 GFR 30',
+      'MEKANİZMA': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '03030 > İç Kilitleme Sistemi': {
+    code: '03030',
+    name: 'İç Kilitleme Sistemi',
+    description: '• Çift kapılı kabinlerde kapılardan birinin içeriden kilitlenmesini sağlar.\n• Özel Montaj alternatifleri için satış ekibi ile görüşün.',
+    materials: {
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'MEKANİZMA': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '003 > İspanyolet Sistemli Pano Kilidi': {
+    code: '003',
+    name: 'İspanyolet Sistemli Pano Kilidi',
+    description: '',
+    materials: {},
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '103 > İspanyolet Sistemli Pano Kilidi': {
+    code: '103',
+    name: 'İspanyolet Sistemli Pano Kilidi',
+    description: '',
+    materials: {},
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '4001 > İspanyolet sistem': {
+    code: '4001',
+    name: 'İspanyolet sistem',
+    description: '',
+    materials: {},
+    versions: [
+      { version: '1', mekanizmaGovde: 'Zamak', mekanizmaLama: 'Çelik', A: '39', B: '29', C: '55', D: '22' },
+      { version: '2', mekanizmaGovde: 'Plastik', mekanizmaLama: 'Çelik', A: '39', B: '29', C: '55', D: '22' },
+      { version: '3', mekanizmaGovde: 'Zamak (Stoplamalı)', mekanizmaLama: 'Çelik', A: '39', B: '29', C: '55', D: '22' },
+      { version: '4', mekanizmaGovde: 'Paslanmaz Çelik', mekanizmaLama: 'Paslanmaz Çelik', A: '39', B: '29', C: '55', D: '22' },
+      { version: '5', mekanizmaGovde: 'Zamak (D:19mm)', mekanizmaLama: 'Çelik', A: '39', B: '27', C: '55', D: '19' },
+      { version: '6', mekanizmaGovde: 'Zamak (A:38mm)', mekanizmaLama: 'Çelik', A: '39', B: '27', C: '55', D: '22' },
+    ],
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
 }
 
 // Ürün logoları mapping
@@ -441,7 +833,7 @@ function ProductDetail() {
       return { code: match[1], name: match[2] }
     }
     // Kod yoksa, sadece ismi döndür
-    if (name.includes('Kollu Kilit') || name.includes('Dikey Hareketli')) {
+    if (name.includes('Kollu Kilit') || name.includes('Dikey Hareketli') || name.includes('İspanyolet') || name.includes('Dikey Mekanizmalı') || name.includes('İç Kilitleme') || name.includes('ispanyolet')) {
       return { code: null, name: name }
     }
     return null
@@ -451,13 +843,46 @@ function ProductDetail() {
   const productDetail = productDetails[productName]
   
   // Kollu kilit ürünleri için otomatik detay sayfası
-  const isLockProduct = productInfo && (productInfo.name.includes('Kollu Kilit') || productInfo.name.includes('Dikey Hareketli'))
+  const isLockProduct = productInfo && (productInfo.name.includes('Kollu Kilit') || productInfo.name.includes('Dikey Hareketli') || productInfo.name.includes('İspanyolet') || productInfo.name.includes('Dikey Mekanizmalı') || productInfo.name.includes('İç Kilitleme') || productInfo.name.includes('ispanyolet'))
   const hasDetail = !!productDetail || isLockProduct
   
   // Kollu kilit resim mapping (ürün koduna göre)
   const getKolluKilitImage = () => {
     const code = productDetail?.code || productInfo?.code
     if (!code) return productImage || '/kollukilitler.png'
+    
+    // İspanyolet ürünleri için özel resim mapping
+    if (productName?.includes('İspanyolet') || productName?.includes('Dikey Hareketli') || productName?.includes('Dikey Mekanizmalı') || productName?.includes('İç Kilitleme') || productName?.includes('ispanyolet')) {
+      const ispanyoletImageMap = {
+        '002': '/002ispanyolet.jpg',
+        '003': '/003ispanyolet.jpg',
+        '007': '/007ispanyolet.jpg',
+        '102': '/102ispanyolet.jpg',
+        '103': productName?.includes('Pano') ? '/103ispanyoletpano.jpg' : '/103ispanyolet.jpg',
+        '104': '/104ispanyolet.jpg',
+        '107': '/107ispanyolet.jpg',
+        '109': '/109ispanyolet.jpg',
+        '203': '/203ispanyolet.jpg',
+        '204': '/204ispanyolet.jpg',
+        '207': '/207ispanyolet.jpg',
+        '209': '/209ispanyolet.jpg',
+        '307': '/307ispanyolet.jpg',
+        '309': '/309ispanyolet.jpg',
+        '407': '/407ispanyolet.jpg',
+        '409': '/409ispanyolet.jpg',
+        '502': '/502ispanyolet.jpg',
+        '504': '/504ispanyolet.jpg',
+        '602': '/602ispanyolet.jpg',
+        '809': '/809ispanyolet.jpg',
+        '909': '/909ispanyolet.jpg',
+        '03030': '/03030ispanyolet.jpg',
+        '4001': '/4001ispanyolet.jpg',
+      }
+      
+      if (ispanyoletImageMap[code]) {
+        return ispanyoletImageMap[code]
+      }
+    }
     
     // Özel durumlar
     if (code === '001') {
@@ -505,6 +930,39 @@ function ProductDetail() {
     // Özel durumlar
     if (code === '001' && name?.includes('Küçük Versiyon')) {
       return '/001-kollu-kilit-kucuk-versiyon.pdf'
+    }
+    
+    // İspanyolet ürünleri için özel PDF mapping
+    if (productName?.includes('İspanyolet') || productName?.includes('Dikey Hareketli') || productName?.includes('Dikey Mekanizmalı') || productName?.includes('İç Kilitleme') || productName?.includes('ispanyolet')) {
+      const ispanyoletPdfMap = {
+        '002': '/002-ispanyolet-sistemli-kollu-kilit.pdf',
+        '003': '/003-ispanyolet-sistemli-pano-kilidi.pdf',
+        '007': '/007-ispanyolet-sistemli-kollu-kilit.pdf',
+        '102': '/102-ispanyolet-sistemli-kollu-kilit.pdf',
+        '103': name?.includes('Pano') ? '/103-ispanyolet-sistemli-pano-kilidi.pdf' : '/103-ispanyolet-sistemli-kollu-kilit.pdf',
+        '104': '/104-dikey-mekanizmali-kollu-kilit.pdf',
+        '107': '/107-ispanyolet-sistemli-kollu-kilit.pdf',
+        '109': '/109-ispanyolet-sistemli-kollu-kilit.pdf',
+        '203': name?.includes('Pano') ? '/203-ispanyolet-sistemli-pano-kilit.pdf' : '/203-ispanyolet-sistemli-kollu-kilit.pdf',
+        '204': '/204-dikey-hareketli-kollu-kilit.pdf',
+        '207': '/207-ispanyolet-sistemli-kollu-kilit.pdf',
+        '209': '/209-ispanyolet-sistemli-kollu-kilit.pdf',
+        '307': '/307-ispanyolet-sistemli-kollu-kilit.pdf',
+        '309': '/309-ispanyolet-sistemli-kollu-kilit.pdf',
+        '407': '/407-ispanyolet-sistemli-kollu-kilit.pdf',
+        '409': '/409-ispanyolet-sistemli-kollu-kilit.pdf',
+        '502': '/502-ispanyolet-sistemli-kollu-kilit.pdf',
+        '504': '/504-dikey-hareketli-kollu-kilit.pdf',
+        '602': '/602-ispanyolet-sistemli-kollu-kilit.pdf',
+        '809': '/809-ispanyolet-sistemli-kollu-kilit.pdf',
+        '909': '/909-ispanyolet-sistemli-kollu-kilit.pdf',
+        '03030': '/03030-ic-kilitleme-sistemi.pdf',
+        '4001': '/4001-ispanyolet-sistem.pdf',
+      }
+      
+      if (ispanyoletPdfMap[code]) {
+        return ispanyoletPdfMap[code]
+      }
     }
     
     // Kod bazlı PDF mapping
@@ -601,38 +1059,80 @@ function ProductDetail() {
               {/* Sağ Kolon - Ürün Bilgileri */}
               <div className="space-y-6">
                 {/* Ürün Bilgisi */}
-                {(productDetail?.description || isLockProduct) && (
+                {productDetail?.description && productDetail.description.trim() !== '' ? (
                   <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                     <div className="flex items-center gap-2 mb-4">
                       <div className="h-1 w-8 rounded-full bg-[#16a34a]"></div>
                       <h3 className="text-xl font-bold text-slate-900">Ürün Bilgisi</h3>
                     </div>
                     <div className="text-base leading-relaxed text-slate-700 whitespace-pre-line">
-                      {productDetail?.description || 'Sac ve polyester panolara uygulanır. 40 mm pirinç barel uygulaması yapılabilir.'}
+                      {productDetail.description}
                     </div>
                   </div>
-                )}
+                ) : isLockProduct && !productDetail ? (
+                  <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="h-1 w-8 rounded-full bg-[#16a34a]"></div>
+                      <h3 className="text-xl font-bold text-slate-900">Ürün Bilgisi</h3>
+                    </div>
+                    <div className="text-base leading-relaxed text-slate-700 whitespace-pre-line">
+                      Sac ve polyester panolara uygulanır. 40 mm pirinç barel uygulaması yapılabilir.
+                    </div>
+                  </div>
+                ) : null}
 
                 {/* Malzeme Bilgileri */}
-                {(productDetail?.materials || isLockProduct) && (
+                {(productDetail?.materials || isLockProduct) && Object.keys(productDetail?.materials || {}).length > 0 && (
                   <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                     <div className="flex items-center gap-2 mb-6">
                       <div className="h-1 w-8 rounded-full bg-[#16a34a]"></div>
                       <h3 className="text-xl font-bold text-slate-900">MALZEME</h3>
                     </div>
                     <div className="space-y-4">
-                      {Object.entries(productDetail?.materials || {
-                        'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
-                        'KOL': 'Polyamide DIN-EN ISO 1043-1 PA6GFR 30',
-                        'SİLİNDİR': 'Zamak DIN-EN 1774-ZnAl4Cu1',
-                        'DİL': 'Çelik',
-                        'CONTA': 'Kauçuk',
-                      }).map(([key, value]) => (
+                      {Object.entries(productDetail?.materials || {}).map(([key, value]) => (
                         <div key={key} className="flex flex-col sm:flex-row sm:items-start gap-2 pb-4 border-b border-slate-100 last:border-0 last:pb-0">
                           <div className="min-w-[120px] font-semibold text-slate-900 text-sm sm:text-base">{key}:</div>
                           <div className="text-sm sm:text-base text-slate-600 flex-1">{value}</div>
                         </div>
                       ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Versiyon Tablosu - 4001 için */}
+                {productDetail?.versions && (
+                  <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div className="flex items-center gap-2 mb-6">
+                      <div className="h-1 w-8 rounded-full bg-[#16a34a]"></div>
+                      <h3 className="text-xl font-bold text-slate-900">Ürün Varyasyonları</h3>
+                    </div>
+                    <div className="overflow-x-auto">
+                      <table className="w-full border-collapse">
+                        <thead>
+                          <tr className="bg-slate-50">
+                            <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Versiyon</th>
+                            <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Mekanizma Gövde</th>
+                            <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Mekanizma Lama</th>
+                            <th className="border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-slate-900">A</th>
+                            <th className="border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-slate-900">B</th>
+                            <th className="border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-slate-900">C</th>
+                            <th className="border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-slate-900">D</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {productDetail.versions.map((version, index) => (
+                            <tr key={index} className="hover:bg-slate-50 transition-colors">
+                              <td className="border border-slate-200 px-4 py-3 text-sm font-medium text-slate-900">{version.version}</td>
+                              <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.mekanizmaGovde}</td>
+                              <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.mekanizmaLama}</td>
+                              <td className="border border-slate-200 px-4 py-3 text-sm text-center text-slate-700">{version.A}</td>
+                              <td className="border border-slate-200 px-4 py-3 text-sm text-center text-slate-700">{version.B}</td>
+                              <td className="border border-slate-200 px-4 py-3 text-sm text-center text-slate-700">{version.C}</td>
+                              <td className="border border-slate-200 px-4 py-3 text-sm text-center text-slate-700">{version.D}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 )}

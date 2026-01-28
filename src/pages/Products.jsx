@@ -79,16 +79,18 @@ const lockSections = [
       '002 > İspanyolet Sistemli Kollu Kilit',
       '102 > İspanyolet Sistemli Kollu Kilit',
       '502 > İspanyolet Sistemli Kollu Kilit',
+      '502 > İspanyolet Sistemli Kollu Kilit',
       '602 > İspanyolet Sistemli Kollu Kilit',
       '409 > İspanyolet Sistemli Kollu Kilit',
       '107 > İspanyolet Sistemli Kollu Kilit',
+      '504 > Dikey Hareketli Kollu Kilit',
       '504 > Dikey Hareketli Kollu Kilit',
       '207 > İspanyolet Sistemli Kollu Kilit',
       '307 > İspanyolet Sistemli Kollu Kilit',
       '407 > İspanyolet Sistemli Kollu Kilit',
       '204 > Dikey Hareketli Kollu Kilit',
-      'Dikey Mekanizmalı Kollu Kilit',
       '104 > Dikey Mekanizmalı Kollu Kilit',
+      '109 > İspanyolet Sistemli Kollu Kilit',
       '109 > İspanyolet Sistemli Kollu Kilit',
       '909 > İspanyolet Sistemli Kollu Kilit',
       '309 > İspanyolet Sistemli Kollu Kilit',
@@ -97,11 +99,11 @@ const lockSections = [
       '809 > İspanyolet Sistemli Kollu Kilit',
       '103 > İspanyolet Sistemli Kollu Kilit',
       '203 > İspanyolet Sistemli Kollu Kilit',
-      'İspanyolet Sistemli Pano Kilit',
       '203 > İspanyolet Sistemli Pano Kilit',
-      'İspanyolet Sistemli Pano Kilidi',
+      '03030 > İç Kilitleme Sistemi',
       '003 > İspanyolet Sistemli Pano Kilidi',
       '103 > İspanyolet Sistemli Pano Kilidi',
+      '4001 > İspanyolet sistem',
     ],
   },
   {
@@ -596,6 +598,40 @@ function Products() {
     }
     
     const code = extractCode(itemName)
+    
+    // İspanyolet ürünleri için özel resim mapping
+    if (code && (itemName.includes('İspanyolet') || itemName.includes('Dikey Hareketli') || itemName.includes('Dikey Mekanizmalı') || itemName.includes('İç Kilitleme') || itemName.includes('ispanyolet'))) {
+      const ispanyoletImageMap = {
+        '002': '/002ispanyolet.jpg',
+        '003': '/003ispanyolet.jpg',
+        '007': '/007ispanyolet.jpg',
+        '102': '/102ispanyolet.jpg',
+        '103': itemName.includes('Pano') ? '/103ispanyoletpano.jpg' : '/103ispanyolet.jpg',
+        '104': '/104ispanyolet.jpg',
+        '107': '/107ispanyolet.jpg',
+        '109': '/109ispanyolet.jpg',
+        '203': itemName.includes('Pano') ? '/203ispanyolet.jpg' : '/203ispanyolet.jpg',
+        '204': '/204ispanyolet.jpg',
+        '207': '/207ispanyolet.jpg',
+        '209': '/209ispanyolet.jpg',
+        '307': '/307ispanyolet.jpg',
+        '309': '/309ispanyolet.jpg',
+        '407': '/407ispanyolet.jpg',
+        '409': '/409ispanyolet.jpg',
+        '502': '/502ispanyolet.jpg',
+        '504': '/504ispanyolet.jpg',
+        '602': '/602ispanyolet.jpg',
+        '809': '/809ispanyolet.jpg',
+        '909': '/909ispanyolet.jpg',
+        '03030': '/03030ispanyolet.jpg',
+        '4001': '/4001ispanyolet.jpg',
+      }
+      
+      if (ispanyoletImageMap[code]) {
+        return ispanyoletImageMap[code]
+      }
+    }
+    
     if (code && itemName.includes('Kollu Kilit')) {
       // Özel durumlar
       if (code === '001' && itemName.includes('Küçük Versiyon')) {
