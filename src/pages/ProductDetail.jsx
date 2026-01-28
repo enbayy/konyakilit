@@ -755,6 +755,99 @@ const productDetails = {
       { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
     ],
   },
+  '016 > Kabin Kilidi (Metal Gövde)': {
+    code: '016',
+    name: 'Kabin Kilidi (Metal Gövde)',
+    description: '• Kapıyı iterek kilitleme özelliği vardır.\n• Kilitleme için dil bağlantı aparatı gereklidir.\n• Kilitli konumda iken içeriden dil itilerek kilit açılabilir.',
+    materials: {
+      'GÖVDE': 'Çelik',
+      'KOL': 'Çelik',
+      'DİL': 'Pirinç',
+      'CİVATA': 'Paslanmaz Çelik',
+      'CONTA': 'Poliüretan',
+      'YÜZEY': 'Siyah boya',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '016 > Kabin Kilidi (Plastik Gövde)': {
+    code: '016',
+    name: 'Kabin Kilidi (Plastik Gövde)',
+    description: '• Kapıyı iterek kilitleme özelliği vardır.\n• Kilitleme için dil bağlantı aparatı gereklidir.\n• Kilitli konumda iken içeriden dil itilerek kilit açılabilir.',
+    materials: {
+      'GÖVDE': 'Polyamid DIN-EN ISO 1043-1 PA6 GFR 30',
+      'DİL': 'Pirinç veya Delrin',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '016 > Kabin Kilidi (Kancalı Kilit Entegreli)': {
+    code: '016',
+    name: 'Kabin Kilidi (Kancalı Kilit Entegreli)',
+    description: '• Kapıyı iterek kilitleme\n• Kancalı kilit ile entegreli kilitleme sistemi\n• Karşılık civatası ile kullanılır.',
+    materials: {
+      'GÖVDE': 'Çelik',
+      'KOL': 'Çelik',
+      'DİL': 'Pirinç',
+      'CİVATA': 'Paslanmaz çelik',
+      'KANCALI KİLİT': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '316 > Kabin Kilidi': {
+    code: '316',
+    name: 'Kabin Kilidi',
+    description: '• Kapıyı iterek kilitleme özelliği vardır.\n• Kilitleme için dil bağlantı aparatı gereklidir.\n• Kilitli konumda iken içeriden dil itilerek kilit açılabilir.',
+    materials: {
+      'GÖVDE': 'Polyamid DIN-EN ISO 1043-1 PA6 GFR 30',
+      'DİL': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '216 > Kabin Kilidi': {
+    code: '216',
+    name: 'Kabin Kilidi',
+    description: '• Kapıyı iterek kilitleme özelliği vardır.\n• Kilitleme için dil bağlantı aparatı gereklidir.\n• Kilitli konumda iken içeriden dil itilerek kilit açılabilir.',
+    materials: {
+      'GÖVDE': 'Çelik veya Polyamid DIN-EN ISO 1043-1 PA6 GFR 30',
+      'DİL': 'Pirinç veya Delrin',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '116 > Mini Kabin Kilidi': {
+    code: '116',
+    name: 'Mini Kabin Kilidi',
+    description: '• Dil malzemesi delrindir. Kilit karşılığı gerekmez.\n• Kilitli konumda iken içeriden dil ; itilerek kilit açılabilir.',
+    materials: {
+      'GÖVDE': 'Polyamid DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Delrin',
+      'BAĞLANTI SACI': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
 }
 
 // Ürün logoları mapping
@@ -833,7 +926,7 @@ function ProductDetail() {
       return { code: match[1], name: match[2] }
     }
     // Kod yoksa, sadece ismi döndür
-    if (name.includes('Kollu Kilit') || name.includes('Dikey Hareketli') || name.includes('İspanyolet') || name.includes('Dikey Mekanizmalı') || name.includes('İç Kilitleme') || name.includes('ispanyolet')) {
+    if (name.includes('Kollu Kilit') || name.includes('Dikey Hareketli') || name.includes('İspanyolet') || name.includes('Dikey Mekanizmalı') || name.includes('İç Kilitleme') || name.includes('ispanyolet') || name.includes('Kabin Kilidi')) {
       return { code: null, name: name }
     }
     return null
@@ -843,13 +936,30 @@ function ProductDetail() {
   const productDetail = productDetails[productName]
   
   // Kollu kilit ürünleri için otomatik detay sayfası
-  const isLockProduct = productInfo && (productInfo.name.includes('Kollu Kilit') || productInfo.name.includes('Dikey Hareketli') || productInfo.name.includes('İspanyolet') || productInfo.name.includes('Dikey Mekanizmalı') || productInfo.name.includes('İç Kilitleme') || productInfo.name.includes('ispanyolet'))
+  const isLockProduct = productInfo && (productInfo.name.includes('Kollu Kilit') || productInfo.name.includes('Dikey Hareketli') || productInfo.name.includes('İspanyolet') || productInfo.name.includes('Dikey Mekanizmalı') || productInfo.name.includes('İç Kilitleme') || productInfo.name.includes('ispanyolet') || productInfo.name.includes('Kabin Kilidi'))
   const hasDetail = !!productDetail || isLockProduct
   
   // Kollu kilit resim mapping (ürün koduna göre)
   const getKolluKilitImage = () => {
     const code = productDetail?.code || productInfo?.code
     if (!code) return productImage || '/kollukilitler.png'
+    
+    // Kabin kilitleri için özel resim mapping
+    if (productName?.includes('Kabin Kilidi')) {
+      const kabinKilitImageMap = {
+        '016': productName?.includes('Metal Gövde') ? '/016kabinkilidi_metalgovde.jpg' : 
+               productName?.includes('Plastik Gövde') ? '/016kabinkilidi_plastikgovde.jpg' :
+               productName?.includes('Kancalı') ? '/016kabinkilidi_kancalikilitentegreli.jpg' :
+               '/016kabinkilidi_metalgovde.jpg',
+        '116': '/116kabinkilidi.jpg',
+        '216': '/216kabinkilidi.jpg',
+        '316': '/316kabinkilidi.jpg',
+      }
+      
+      if (kabinKilitImageMap[code]) {
+        return kabinKilitImageMap[code]
+      }
+    }
     
     // İspanyolet ürünleri için özel resim mapping
     if (productName?.includes('İspanyolet') || productName?.includes('Dikey Hareketli') || productName?.includes('Dikey Mekanizmalı') || productName?.includes('İç Kilitleme') || productName?.includes('ispanyolet')) {
@@ -930,6 +1040,23 @@ function ProductDetail() {
     // Özel durumlar
     if (code === '001' && name?.includes('Küçük Versiyon')) {
       return '/001-kollu-kilit-kucuk-versiyon.pdf'
+    }
+    
+    // Kabin kilitleri için özel PDF mapping
+    if (productName?.includes('Kabin Kilidi')) {
+      const kabinKilitPdfMap = {
+        '016': productName?.includes('Metal Gövde') ? '/016-kabin-kilidi-metal-govde.pdf' :
+               productName?.includes('Plastik Gövde') ? '/016-kabin-kilidi-plastik-govde.pdf' :
+               productName?.includes('Kancalı') ? '/016-kabin-kilidi-kancali-kilit-entegreli.pdf' :
+               '/016-kabin-kilidi-metal-govde.pdf',
+        '116': '/116-mini-kabin-kilidi.pdf',
+        '216': '/216-kabin-kilidi.pdf',
+        '316': '/316-kabin-kilidi.pdf',
+      }
+      
+      if (kabinKilitPdfMap[code]) {
+        return kabinKilitPdfMap[code]
+      }
     }
     
     // İspanyolet ürünleri için özel PDF mapping
