@@ -579,6 +579,9 @@ function SectionProducts() {
         '012 > Klima Santral Kilidi (Versiyon 1)',
         '012 > Klima Santral Kilidi (Versiyon 2)',
         '012 > Klima Santral Kilidi (Versiyon 3)',
+        '012 > Klima Santral Kilidi Aksesuarı',
+        '012 > Klima Santral Kilidi',
+        '112 > Klima Santral Kilidi',
       ]
     }
     for (const group of catalogGroups) {
@@ -950,12 +953,20 @@ function SectionProducts() {
             // KİLİMA SANTRAL ÜRÜNLERİ için özel resim mapping (index'e göre)
             let img = getPumpImage(item)
             if (sectionTitle === 'KİLİMA SANTRAL ÜRÜNLERİ' && item.includes('012 > Klima Santral Kilidi')) {
-              const klimaSantralImages = [
-                '/012klimasantralkilidi.jpg',
-                '/012klimasantralkilidi2.jpg',
-                '/012klimasantralkilidi3.jpg',
-              ]
-              img = klimaSantralImages[index % klimaSantralImages.length]
+              if (item.includes('Versiyon 1')) {
+                img = '/012klimasantralkilidi.jpg'
+              } else if (item.includes('Versiyon 2')) {
+                img = '/012klimasantralkilidi2.jpg'
+              } else if (item.includes('Versiyon 3')) {
+                img = '/012klimasantralkilidi3.jpg'
+              } else if (item.includes('Aksesuarı')) {
+                img = '/012klimasantralkilidiaksesuar.jpg'
+              } else {
+                // Genel 012 > Klima Santral Kilidi için
+                img = '/012_v4klimasantral.jpg'
+              }
+            } else if (sectionTitle === 'KİLİMA SANTRAL ÜRÜNLERİ' && item.includes('112 > Klima Santral Kilidi')) {
+              img = '/112_v1klimasantral.jpg'
             }
             const productSlug = encodeURIComponent(item.toLowerCase().replace(/\s+/g, '-'))
             // Ürün adından sayıyı çıkar (örn: "001 > Kollu Kilit" -> code: "001", name: "Kollu Kilit")

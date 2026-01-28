@@ -1061,6 +1061,68 @@ const productDetails = {
       { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
     ],
   },
+  '012 > Klima Santral Kilidi Aksesuarı': {
+    code: '012',
+    name: 'Klima Santral Kilidi Aksesuarı',
+    description: 'Emniyet Kolu\n\n• İçeriden çevirme kolu dışardan kilitlemenin olmadığı durumlarda kullanılır.\n• Emniyet kolu opsiyonel olup talep halinde temin edilir.',
+    materials: {},
+    versions: [
+      { urunKodu: '012 A1', urunResmi: '/012a1.jpg', urunAdi: 'Emniyet Kolu', aciklama: 'Çelik, Plastik Kaplama' },
+      { urunKodu: '012 A2', urunResmi: '/012a2.jpg', urunAdi: 'Kilit Karşılığı', aciklama: 'Zamak' },
+      { urunKodu: '012 A3', urunResmi: '/012a3.jpg', urunAdi: 'Emniyet Kolu', aciklama: 'Plastik' },
+    ],
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '012 > Klima Santral Kilidi (Versiyon 4)': {
+    code: '012',
+    name: 'Klima Santral Kilidi (Versiyon 4)',
+    description: '• Kol olmaksızın harici 10 mm metal anahtar ile açılması mümkündür.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'DİL': 'Çelik',
+      'AYAR CİVATASI': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '012 > Klima Santral Kilidi': {
+    code: '012',
+    name: 'Klima Santral Kilidi',
+    description: '• Kol olmaksızın harici 10 mm metal anahtar ile açılması mümkündür.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'DİL': 'Çelik',
+      'AYAR CİVATASI': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '112 > Klima Santral Kilidi': {
+    code: '112',
+    name: 'Klima Santral Kilidi',
+    description: '• Ergonomik ve estetik kol\n• Hızlı montaj\n• Güçlü kilitleme yapısı\n• Ayarlanabilir kilitleme aralığı\n• Dışa doğru açılan kapılar için uygundur.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'PA6 GFR 30',
+      'DİL': 'Çelik – PA6 GFR 30',
+      'CONTA': 'Poliüretan',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
 }
 
 // Ürün logoları mapping
@@ -1184,6 +1246,20 @@ function ProductDetail() {
       }
       if (productName?.includes('Versiyon 3')) {
         return '/012klimasantralkilidi3.jpg'
+      }
+      if (productName?.includes('Versiyon 4')) {
+        return '/012_v4klimasantral.jpg'
+      }
+      if (productName?.includes('Aksesuarı')) {
+        return '/012klimasantralkilidiaksesuar.jpg'
+      }
+      if (code === '012') {
+        // Genel 012 > Klima Santral Kilidi için
+        return '/012_v4klimasantral.jpg'
+      }
+      if (code === '112') {
+        // 112 > Klima Santral Kilidi için
+        return '/112_v1klimasantral.jpg'
       }
       // Genel durum için
       return '/012klimasantralkilidi.jpg'
@@ -1320,7 +1396,16 @@ function ProductDetail() {
       if (productName?.includes('Versiyon 3')) {
         return '/012-klima-santral-kilidi (2).pdf'
       }
-      // Genel durum için
+      if (productName?.includes('Versiyon 4')) {
+        return '/012-klima-santral-kilidi (3).pdf'
+      }
+      if (productName?.includes('Aksesuarı')) {
+        return '/012-klima-santral-kilidi-aksesuari.pdf'
+      }
+      if (code === '112') {
+        return '/112-klima-santral-kilidi.pdf'
+      }
+      // Genel 012 > Klima Santral Kilidi için
       return '/012-klima-santral-kilidi.pdf'
     }
     
@@ -1540,15 +1625,21 @@ function ProductDetail() {
                                 <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Yüzey</th>
                                 <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Dil</th>
                               </>
+                            ) : productDetail.versions[0]?.urunKodu ? (
+                              <>
+                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Ürün Kodu</th>
+                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Ürün Adı</th>
+                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Açıklama</th>
+                              </>
                             ) : null}
                           </tr>
                         </thead>
                         <tbody>
                           {productDetail.versions.map((version, index) => (
                             <tr key={index} className="hover:bg-slate-50 transition-colors">
-                              <td className="border border-slate-200 px-4 py-3 text-sm font-medium text-slate-900">{version.version}</td>
                               {version.mekanizmaGovde ? (
                                 <>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm font-medium text-slate-900">{version.version}</td>
                                   <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.mekanizmaGovde}</td>
                                   <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.mekanizmaLama}</td>
                                   <td className="border border-slate-200 px-4 py-3 text-sm text-center text-slate-700">{version.A}</td>
@@ -1558,9 +1649,16 @@ function ProductDetail() {
                                 </>
                               ) : version.malzeme ? (
                                 <>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm font-medium text-slate-900">{version.version}</td>
                                   <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.malzeme}</td>
                                   <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.yuzey}</td>
                                   <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.dil}</td>
+                                </>
+                              ) : version.urunKodu ? (
+                                <>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm font-medium text-slate-900">{version.urunKodu}</td>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.urunAdi}</td>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.aciklama}</td>
                                 </>
                               ) : null}
                             </tr>
