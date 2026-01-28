@@ -74,6 +74,21 @@ const lockSections = [
     ],
   },
   {
+    title: 'Kabin Kilitleri',
+    items: [
+      '016 > Kabin Kilidi (Metal Gövde)',
+      '016 > Kabin Kilidi (Plastik Gövde)',
+      '016 > Kabin Kilidi (Kancalı Kilit Entegreli)',
+      '316 > Kabin Kilidi',
+      '216 > Kabin Kilidi',
+      '116 > Mini Kabin Kilidi',
+    ],
+  },
+  {
+    title: 'T Kollu Kabin Kilitleri',
+    items: [],
+  },
+  {
     title: 'KİLİMA SANTRAL ÜRÜNLERİ',
     items: [
       '012 > Klima Santral Kilidi',
@@ -532,6 +547,8 @@ function SectionProducts() {
       'kollu-kilitler': 'KOLLU KİLİTLER',
       'ispanyolet-sistemli-kilitler': 'İSPANYOLET SİSTEMLİ KİLİTLER',
       'trafo-ve-kabin-kilitleri': 'TRAFO VE KABİN KİLİTLERİ',
+      'kabin-kilitleri': 'Kabin Kilitleri',
+      't-kollu-kabin-kilitleri': 'T Kollu Kabin Kilitleri',
       'kilima-santral-urunleri': 'KİLİMA SANTRAL ÜRÜNLERİ',
       'cesitli-urunler': 'ÇEŞİTLİ ÜRÜNLER',
       'diller-anahtarlar-cubuk-ve-lamalar': 'DİLLER - ANAHTARLAR ÇUBUK VE LAMALAR',
@@ -572,6 +589,7 @@ function SectionProducts() {
     'KOLLU KİLİTLER': '/kollukilit.png',
     'İSPANYOLET SİSTEMLİ KİLİTLER': '/ispanyoletsistemlikilitler.png',
     'TRAFO VE KABİN KİLİTLERİ': '/trafovekabinkilitleri.png',
+    'Kabin Kilitleri': '/trafovekabinkilitleri.png',
     'KİLİMA SANTRAL ÜRÜNLERİ': '/klimasantralurunleri.png',
     'ÇEŞİTLİ ÜRÜNLER': '/cesitliurunler.jpg',
     'DİLLER - ANAHTARLAR ÇUBUK VE LAMALAR': '/dilleranahtarlarcubuklarve.png',
@@ -589,6 +607,23 @@ function SectionProducts() {
     }
     
     const code = extractCode(itemName)
+    
+    // Kabin kilitleri için özel resim mapping
+    if (code && itemName.includes('Kabin Kilidi')) {
+      const kabinKilitImageMap = {
+        '016': itemName.includes('Metal Gövde') ? '/016kabinkilidi_metalgovde.jpg' : 
+               itemName.includes('Plastik Gövde') ? '/016kabinkilidi_plastikgovde.jpg' :
+               itemName.includes('Kancalı') ? '/016kabinkilidi_kancalikilitentegreli.jpg' :
+               '/016kabinkilidi_metalgovde.jpg',
+        '116': '/116kabinkilidi.jpg',
+        '216': '/216kabinkilidi.jpg',
+        '316': '/316kabinkilidi.jpg',
+      }
+      
+      if (kabinKilitImageMap[code]) {
+        return kabinKilitImageMap[code]
+      }
+    }
     
     // İspanyolet ürünleri için özel resim mapping
     if (code && (itemName.includes('İspanyolet') || itemName.includes('Dikey Hareketli') || itemName.includes('Dikey Mekanizmalı') || itemName.includes('İç Kilitleme') || itemName.includes('ispanyolet'))) {
@@ -873,20 +908,46 @@ function SectionProducts() {
             const match = item.match(/^(\d+(?:\s*[A-Z]\d+)?)\s*>\s*(.+)$/)
             const productCode = match ? match[1] : null
             const productName = match ? match[2] : item
+            
+            // TRAFO VE KABİN KİLİTLERİ için özel kontrol - "Kabin Kilitleri" ve "T Kollu Kabin Kilitleri" section sayfasına yönlendir
+            const isSubSection = sectionTitle === 'TRAFO VE KABİN KİLİTLERİ' && (item === 'Kabin Kilitleri' || item === 'T Kollu Kabin Kilitleri')
+            const sectionSlugMap = {
+              'Kabin Kilitleri': 'kabin-kilitleri',
+              'T Kollu Kabin Kilitleri': 't-kollu-kabin-kilitleri',
+            }
+            const sectionSlug = isSubSection ? sectionSlugMap[item] : null
+            
+            // Alt section'lar için resim belirleme
+            const getSubSectionImage = (sectionName) => {
+              const subSectionImageMap = {
+                'Kabin Kilitleri': '/kabinkilitleri.jpg',
+                'T Kollu Kabin Kilitleri': '/t_kollu_kabinkilitleri.jpg',
+              }
+              return subSectionImageMap[sectionName] || '/trafovekabinkilitleri.png'
+            }
+            
             return (
               <Link
                 key={item}
-                to={`/urun-detay/${productSlug}`}
-                state={{ productName: item, productImage: img, productLogo: getProductLogo(item) }}
+                to={sectionSlug ? `/urunler/${sectionSlug}` : `/urun-detay/${productSlug}`}
+                state={sectionSlug ? {} : { productName: item, productImage: img, productLogo: getProductLogo(item) }}
                 className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-[#16a34a]/50 hover:shadow-xl"
               >
                 {/* Ürün Görseli */}
                 <div className="relative flex h-80 items-center justify-center overflow-hidden bg-white p-6">
-                  <img 
-                    src={img} 
-                    alt={item} 
-                    className="h-full w-full object-contain transition-all duration-500 group-hover:scale-105" 
-                  />
+                  {isSubSection ? (
+                    <img 
+                      src={getSubSectionImage(item)} 
+                      alt={item} 
+                      className="h-full w-full object-contain transition-all duration-500 group-hover:scale-105" 
+                    />
+                  ) : (
+                    <img 
+                      src={img} 
+                      alt={item} 
+                      className="h-full w-full object-contain transition-all duration-500 group-hover:scale-105" 
+                    />
+                  )}
                 </div>
                 
                 {/* Ürün Bilgileri */}
@@ -900,11 +961,11 @@ function SectionProducts() {
                         </span>
                       )}
                       <h3 className="line-clamp-2 flex-1 text-base font-semibold leading-tight text-slate-900 transition-colors duration-300 group-hover:text-[#16a34a]">
-                        {productName}
+                        {isSubSection ? item : productName}
                       </h3>
                     </div>
                     {/* ÇEŞİTLİ ÜRÜNLER, TRAFO VE KABİN KİLİTLERİ, DİLLER ve ÇEYREK DÖNÜŞLÜ KİLİTLER için Ürün Grup Çeşitleri yazısı */}
-                    {(sectionTitle === 'ÇEŞİTLİ ÜRÜNLER' || sectionTitle === 'TRAFO VE KABİN KİLİTLERİ' || sectionTitle === 'DİLLER - ANAHTARLAR ÇUBUK VE LAMALAR' || sectionTitle === 'ÇEYREK DÖNÜŞLÜ KİLİTLER') && (
+                    {(sectionTitle === 'ÇEŞİTLİ ÜRÜNLER' || sectionTitle === 'TRAFO VE KABİN KİLİTLERİ' || sectionTitle === 'DİLLER - ANAHTARLAR ÇUBUK VE LAMALAR' || sectionTitle === 'ÇEYREK DÖNÜŞLÜ KİLİTLER') && !isSubSection && (
                       <p className="mb-3 text-xs text-slate-500">Ürün Grup Çeşitleri</p>
                     )}
                   </div>

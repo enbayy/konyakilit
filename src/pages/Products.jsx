@@ -114,6 +114,21 @@ const lockSections = [
     ],
   },
   {
+    title: 'Kabin Kilitleri',
+    items: [
+      '016 > Kabin Kilidi (Metal Gövde)',
+      '016 > Kabin Kilidi (Plastik Gövde)',
+      '016 > Kabin Kilidi (Kancalı Kilit Entegreli)',
+      '316 > Kabin Kilidi',
+      '216 > Kabin Kilidi',
+      '116 > Mini Kabin Kilidi',
+    ],
+  },
+  {
+    title: 'T Kollu Kabin Kilitleri',
+    items: [],
+  },
+  {
     title: 'KİLİMA SANTRAL ÜRÜNLERİ',
     items: [
       '012 > Klima Santral Kilidi',
@@ -535,6 +550,8 @@ function Products() {
       'KOLLU KİLİTLER': 'kollu-kilitler',
       'İSPANYOLET SİSTEMLİ KİLİTLER': 'ispanyolet-sistemli-kilitler',
       'TRAFO VE KABİN KİLİTLERİ': 'trafo-ve-kabin-kilitleri',
+      'Kabin Kilitleri': 'kabin-kilitleri',
+      'T Kollu Kabin Kilitleri': 't-kollu-kabin-kilitleri',
       'KİLİMA SANTRAL ÜRÜNLERİ': 'kilima-santral-urunleri',
       'ÇEŞİTLİ ÜRÜNLER': 'cesitli-urunler',
       'DİLLER - ANAHTARLAR ÇUBUK VE LAMALAR': 'diller-anahtarlar-cubuk-ve-lamalar',
@@ -598,6 +615,23 @@ function Products() {
     }
     
     const code = extractCode(itemName)
+    
+    // Kabin kilitleri için özel resim mapping
+    if (code && itemName.includes('Kabin Kilidi')) {
+      const kabinKilitImageMap = {
+        '016': itemName.includes('Metal Gövde') ? '/016kabinkilidi_metalgovde.jpg' : 
+               itemName.includes('Plastik Gövde') ? '/016kabinkilidi_plastikgovde.jpg' :
+               itemName.includes('Kancalı') ? '/016kabinkilidi_kancalikilitentegreli.jpg' :
+               '/016kabinkilidi_metalgovde.jpg',
+        '116': '/116kabinkilidi.jpg',
+        '216': '/216kabinkilidi.jpg',
+        '316': '/316kabinkilidi.jpg',
+      }
+      
+      if (kabinKilitImageMap[code]) {
+        return kabinKilitImageMap[code]
+      }
+    }
     
     // İspanyolet ürünleri için özel resim mapping
     if (code && (itemName.includes('İspanyolet') || itemName.includes('Dikey Hareketli') || itemName.includes('Dikey Mekanizmalı') || itemName.includes('İç Kilitleme') || itemName.includes('ispanyolet'))) {
