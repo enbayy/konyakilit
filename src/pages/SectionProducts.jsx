@@ -37,7 +37,6 @@ const lockSections = [
     title: 'İSPANYOLET SİSTEMLİ KİLİTLER',
     items: [
       '002 > İspanyolet Sistemli Kollu Kilit',
-      'İspanyolet Sistemli Kollu Kilit',
       '102 > İspanyolet Sistemli Kollu Kilit',
       '502 > İspanyolet Sistemli Kollu Kilit',
       '602 > İspanyolet Sistemli Kollu Kilit',

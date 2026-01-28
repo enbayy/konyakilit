@@ -8,37 +8,37 @@ function ProductCategoriesSection() {
       title: 'Kilitler',
       description: 'Kollu Kilitler, Silindirli Kilitler, Çeyrek Dönüşlü Kilitler ve daha fazlası',
       icon: '🔒',
-      image: '/konyakilitlogo.png',
+      image: '/kollukilit.png',
     },
     {
       title: 'Menteşeler',
       description: 'Kenar Menteşeler, Gizli Menteşeler, Köşe Menteşeler',
       icon: '🔗',
-      image: '/konyakilitlogo.png',
+      image: '/menteselerslider.png',
     },
     {
       title: 'Contalar',
       description: 'Sızdırmazlık Profilleri, Yapışkanlı Contalar',
       icon: '⚙️',
-      image: '/konyakilitlogo.png',
+      image: '/cesitliurunler.jpg',
     },
     {
       title: 'Aksesuarlar ve Kulplar',
       description: 'Kulplar ve çeşitli aksesuarlar',
       icon: '🎯',
-      image: '/konyakilitlogo.png',
+      image: '/dilleranahtarlarcubuklarve.png',
     },
     {
       title: 'Paslanmaz Çelik Ürünler',
       description: 'Kilitler, Menteşeler ve Aksesuarlar',
       icon: '✨',
-      image: '/konyakilitlogo.png',
+      image: '/paslanmazslider.png',
     },
     {
       title: 'Elektronik',
       description: 'Elektronik Kollu Kilitler, Erişim Kontrol Sistemleri',
       icon: '📱',
-      image: '/konyakilitlogo.png',
+      image: '/trafovekabinkilitleri.png',
     },
   ]
 
@@ -72,18 +72,28 @@ function ProductCategoriesSection() {
           <div
             key={index}
             onClick={() => handleCategoryClick(category)}
-            className="group relative cursor-pointer overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#16a34a]/40 hover:shadow-xl"
+            className="group relative cursor-pointer overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#16a34a]/40 hover:shadow-xl"
           >
-            <div className="mb-4 flex items-center justify-between">
-              <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-[#16a34a]/10 text-3xl transition-all duration-300 group-hover:bg-[#16a34a] group-hover:text-white">
-                {category.icon}
-              </div>
+            <div className="relative h-48 w-full overflow-hidden bg-slate-100">
+              <img
+                src={category.image}
+                alt={category.title}
+                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
-            <h3 className="mb-2 text-xl font-bold text-slate-900">{category.title}</h3>
-            <p className="mb-4 text-sm leading-relaxed text-slate-600">{category.description}</p>
-            <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#16a34a] transition-all duration-300 group-hover:gap-3">
-              Detayları Görüntüle
-              <span className="text-base">→</span>
+            <div className="p-6">
+              <div className="mb-4 flex items-center justify-between">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#16a34a]/10 text-2xl transition-all duration-300 group-hover:bg-[#16a34a] group-hover:text-white">
+                  {category.icon}
+                </div>
+              </div>
+              <h3 className="mb-2 text-xl font-bold text-slate-900">{category.title}</h3>
+              <p className="mb-4 text-sm leading-relaxed text-slate-600">{category.description}</p>
+              <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#16a34a] transition-all duration-300 group-hover:gap-3">
+                Detayları Görüntüle
+                <span className="text-base">→</span>
+              </div>
             </div>
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#16a34a]/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </div>

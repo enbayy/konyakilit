@@ -1,25 +1,25 @@
 export const heroSlides = [
   {
-    title: 'ESSENTRA\'YA HOŞ GELDİNİZ',
+    title: 'KOLU KİLİTLER',
     description:
       'Yüzlerce pazar ve binlerce ürün için yaşamsal bileşen aksamının küresel üreticisi ve distribütörüyüz. Yaptığımız işten gurur duyuyor ve en küçük parçaların bile oynayacak büyük rolü olduğuna inanıyoruz.',
-    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1920',
+    image: '/kollukilitslider.png',
   },
   {
-    title: 'KALİTELİ KİLİT ÇÖZÜMLERİ',
+    title: 'MENTEŞELER',
     description:
       'Konya Kilit olarak, endüstriyel ve ticari uygulamalar için güvenilir kilit sistemleri sunuyoruz. Modern teknoloji ve geleneksel kaliteyi bir araya getiriyoruz.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920',
+    image: '/menteselerslider.png',
   },
   {
-    title: 'GÜVENLİK İÇİN HER ŞEY',
+    title: 'PANO KİLİTLERİ',
     description: '1978\'den bu yana güvenlik sektöründe hizmet veren firmamız, geniş ürün yelpazesi ve uzman ekibiyle yanınızdayız.',
-    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1920',
+    image: '/panokilitlerislider.png',
   },
   {
-    title: 'YENİLİKÇİ ÇÖZÜMLER',
+    title: 'PASLANMAZ ÇELİK ÜRÜNLER',
     description: 'Elektronik kilit sistemlerinden geleneksel çözümlere kadar geniş bir yelpazede hizmet sunuyoruz.',
-    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1920',
+    image: '/paslanmazslider.png',
   },
 ]
 

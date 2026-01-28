@@ -4,7 +4,6 @@ import CatalogSection from '../components/home/CatalogSection'
 import HeroSection from '../components/home/HeroSection'
 import NewsletterSection from '../components/home/NewsletterSection'
 import ProductCategoriesSection from '../components/home/ProductCategoriesSection'
-import SectorsSection from '../components/home/SectorsSection'
 import { brandLogos, heroSlides } from '../components/home/homeData'
 
 function Home() {
@@ -12,7 +11,6 @@ function Home() {
     <div className="pb-16">
       <HeroSection slides={heroSlides} />
       <ProductCategoriesSection />
-      <SectorsSection />
       <AboutSection />
       <BrandsSection brands={brandLogos} />
       <CatalogSection />
