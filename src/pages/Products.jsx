@@ -114,32 +114,6 @@ const lockSections = [
     ],
   },
   {
-    title: 'Kabin Kilitleri',
-    items: [
-      '016 > Kabin Kilidi (Metal Gövde)',
-      '016 > Kabin Kilidi (Plastik Gövde)',
-      '016 > Kabin Kilidi (Kancalı Kilit Entegreli)',
-      '316 > Kabin Kilidi',
-      '216 > Kabin Kilidi',
-      '116 > Mini Kabin Kilidi',
-    ],
-  },
-  {
-    title: 'T Kollu Kabin Kilitleri',
-    items: [
-      '214 > "T" Kollu Kabin Kilidi',
-      '214 > T Kollu Kabin Kilidi',
-      '014 > "T" Kollu Kabin Kilidi',
-      '114 > Mini \'T\' Kollu Kabin Kilidi',
-      '315 > "T" Kollu Kabin Kilidi',
-      '215 > "T" Kollu Kabin Kilidi',
-      '115 > "T" Kollu Kabin Kilidi',
-      '015 > T Kollu Kabin Kilidi',
-      '018 > Trafo Kilidi',
-      '118 > Trafo Kilidi',
-    ],
-  },
-  {
     title: 'KİLİMA SANTRAL ÜRÜNLERİ',
     items: [
       '012 > Klima Santral Kilidi',
@@ -561,8 +535,6 @@ function Products() {
       'KOLLU KİLİTLER': 'kollu-kilitler',
       'İSPANYOLET SİSTEMLİ KİLİTLER': 'ispanyolet-sistemli-kilitler',
       'TRAFO VE KABİN KİLİTLERİ': 'trafo-ve-kabin-kilitleri',
-      'Kabin Kilitleri': 'kabin-kilitleri',
-      'T Kollu Kabin Kilitleri': 't-kollu-kabin-kilitleri',
       'KİLİMA SANTRAL ÜRÜNLERİ': 'kilima-santral-urunleri',
       'ÇEŞİTLİ ÜRÜNLER': 'cesitli-urunler',
       'DİLLER - ANAHTARLAR ÇUBUK VE LAMALAR': 'diller-anahtarlar-cubuk-ve-lamalar',
