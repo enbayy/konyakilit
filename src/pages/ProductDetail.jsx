@@ -1171,6 +1171,99 @@ const productDetails = {
       { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
     ],
   },
+  '712 > Fonsiyonel Kilit Menteşe': {
+    code: '712',
+    name: 'Fonsiyonel Kilit Menteşe',
+    description: 'Hem menteşe hem kilit olarak kullanılır. Bu özellik dolayısıyla kapılar hem SAĞ hem de SOL el açılımlı çalışır. İstenirse kapak komple yerinden çıkartılabilir. 3 eksende montaj ayar yapma özelliği mevcuttur. Montaj vidalarını gizleyen plastik tapaları mevcuttur. İçeriden basınçlı kabinler için uygundur.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'GÖBEK': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL KARŞILIĞI': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+    },
+    versions: [
+      { urunKodu: '71220', urunAdi: 'Fonsiyonel Kilitlemeli Menteşe', malzeme: 'Plastik', yuzey: 'Siyah' },
+    ],
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '612 > Klima Santral Kilidi': {
+    code: '612',
+    name: 'Klima Santral Kilidi',
+    description: '• Pozitif basınçlı klima santrallerinde dışarıdan kilitleme sağlar.\n• Logo uygulaması için Mesan ile kontağa geçiniz.',
+    materials: {
+      'GÖVDE': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'GÖBEK': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '612 > Klima Santral Kilidi T Kollu': {
+    code: '612',
+    name: 'Klima Santral Kilidi T Kollu',
+    description: '• Pozitif basınçlı klima santrallerinde dışarıdan kilitleme sağlar.',
+    materials: {
+      'GÖVDE': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4C yada PA6 GFR 30',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '612 > Klima Kabin Kilidi L Kollu': {
+    code: '612',
+    name: 'Klima Kabin Kilidi L Kollu',
+    description: '• Pozitif basınçlı klima santrallerinde dışarıdan kilitleme sağlar.',
+    materials: {
+      'GÖVDE': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4C yada PA6 GFR 30',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '078 > Profil Bağlantı Parçası (3D)': {
+    code: '078',
+    name: 'Profil Bağlantı Parçası (3D)',
+    description: '• Komple metal malzeme.\n• 3 boyut ayar imkanı sağlar.\n• Yüksek mekanik dayanım.',
+    materials: {
+      'GÖVDE': 'Zamak DIN-EN 1774-ZnAl4Cu1 veya PA6 GFR 30',
+      'CİVATA': 'Çelik',
+      'SOMUN': 'Çelik',
+      'YÜZEY': 'Çinko kaplama veye siyah boya',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '462 > Sıkıştırmalı Kilit': {
+    code: '462',
+    name: 'Sıkıştırmalı Kilit',
+    description: '',
+    materials: {
+      'KOVAN': 'PA6 GFR 30',
+      'KELEBEK': 'PA6 GFR 30',
+      'CİVATA': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
   '112 > Klima Santral Kilidi Aksesuarları': {
     code: '112',
     name: 'Klima Santral Kilidi Aksesuarları',
@@ -1290,7 +1383,7 @@ function ProductDetail() {
       return { code: match[1], name: match[2] }
     }
     // Kod yoksa, sadece ismi döndür
-    if (name.includes('Kollu Kilit') || name.includes('Dikey Hareketli') || name.includes('İspanyolet') || name.includes('Dikey Mekanizmalı') || name.includes('İç Kilitleme') || name.includes('ispanyolet') || name.includes('Kabin Kilidi') || name.includes('T Kollu') || name.includes('"T" Kollu') || name.includes('\'T\' Kollu') || name.includes('Trafo Kilidi') || name.includes('Klima Santral Kilidi')) {
+    if (name.includes('Kollu Kilit') || name.includes('Dikey Hareketli') || name.includes('İspanyolet') || name.includes('Dikey Mekanizmalı') || name.includes('İç Kilitleme') || name.includes('ispanyolet') || name.includes('Kabin Kilidi') || name.includes('T Kollu') || name.includes('"T" Kollu') || name.includes('\'T\' Kollu') || name.includes('Trafo Kilidi') || name.includes('Klima Santral Kilidi') || name.includes('Klima Kabin Kilidi') || name.includes('Fonsiyonel Kilit Menteşe') || name.includes('Profil Bağlantı Parçası') || name.includes('Sıkıştırmalı Kilit')) {
       return { code: null, name: name }
     }
     return null
@@ -1300,7 +1393,7 @@ function ProductDetail() {
   const productDetail = productDetails[productName]
   
   // Kollu kilit ürünleri için otomatik detay sayfası
-  const isLockProduct = productInfo && (productInfo.name.includes('Kollu Kilit') || productInfo.name.includes('Dikey Hareketli') || productInfo.name.includes('İspanyolet') || productInfo.name.includes('Dikey Mekanizmalı') || productInfo.name.includes('İç Kilitleme') || productInfo.name.includes('ispanyolet') || productInfo.name.includes('Kabin Kilidi') || productInfo.name.includes('T Kollu') || productInfo.name.includes('"T" Kollu') || productInfo.name.includes('\'T\' Kollu') || productInfo.name.includes('Trafo Kilidi') || productInfo.name.includes('Klima Santral Kilidi'))
+  const isLockProduct = productInfo && (productInfo.name.includes('Kollu Kilit') || productInfo.name.includes('Dikey Hareketli') || productInfo.name.includes('İspanyolet') || productInfo.name.includes('Dikey Mekanizmalı') || productInfo.name.includes('İç Kilitleme') || productInfo.name.includes('ispanyolet') || productInfo.name.includes('Kabin Kilidi') || productInfo.name.includes('T Kollu') || productInfo.name.includes('"T" Kollu') || productInfo.name.includes('\'T\' Kollu') || productInfo.name.includes('Trafo Kilidi') || productInfo.name.includes('Klima Santral Kilidi') || productInfo.name.includes('Klima Kabin Kilidi') || productInfo.name.includes('Fonsiyonel Kilit Menteşe') || productInfo.name.includes('Profil Bağlantı Parçası') || productInfo.name.includes('Sıkıştırmalı Kilit'))
   const hasDetail = !!productDetail || isLockProduct
   
   // Kollu kilit resim mapping (ürün koduna göre)
@@ -1323,6 +1416,38 @@ function ProductDetail() {
       if (kabinKilitImageMap[code]) {
         return kabinKilitImageMap[code]
       }
+    }
+    
+    // 612 > Klima Santral Kilidi için özel resim mapping (önce kontrol edilmeli)
+    if (code === '612') {
+      if (productName?.includes('Klima Santral Kilidi')) {
+        // Önce kartlardaki resmi kontrol et (productImage state'i)
+        if (productImage) {
+          return productImage
+        }
+        // Eğer productImage yoksa, ürün adına göre resim seç
+        if (productName?.includes('T\' Kollu') || productName?.includes('\'T\' Kollu') || productName?.includes('T Kollu')) {
+          return '/612_t_kolluklimasantralkilidi.jpg'
+        }
+        // Genel 612 > Klima Santral Kilidi için
+        return '/612klimasantralkilidi.jpg'
+      }
+      if (productName?.includes('Klima Kabin Kilidi')) {
+        // Önce kartlardaki resmi kontrol et (productImage state'i)
+        if (productImage) {
+          return productImage
+        }
+        // Eğer productImage yoksa, ürün adına göre resim seç
+        if (productName?.includes('L\' Kollu') || productName?.includes('\'L\' Kollu') || productName?.includes('L Kollu')) {
+          return '/612_l_kollukabinkilidi.jpg'
+        }
+        return '/612klimakabinkilidi.jpg'
+      }
+    }
+    
+    // 712 > Fonsiyonel Kilit Menteşe için özel resim mapping
+    if (code === '712' && productName?.includes('Fonsiyonel Kilit Menteşe')) {
+      return '/712fonsiyonelkilitmese.jpg'
     }
     
     // Klima Santral Kilidi için özel resim mapping
@@ -1372,8 +1497,18 @@ function ProductDetail() {
       return '/012klimasantralkilidi.jpg'
     }
     
-    // T Kollu Kabin Kilitleri için özel resim mapping
-    if (productName?.includes('T Kollu') || productName?.includes('"T" Kollu') || productName?.includes('\'T\' Kollu') || productName?.includes('Trafo Kilidi')) {
+    // 078 > Profil Bağlantı Parçası için özel resim mapping
+    if (code === '078' && productName?.includes('Profil Bağlantı Parçası')) {
+      return '/078_profilbaglantıparcasi.jpg'
+    }
+    
+    // 462 > Sıkıştırmalı Kilit için özel resim mapping
+    if (code === '462' && productName?.includes('Sıkıştırmalı Kilit')) {
+      return '/462_sikistirmalikilit.jpg'
+    }
+    
+    // T Kollu Kabin Kilitleri için özel resim mapping (Klima içermeyen Kabin Kilitleri için)
+    if (!productName?.includes('Klima') && (productName?.includes('T Kollu') || productName?.includes('"T" Kollu') || productName?.includes('\'T\' Kollu') || productName?.includes('Trafo Kilidi'))) {
       const tKolluKabinKilitImageMap = {
         '014': '/014tkollukabinkilidi.jpg',
         '015': '/015tkollukabinkilidi.jpg',
@@ -1469,6 +1604,8 @@ function ProductDetail() {
   const getPdfPath = () => {
     const code = productDetail?.code || productInfo?.code
     const name = productDetail?.name || productInfo?.name || productName
+    // Hem productName hem de name'i kontrol etmek için birleştir
+    const fullName = productName || name
     
     // Özel durumlar
     if (code === '001' && name?.includes('Küçük Versiyon')) {
@@ -1476,7 +1613,7 @@ function ProductDetail() {
     }
     
     // Kabin kilitleri için özel PDF mapping
-    if (productName?.includes('Kabin Kilidi')) {
+    if (fullName?.includes('Kabin Kilidi')) {
       const kabinKilitPdfMap = {
         '016': productName?.includes('Metal Gövde') ? '/016-kabin-kilidi-metal-govde.pdf' :
                productName?.includes('Plastik Gövde') ? '/016-kabin-kilidi-plastik-govde.pdf' :
@@ -1492,54 +1629,89 @@ function ProductDetail() {
       }
     }
     
+    // 612 > Klima Santral Kilidi için özel PDF mapping (önce kontrol edilmeli)
+    if (code === '612' && fullName?.includes('Klima Santral Kilidi')) {
+      // T Kollu kontrolü - farklı formatları kontrol et
+      if (fullName?.includes('T\' Kollu') || 
+          fullName?.includes('\'T\' Kollu') || 
+          fullName?.includes('T Kollu') ||
+          fullName?.includes('"T" Kollu')) {
+        return '/612-klima-santral-kilidi-t-kollu.pdf'
+      }
+      return '/612_Klima_Santral_Kilidi.pdf'
+    }
+    
+    // 712 > Fonsiyonel Kilit Menteşe için özel PDF mapping
+    if (code === '712' && fullName?.includes('Fonsiyonel Kilit Menteşe')) {
+      return '/712-fonsiyonel-kilit-mentese.pdf'
+    }
+    
     // Klima Santral Kilidi için özel PDF mapping
-    if (productName?.includes('Klima Santral Kilidi')) {
+    if (fullName?.includes('Klima Santral Kilidi')) {
       // 112 > Klima Santral Kilidi için özel mapping
       if (code === '112') {
-        if (productName?.includes('Aksesuarları')) {
+        if (fullName?.includes('Aksesuarları')) {
           return '/112-klima-santral-kilidi-aksesuarlari.pdf'
         }
-        if (productName?.includes('Versiyon 2')) {
+        if (fullName?.includes('Versiyon 2')) {
           return '/112-klima-santral-kilidiversiyon2.pdf'
         }
-        if (productName?.includes('Versiyon 3')) {
+        if (fullName?.includes('Versiyon 3')) {
           return '/112-klima-santral-kilidiversiyon3.pdf'
         }
-        if (productName?.includes('Versiyon 4')) {
+        if (fullName?.includes('Versiyon 4')) {
           return '/112-klima-santral-kilidi_Versiyon4.pdf'
         }
         // Versiyon 1 ve genel 112 > Klima Santral Kilidi için
         return '/112-klima-santral-kilidi.pdf'
       }
       // 012 > Klima Santral Kilidi için
-      if (productName?.includes('Versiyon 1')) {
+      if (fullName?.includes('Versiyon 1')) {
         return '/012-klima-santral-kilidi.pdf'
       }
-      if (productName?.includes('Versiyon 2')) {
+      if (fullName?.includes('Versiyon 2')) {
         return '/012-klima-santral-kilidi (1).pdf'
       }
-      if (productName?.includes('Versiyon 3')) {
+      if (fullName?.includes('Versiyon 3')) {
         return '/012-klima-santral-kilidi (2).pdf'
       }
-      if (productName?.includes('Versiyon 4')) {
+      if (fullName?.includes('Versiyon 4')) {
         return '/012-klima-santral-kilidi (3).pdf'
       }
-      if (productName?.includes('Aksesuarı')) {
+      if (fullName?.includes('Aksesuarı')) {
         return '/012-klima-santral-kilidi-aksesuari.pdf'
       }
       // Genel 012 > Klima Santral Kilidi için
       return '/012-klima-santral-kilidi (3).pdf'
     }
     
+    // 612 > Klima Kabin Kilidi için özel PDF mapping
+    if (code === '612' && fullName?.includes('Klima Kabin Kilidi')) {
+      if (fullName?.includes('L\' Kollu') || fullName?.includes('\'L\' Kollu') || fullName?.includes('L Kollu') || fullName?.includes('"L" Kollu')) {
+        return '/612-klima-kabin-kilidi-l-kollu.pdf'
+      }
+      return '/612-klima-kabin-kilidi.pdf'
+    }
+    
+    // 078 > Profil Bağlantı Parçası için özel PDF mapping
+    if (code === '078' && fullName?.includes('Profil Bağlantı Parçası')) {
+      return '/078-profil-baglanti-parcasi-3d.pdf'
+    }
+    
+    // 462 > Sıkıştırmalı Kilit için özel PDF mapping
+    if (code === '462' && fullName?.includes('Sıkıştırmalı Kilit')) {
+      return '/462-sikistirmali-kilit.pdf'
+    }
+    
     // T Kollu Kabin Kilitleri için özel PDF mapping
-    if (productName?.includes('T Kollu') || productName?.includes('"T" Kollu') || productName?.includes('\'T\' Kollu') || productName?.includes('Trafo Kilidi')) {
+    if (fullName?.includes('T Kollu') || fullName?.includes('"T" Kollu') || fullName?.includes('\'T\' Kollu') || fullName?.includes('Trafo Kilidi')) {
       const tKolluKabinKilitPdfMap = {
         '014': '/014-t-kollu-kabin-kilidi.pdf',
         '015': '/015-t-kollu-kabin-kilidi.pdf',
         '114': '/114-mini-t-kollu-kabin-kilidi.pdf',
         '115': '/115-t-kollu-kabin-kilidi.pdf',
         '118': '/118-trafo-kilidi.pdf',
-        '214': productName?.includes('"T"') ? '/214-t-kollu-kabin-kilidi.pdf' : '/214-t-kollu-kabin-kilidi (1).pdf',
+        '214': fullName?.includes('"T"') ? '/214-t-kollu-kabin-kilidi.pdf' : '/214-t-kollu-kabin-kilidi (1).pdf',
         '215': '/215-t-kollu-kabin-kilidi.pdf',
         '315': '/315-t-kollu-kabin-kilidi.pdf',
         '018': '/018-trafo-kilidi.pdf',
@@ -1551,17 +1723,17 @@ function ProductDetail() {
     }
     
     // İspanyolet ürünleri için özel PDF mapping
-    if (productName?.includes('İspanyolet') || productName?.includes('Dikey Hareketli') || productName?.includes('Dikey Mekanizmalı') || productName?.includes('İç Kilitleme') || productName?.includes('ispanyolet')) {
+    if (fullName?.includes('İspanyolet') || fullName?.includes('Dikey Hareketli') || fullName?.includes('Dikey Mekanizmalı') || fullName?.includes('İç Kilitleme') || fullName?.includes('ispanyolet')) {
       const ispanyoletPdfMap = {
         '002': '/002-ispanyolet-sistemli-kollu-kilit.pdf',
         '003': '/003-ispanyolet-sistemli-pano-kilidi.pdf',
         '007': '/007-ispanyolet-sistemli-kollu-kilit.pdf',
         '102': '/102-ispanyolet-sistemli-kollu-kilit.pdf',
-        '103': name?.includes('Pano') ? '/103-ispanyolet-sistemli-pano-kilidi.pdf' : '/103-ispanyolet-sistemli-kollu-kilit.pdf',
+        '103': fullName?.includes('Pano') ? '/103-ispanyolet-sistemli-pano-kilidi.pdf' : '/103-ispanyolet-sistemli-kollu-kilit.pdf',
         '104': '/104-dikey-mekanizmali-kollu-kilit.pdf',
         '107': '/107-ispanyolet-sistemli-kollu-kilit.pdf',
         '109': '/109-ispanyolet-sistemli-kollu-kilit.pdf',
-        '203': name?.includes('Pano') ? '/203-ispanyolet-sistemli-pano-kilit.pdf' : '/203-ispanyolet-sistemli-kollu-kilit.pdf',
+        '203': fullName?.includes('Pano') ? '/203-ispanyolet-sistemli-pano-kilit.pdf' : '/203-ispanyolet-sistemli-kollu-kilit.pdf',
         '204': '/204-dikey-hareketli-kollu-kilit.pdf',
         '207': '/207-ispanyolet-sistemli-kollu-kilit.pdf',
         '209': '/209-ispanyolet-sistemli-kollu-kilit.pdf',
@@ -1740,18 +1912,35 @@ function ProductDetail() {
                                 <th className="border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-slate-900">C</th>
                                 <th className="border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-slate-900">D</th>
                               </>
+                            ) : productDetail.versions[0]?.urunKodu ? (
+                              <>
+                                {productDetail.versions[0]?.malzeme ? (
+                                  <>
+                                    <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Ürün Kodu</th>
+                                    <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Ürün Adı</th>
+                                    <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Malzeme</th>
+                                    <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Yüzey</th>
+                                  </>
+                                ) : (
+                                  <>
+                                    <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Ürün Kodu</th>
+                                    <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Ürün Adı</th>
+                                    <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Açıklama</th>
+                                  </>
+                                )}
+                              </>
+                            ) : productDetail.versions[0]?.malzeme ? (
+                              <>
+                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Ürün Kodu</th>
+                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Ürün Adı</th>
+                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Açıklama</th>
+                              </>
                             ) : productDetail.versions[0]?.malzeme ? (
                               <>
                                 <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Versiyon</th>
                                 <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Malzeme</th>
                                 <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Yüzey</th>
                                 <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Dil</th>
-                              </>
-                            ) : productDetail.versions[0]?.urunKodu ? (
-                              <>
-                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Ürün Kodu</th>
-                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Ürün Adı</th>
-                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Açıklama</th>
                               </>
                             ) : null}
                           </tr>
@@ -1769,18 +1958,25 @@ function ProductDetail() {
                                   <td className="border border-slate-200 px-4 py-3 text-sm text-center text-slate-700">{version.C}</td>
                                   <td className="border border-slate-200 px-4 py-3 text-sm text-center text-slate-700">{version.D}</td>
                                 </>
-                              ) : version.malzeme ? (
+                              ) : version.urunKodu && version.malzeme ? (
                                 <>
-                                  <td className="border border-slate-200 px-4 py-3 text-sm font-medium text-slate-900">{version.version}</td>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm font-medium text-slate-900">{version.urunKodu}</td>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.urunAdi}</td>
                                   <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.malzeme}</td>
                                   <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.yuzey}</td>
-                                  <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.dil}</td>
                                 </>
                               ) : version.urunKodu ? (
                                 <>
                                   <td className="border border-slate-200 px-4 py-3 text-sm font-medium text-slate-900">{version.urunKodu}</td>
                                   <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.urunAdi}</td>
                                   <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.aciklama}</td>
+                                </>
+                              ) : version.malzeme ? (
+                                <>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm font-medium text-slate-900">{version.version}</td>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.malzeme}</td>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.yuzey}</td>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.dil}</td>
                                 </>
                               ) : null}
                             </tr>

@@ -128,8 +128,8 @@ const lockSections = [
       '112 > Klima Santral Kilidi Aksesuarları',
       '712 > Fonsiyonel Kilit Menteşe',
       '612 > Klima Santral Kilidi',
-      '612 > Klima Santral Kilidi \'T\' Kollu',
-      '612 > Klima Kabin Kilidi \'L\' Kollu',
+      '612 > Klima Santral Kilidi T Kollu',
+      '612 > Klima Kabin Kilidi L Kollu',
       '078 > Profil Bağlantı Parçası (3D)',
       '462 > Sıkıştırmalı Kilit',
     ],
@@ -586,8 +586,26 @@ function Products() {
     
     const code = extractCode(itemName)
     
-    // Kabin kilitleri için özel resim mapping
-    if (code && itemName.includes('Kabin Kilidi')) {
+    // Klima Kabin Kilidi için özel resim mapping (en önce kontrol edilmeli - 612 için)
+    // Bu kontrol MUTLAKA en başta olmalı ve diğer kontrollerden önce çalışmalı
+    if (code === '612' && itemName.includes('Klima Kabin Kilidi')) {
+      // L Kollu kontrolü - farklı formatları kontrol et (tırnak işaretleri dahil)
+      // Ürün adı: "612 > Klima Kabin Kilidi 'L' Kollu" formatında
+      const hasLKollu = itemName.includes('L\' Kollu') || 
+                        itemName.includes('\'L\' Kollu') || 
+                        itemName.includes('L Kollu') ||
+                        itemName.includes('"L" Kollu') ||
+                        itemName.includes("'L' Kollu") ||
+                        /L['"]\s*Kollu/i.test(itemName)
+      
+      if (hasLKollu) {
+        return '/612_l_kollukabinkilidi.jpg'
+      }
+      return '/612klimakabinkilidi.jpg'
+    }
+    
+    // Kabin kilitleri için özel resim mapping (Klima içermeyen Kabin Kilitleri için)
+    if (code && itemName.includes('Kabin Kilidi') && !itemName.includes('Klima')) {
       const kabinKilitImageMap = {
         '016': itemName.includes('Metal Gövde') ? '/016kabinkilidi_metalgovde.jpg' : 
                itemName.includes('Plastik Gövde') ? '/016kabinkilidi_plastikgovde.jpg' :
@@ -603,8 +621,8 @@ function Products() {
       }
     }
     
-    // T Kollu Kabin Kilitleri için özel resim mapping
-    if (code && (itemName.includes('T Kollu') || itemName.includes('"T" Kollu') || itemName.includes('\'T\' Kollu') || itemName.includes('Trafo Kilidi'))) {
+    // T Kollu Kabin Kilitleri için özel resim mapping (Klima içermeyen Kabin Kilitleri için)
+    if (code && !itemName.includes('Klima') && (itemName.includes('T Kollu') || itemName.includes('"T" Kollu') || itemName.includes('\'T\' Kollu') || itemName.includes('Trafo Kilidi'))) {
       const tKolluKabinKilitImageMap = {
         '014': '/014tkollukabinkilidi.jpg',
         '015': '/015tkollukabinkilidi.jpg',
@@ -692,6 +710,38 @@ function Products() {
       if (kolluKilitImageMap[code]) {
         return kolluKilitImageMap[code]
       }
+    }
+    
+    // Klima Santral Kilidi için özel resim mapping (612 için T Kollu kontrolü ile)
+    // NOT: Klima Kabin Kilidi kontrolünden sonra gelmeli
+    if (code && itemName.includes('Klima Santral Kilidi') && !itemName.includes('Klima Kabin Kilidi')) {
+      const klimaSantralImageMap = {
+        '012': '/012klimasantralkilidi.jpg',
+        '112': '/112klimasantralkilidi.jpg',
+        '612': (itemName.includes('T\' Kollu') || itemName.includes('\'T\' Kollu') || itemName.includes('T Kollu') || itemName.includes("'T' Kollu")) ? '/612_t_kolluklimasantralkilidi.jpg' : '/612klimasantralkilidi.jpg',
+      }
+      
+      if (klimaSantralImageMap[code]) {
+        return klimaSantralImageMap[code]
+      }
+      
+      // Kod bulunamazsa genel resim
+      return '/klimasantralurunleri.png'
+    }
+    
+    // 712 > Fonsiyonel Kilit Menteşe için özel resim mapping
+    if (code === '712' && itemName.includes('Fonsiyonel Kilit Menteşe')) {
+      return '/712fonsiyonelkilitmese.jpg'
+    }
+    
+    // 078 > Profil Bağlantı Parçası için özel resim mapping
+    if (code === '078' && itemName.includes('Profil Bağlantı Parçası')) {
+      return '/078_profilbaglantıparcasi.jpg'
+    }
+    
+    // 462 > Sıkıştırmalı Kilit için özel resim mapping
+    if (code === '462' && itemName.includes('Sıkıştırmalı Kilit')) {
+      return '/462_sikistirmalikilit.jpg'
     }
     
     // Ürün bazlı özel mapping
