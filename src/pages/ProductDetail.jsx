@@ -1015,6 +1015,52 @@ const productDetails = {
       { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
     ],
   },
+  '012 > Klima Santral Kilidi (Versiyon 1)': {
+    code: '012',
+    name: 'Klima Santral Kilidi (Versiyon 1)',
+    description: '• Sökülebilir çevirme kolu.\n• Döner makaralı dil sayesinde kolay kilitleme sağlar.\n• Anahtarlı anahtarsız ve göbekli kullanım mevcuttur.\n• Farklı kapı kalınlıklarında kullanılabilir.\n• Kabin içinden kolu çevirerek açacak emniyet kolu vardır.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'DİL': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '012 > Klima Santral Kilidi (Versiyon 2)': {
+    code: '012',
+    name: 'Klima Santral Kilidi (Versiyon 2)',
+    description: '• İçeriden basınçlı klima santrallerinde basınçlı kilitleme yapar.\n• Makaralı dil sayesinde kolay kilitleme yapar.\n• Farklı kapı kalınlıklarında kullanılabilir.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'DİL': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '012 > Klima Santral Kilidi (Versiyon 3)': {
+    code: '012',
+    name: 'Klima Santral Kilidi (Versiyon 3)',
+    description: '• Döner makaralı dil sayesinde kolay kilitleme sağlar\n• Anahtarsız uygulamalarda kullanılır\n• Farklı kapı kalınlıkları için uygundur.\n• T Kolun küçük yapısı sayesinde az yer tutar.',
+    materials: {
+      'GÖVDE': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Polyamide DIN-EN ISO 1043-1 PA6 GFR 30',
+      'DİL': 'Çelik',
+      'AYAR CİVATASI': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
 }
 
 // Ürün logoları mapping
@@ -1093,7 +1139,7 @@ function ProductDetail() {
       return { code: match[1], name: match[2] }
     }
     // Kod yoksa, sadece ismi döndür
-    if (name.includes('Kollu Kilit') || name.includes('Dikey Hareketli') || name.includes('İspanyolet') || name.includes('Dikey Mekanizmalı') || name.includes('İç Kilitleme') || name.includes('ispanyolet') || name.includes('Kabin Kilidi') || name.includes('T Kollu') || name.includes('"T" Kollu') || name.includes('\'T\' Kollu') || name.includes('Trafo Kilidi')) {
+    if (name.includes('Kollu Kilit') || name.includes('Dikey Hareketli') || name.includes('İspanyolet') || name.includes('Dikey Mekanizmalı') || name.includes('İç Kilitleme') || name.includes('ispanyolet') || name.includes('Kabin Kilidi') || name.includes('T Kollu') || name.includes('"T" Kollu') || name.includes('\'T\' Kollu') || name.includes('Trafo Kilidi') || name.includes('Klima Santral Kilidi')) {
       return { code: null, name: name }
     }
     return null
@@ -1103,7 +1149,7 @@ function ProductDetail() {
   const productDetail = productDetails[productName]
   
   // Kollu kilit ürünleri için otomatik detay sayfası
-  const isLockProduct = productInfo && (productInfo.name.includes('Kollu Kilit') || productInfo.name.includes('Dikey Hareketli') || productInfo.name.includes('İspanyolet') || productInfo.name.includes('Dikey Mekanizmalı') || productInfo.name.includes('İç Kilitleme') || productInfo.name.includes('ispanyolet') || productInfo.name.includes('Kabin Kilidi') || productInfo.name.includes('T Kollu') || productInfo.name.includes('"T" Kollu') || productInfo.name.includes('\'T\' Kollu') || productInfo.name.includes('Trafo Kilidi'))
+  const isLockProduct = productInfo && (productInfo.name.includes('Kollu Kilit') || productInfo.name.includes('Dikey Hareketli') || productInfo.name.includes('İspanyolet') || productInfo.name.includes('Dikey Mekanizmalı') || productInfo.name.includes('İç Kilitleme') || productInfo.name.includes('ispanyolet') || productInfo.name.includes('Kabin Kilidi') || productInfo.name.includes('T Kollu') || productInfo.name.includes('"T" Kollu') || productInfo.name.includes('\'T\' Kollu') || productInfo.name.includes('Trafo Kilidi') || productInfo.name.includes('Klima Santral Kilidi'))
   const hasDetail = !!productDetail || isLockProduct
   
   // Kollu kilit resim mapping (ürün koduna göre)
@@ -1126,6 +1172,21 @@ function ProductDetail() {
       if (kabinKilitImageMap[code]) {
         return kabinKilitImageMap[code]
       }
+    }
+    
+    // Klima Santral Kilidi için özel resim mapping
+    if (productName?.includes('Klima Santral Kilidi')) {
+      if (productName?.includes('Versiyon 1')) {
+        return '/012klimasantralkilidi.jpg'
+      }
+      if (productName?.includes('Versiyon 2')) {
+        return '/012klimasantralkilidi2.jpg'
+      }
+      if (productName?.includes('Versiyon 3')) {
+        return '/012klimasantralkilidi3.jpg'
+      }
+      // Genel durum için
+      return '/012klimasantralkilidi.jpg'
     }
     
     // T Kollu Kabin Kilitleri için özel resim mapping
@@ -1246,6 +1307,21 @@ function ProductDetail() {
       if (kabinKilitPdfMap[code]) {
         return kabinKilitPdfMap[code]
       }
+    }
+    
+    // Klima Santral Kilidi için özel PDF mapping
+    if (productName?.includes('Klima Santral Kilidi')) {
+      if (productName?.includes('Versiyon 1')) {
+        return '/012-klima-santral-kilidi.pdf'
+      }
+      if (productName?.includes('Versiyon 2')) {
+        return '/012-klima-santral-kilidi (1).pdf'
+      }
+      if (productName?.includes('Versiyon 3')) {
+        return '/012-klima-santral-kilidi (2).pdf'
+      }
+      // Genel durum için
+      return '/012-klima-santral-kilidi.pdf'
     }
     
     // T Kollu Kabin Kilitleri için özel PDF mapping

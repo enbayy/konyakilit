@@ -105,31 +105,19 @@ const lockSections = [
       '012 > Klima Santral Kilidi',
       '012 > Klima Santral Kilidi',
       '012 > Klima Santral Kilidi',
-      'Klima Santral Kilidi Aksesuarı',
-      '012 > Klima Santral Kilidi Aksesuarı',
-      'Klima Santral Kilidi',
       '012 > Klima Santral Kilidi',
-      'Klima Santral Kilidi',
+      '012 > Klima Santral Kilidi Aksesuarı',
       '112 > Klima Santral Kilidi',
-      'Klima Santral Kilidi',
       '112 > Klima Santral Kilidi',
-      'Klima Santral Kilidi Aksesuarları',
+      '112 > Klima Santral Kilidi',
       '112 > Klima Santral Kilidi Aksesuarları',
-      'Klima Santral Kilidi',
       '112 > Klima Santral Kilidi',
-      'Klima Santral Kilidi',
       '112 > Klima Santral Kilidi',
-      'Fonsiyonel Kilit Menteşe',
       '712 > Fonsiyonel Kilit Menteşe',
-      'Klima Santral Kilidi',
       '612 > Klima Santral Kilidi',
-      'Klima Santral Kilidi \'T\' Kollu',
       '612 > Klima Santral Kilidi \'T\' Kollu',
-      'Klima Kabin Kilidi \'L\' Kollu',
       '612 > Klima Kabin Kilidi \'L\' Kollu',
-      'Profil Bağlantı Parçası (3D)',
       '078 > Profil Bağlantı Parçası (3D)',
-      'Sıkıştırmalı Kilit',
       '462 > Sıkıştırmalı Kilit',
     ],
   },
@@ -585,6 +573,14 @@ function SectionProducts() {
   // Section'ın ürünlerini bul
   const currentItems = useMemo(() => {
     if (!sectionTitle) return []
+    // KİLİMA SANTRAL ÜRÜNLERİ için özel ürün listesi
+    if (sectionTitle === 'KİLİMA SANTRAL ÜRÜNLERİ') {
+      return [
+        '012 > Klima Santral Kilidi (Versiyon 1)',
+        '012 > Klima Santral Kilidi (Versiyon 2)',
+        '012 > Klima Santral Kilidi (Versiyon 3)',
+      ]
+    }
     for (const group of catalogGroups) {
       for (const section of group.sections) {
         if (section.title === sectionTitle) {
@@ -689,6 +685,22 @@ function SectionProducts() {
       if (ispanyoletImageMap[code]) {
         return ispanyoletImageMap[code]
       }
+    }
+    
+    // Klima Santral Kilidi için özel resim mapping
+    if (code && itemName.includes('Klima Santral Kilidi')) {
+      const klimaSantralImageMap = {
+        '012': '/012klimasantralkilidi.jpg',
+        '112': '/112klimasantralkilidi.jpg',
+        '612': '/612klimasantralkilidi.jpg',
+      }
+      
+      if (klimaSantralImageMap[code]) {
+        return klimaSantralImageMap[code]
+      }
+      
+      // Kod bulunamazsa genel resim
+      return '/klimasantralurunleri.png'
     }
     
     if (code && itemName.includes('Kollu Kilit')) {
@@ -934,8 +946,17 @@ function SectionProducts() {
 
         {/* Ürünler */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {currentItems.map((item) => {
-            const img = getPumpImage(item)
+          {currentItems.map((item, index) => {
+            // KİLİMA SANTRAL ÜRÜNLERİ için özel resim mapping (index'e göre)
+            let img = getPumpImage(item)
+            if (sectionTitle === 'KİLİMA SANTRAL ÜRÜNLERİ' && item.includes('012 > Klima Santral Kilidi')) {
+              const klimaSantralImages = [
+                '/012klimasantralkilidi.jpg',
+                '/012klimasantralkilidi2.jpg',
+                '/012klimasantralkilidi3.jpg',
+              ]
+              img = klimaSantralImages[index % klimaSantralImages.length]
+            }
             const productSlug = encodeURIComponent(item.toLowerCase().replace(/\s+/g, '-'))
             // Ürün adından sayıyı çıkar (örn: "001 > Kollu Kilit" -> code: "001", name: "Kollu Kilit")
             const match = item.match(/^(\d+(?:\s*[A-Z]\d+)?)\s*>\s*(.+)$/)
