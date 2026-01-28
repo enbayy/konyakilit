@@ -848,6 +848,173 @@ const productDetails = {
       { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
     ],
   },
+  '214 > "T" Kollu Kabin Kilidi': {
+    code: '214',
+    name: '"T" Kollu Kabin Kilidi',
+    description: '• Yalıtımlı kapılarda sıkıştırma özelliği sayesinde sızdırmazlık sağlar.\n• Kilitleme mesafesi ayarlanabilir.\n• Makaralı dil sayesinde kolay kilitleme sağlar.\n• Asma kilit uygulaması mevcuttur.',
+    materials: {
+      'GÖVDE': 'Çelik',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+      'CİVATA': 'Paslanmaz çelik',
+      'CONTA': 'Poliüretan',
+      'YÜZEY': 'KOL: Krom kaplama veya siyah boya\nGÖVDE: Siyah boya',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '214 > T Kollu Kabin Kilidi': {
+    code: '214',
+    name: 'T Kollu Kabin Kilidi',
+    description: '• Yalıtımlı kapılarda sıkıştırma özelliği sayesinde sızdırmazlık sağlar.\n• Kilitleme mesafesi ayarlanabilir.\n• Makaralı dil sayesinde kolay kilitleme sağlar.\n• Asma kilit uygulaması mevcuttur.',
+    materials: {
+      'KOVAN': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+      'CONTA': 'Poliüretan',
+      'YÜZEY': 'KOL: Krom kaplama veya siyah boya\nKOVAN: Siyah boya',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '014 > "T" Kollu Kabin Kilidi': {
+    code: '014',
+    name: '"T" Kollu Kabin Kilidi',
+    description: '• Sabit kilitleme mesafesi mümkündür.\n• Tek noktadan kilitleme sağlar.\n• Makaralı dil sayesinde kolay kilitleme sağlar.\n• Yalıtımlı kapılarda sıkıştırma özelliği ile sızdırmazlık sağlar.\n• Asma kilit uygulaması mevcuttur.\n• Kilit, civata veya perçinleme metodu ile montaj edilebilir.\n• İstenirse fişesiz olarak temin edilebilir.',
+    materials: {
+      'GÖVDE': 'Polyamid DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'YÜZEY': 'KOL: Krom kaplama veya siyah boya',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '114 > Mini \'T\' Kollu Kabin Kilidi': {
+    code: '114',
+    name: 'Mini \'T\' Kollu Kabin Kilidi',
+    description: '• Tek noktadan kilitleme sağlar.\n• Tekerlekli dil sayesinde kolay kilitleme\n• 4 mm sıkıştırma özelliği vardır.\n• Asma kilit takılabilir.\n• Kendinden civatalı, harici civatalı ve sac parça ile montajı mümkündür.\n• Sabit kilitleme mesafesi mümkündür.\n• Farklı kilitleme mesafeleri için (LH) Mesan ile kontağa geçiniz.',
+    materials: {
+      'GÖVDE': 'Polyamid DIN-EN ISO 1043-1 PA6 GFR 30',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'SİLİNDİR': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'YÜZEY': 'KOL: Krom kaplama veya siyah boya',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '315 > "T" Kollu Kabin Kilidi': {
+    code: '315',
+    name: '"T" Kollu Kabin Kilidi',
+    description: '• Fişeli kilitleme\n• Özel amaçlı malzeme dolaplarında uygulanır.\n• Asma kilit kanca çapı max 9 mm olmalıdır.\n• Ayarlanabilir dil sayesinde farklı ölçülerde kilitleme sağlar.\n• Özel dizayn T kol, kullanım kolaylığı sağlar.',
+    materials: {
+      'GÖVDE': 'Paslanmaz çelik',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'ASMA KİLİT HAMİLİ': 'Paslanmaz çelik',
+      'DİL': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '215 > "T" Kollu Kabin Kilidi': {
+    code: '215',
+    name: '"T" Kollu Kabin Kilidi',
+    description: '• Fişeli kilitleme\n• Özel amaçlı malzeme dolaplarında uygulanır.\n• Ayarlanabilir dil sayesinde farklı ölçülerde kilitleme sağlar.\n• Özel dizayn T kol kullanım kolaylığı sağlar.',
+    materials: {
+      'GÖVDE': 'Paslanmaz çelik',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '115 > "T" Kollu Kabin Kilidi': {
+    code: '115',
+    name: '"T" Kollu Kabin Kilidi',
+    description: '• Özel amaçlı malzeme dolaplarında uygulanır.\n• Asma kilit kanca çapı max 9 mm olmalıdır.\n• Ayarlanabilir dil sayesinde farklı ölçülerde kilitleme sağlar.\n• Özel dizayn T kol, kullanım kolaylığı sağlar.',
+    materials: {
+      'GÖVDE': 'Paslanmaz çelik',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'ASMA KİLİT HAMİLİ': 'Paslanmaz çelik',
+      'DİL': 'Çelik',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '015 > T Kollu Kabin Kilidi': {
+    code: '015',
+    name: 'T Kollu Kabin Kilidi',
+    description: '• Asma kilit uygulaması sayesinde yüksek güvenlik sağlar.\n• Max. 9 mm lik kanca çaplı asma kilit uygulanmalıdır.\n• Yatay ve dikey uygulama yapılır.\n• 3 Noktadan kilitleme sağlar.',
+    materials: {
+      'GÖVDE': 'Çelik',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'DİL': 'Çelik',
+      'CİVATA': 'Paslanmaz çelik',
+      'CONTA': 'Poliüretan',
+      'YÜZEY': 'GÖVDE: Siyah boya\nKOL: Krom kaplama veya siyah boya',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '018 > Trafo Kilidi': {
+    code: '018',
+    name: 'Trafo Kilidi',
+    description: '• Orta gerilim panolarında uygulanır.\n• Dökme conta sayesinde sızdırmazlık sağlar.\n• Max 9 mm kanca çaplı asma kilit takılır.\n• Boyasız olarak da satışı gerçekleştirilebilir.\n• Daha fazla dil seçeneği için lütfen Mesan ile iletişime geçiniz.',
+    materials: {
+      'GÖVDE': 'Alüminyum',
+      'KAPAK': 'Alüminyum',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'PİM': 'Paslanmaz çelik',
+      'ASMA KİLİT HAMİLİ': 'Zamak',
+    },
+    versions: [
+      { version: '1', malzeme: 'Alüminyum', yuzey: 'Toz boya (Siyah)', dil: '00' },
+    ],
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
+  '118 > Trafo Kilidi': {
+    code: '118',
+    name: 'Trafo Kilidi',
+    description: '• Alçak gerilim uygulamaları için kullanılabilir.\n• Sızdırmazlık contası isteğe bağlıdır.\n• Max10 mm kanca çaplı asma kilit takılır.\n• Opsiyonel olarak kaplamasız veya boyasız sevk edilir.\n• Dil seçenekleri için Mesan ile iletişime geçiniz.',
+    materials: {
+      'GÖVDE': 'Alüminyum',
+      'KAPAK': 'Alüminyum',
+      'KOL': 'Zamak DIN-EN 1774-ZnAl4Cu1',
+      'ASMA KİLİT HAMİLİ': 'Alüminyum',
+    },
+    relatedProducts: [
+      { name: 'Diller için tıklayınız. (CC: Tırnaksız Diller)', link: '#' },
+      { name: 'Anahtarlar için tıklayınız.', link: '#' },
+      { name: 'İspanyolet çubuklar ve aksesuarlar için tıklayınız.', link: '#' },
+    ],
+  },
 }
 
 // Ürün logoları mapping
@@ -926,7 +1093,7 @@ function ProductDetail() {
       return { code: match[1], name: match[2] }
     }
     // Kod yoksa, sadece ismi döndür
-    if (name.includes('Kollu Kilit') || name.includes('Dikey Hareketli') || name.includes('İspanyolet') || name.includes('Dikey Mekanizmalı') || name.includes('İç Kilitleme') || name.includes('ispanyolet') || name.includes('Kabin Kilidi')) {
+    if (name.includes('Kollu Kilit') || name.includes('Dikey Hareketli') || name.includes('İspanyolet') || name.includes('Dikey Mekanizmalı') || name.includes('İç Kilitleme') || name.includes('ispanyolet') || name.includes('Kabin Kilidi') || name.includes('T Kollu') || name.includes('"T" Kollu') || name.includes('\'T\' Kollu') || name.includes('Trafo Kilidi')) {
       return { code: null, name: name }
     }
     return null
@@ -936,7 +1103,7 @@ function ProductDetail() {
   const productDetail = productDetails[productName]
   
   // Kollu kilit ürünleri için otomatik detay sayfası
-  const isLockProduct = productInfo && (productInfo.name.includes('Kollu Kilit') || productInfo.name.includes('Dikey Hareketli') || productInfo.name.includes('İspanyolet') || productInfo.name.includes('Dikey Mekanizmalı') || productInfo.name.includes('İç Kilitleme') || productInfo.name.includes('ispanyolet') || productInfo.name.includes('Kabin Kilidi'))
+  const isLockProduct = productInfo && (productInfo.name.includes('Kollu Kilit') || productInfo.name.includes('Dikey Hareketli') || productInfo.name.includes('İspanyolet') || productInfo.name.includes('Dikey Mekanizmalı') || productInfo.name.includes('İç Kilitleme') || productInfo.name.includes('ispanyolet') || productInfo.name.includes('Kabin Kilidi') || productInfo.name.includes('T Kollu') || productInfo.name.includes('"T" Kollu') || productInfo.name.includes('\'T\' Kollu') || productInfo.name.includes('Trafo Kilidi'))
   const hasDetail = !!productDetail || isLockProduct
   
   // Kollu kilit resim mapping (ürün koduna göre)
@@ -959,6 +1126,28 @@ function ProductDetail() {
       if (kabinKilitImageMap[code]) {
         return kabinKilitImageMap[code]
       }
+    }
+    
+    // T Kollu Kabin Kilitleri için özel resim mapping
+    if (productName?.includes('T Kollu') || productName?.includes('"T" Kollu') || productName?.includes('\'T\' Kollu') || productName?.includes('Trafo Kilidi')) {
+      const tKolluKabinKilitImageMap = {
+        '014': '/014tkollukabinkilidi.jpg',
+        '015': '/015tkollukabinkilidi.jpg',
+        '114': '/114tkollukabinkilidi.jpg',
+        '115': '/115tkollukabinkilidi.jpg',
+        '118': '/118tkollukabinkilidi.jpg',
+        '214': productName?.includes('"T"') ? '/214tkollukabinkilidi.jpg' : '/214-2tkollukabinkilidi.jpg',
+        '215': '/215tkollukabinkilidi.jpg',
+        '315': '/315tkollukabinkilidi.jpg',
+        '018': '/018tkollukabinkilidi.jpg',
+      }
+      
+      if (tKolluKabinKilitImageMap[code]) {
+        return tKolluKabinKilitImageMap[code]
+      }
+      
+      // Kod bulunamazsa genel resim
+      return '/t_kollu_kabinkilitleri.jpg'
     }
     
     // İspanyolet ürünleri için özel resim mapping
@@ -1056,6 +1245,25 @@ function ProductDetail() {
       
       if (kabinKilitPdfMap[code]) {
         return kabinKilitPdfMap[code]
+      }
+    }
+    
+    // T Kollu Kabin Kilitleri için özel PDF mapping
+    if (productName?.includes('T Kollu') || productName?.includes('"T" Kollu') || productName?.includes('\'T\' Kollu') || productName?.includes('Trafo Kilidi')) {
+      const tKolluKabinKilitPdfMap = {
+        '014': '/014-t-kollu-kabin-kilidi.pdf',
+        '015': '/015-t-kollu-kabin-kilidi.pdf',
+        '114': '/114-mini-t-kollu-kabin-kilidi.pdf',
+        '115': '/115-t-kollu-kabin-kilidi.pdf',
+        '118': '/118-trafo-kilidi.pdf',
+        '214': productName?.includes('"T"') ? '/214-t-kollu-kabin-kilidi.pdf' : '/214-t-kollu-kabin-kilidi (1).pdf',
+        '215': '/215-t-kollu-kabin-kilidi.pdf',
+        '315': '/315-t-kollu-kabin-kilidi.pdf',
+        '018': '/018-trafo-kilidi.pdf',
+      }
+      
+      if (tKolluKabinKilitPdfMap[code]) {
+        return tKolluKabinKilitPdfMap[code]
       }
     }
     
@@ -1231,31 +1439,54 @@ function ProductDetail() {
                   <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                     <div className="flex items-center gap-2 mb-6">
                       <div className="h-1 w-8 rounded-full bg-[#16a34a]"></div>
-                      <h3 className="text-xl font-bold text-slate-900">Ürün Varyasyonları</h3>
+                      <h3 className="text-xl font-bold text-slate-900">
+                        {productDetail.code === '018' ? 'Trafo Kabin Kilidi (V1)' : 'Ürün Varyasyonları'}
+                      </h3>
                     </div>
                     <div className="overflow-x-auto">
                       <table className="w-full border-collapse">
                         <thead>
                           <tr className="bg-slate-50">
-                            <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Versiyon</th>
-                            <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Mekanizma Gövde</th>
-                            <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Mekanizma Lama</th>
-                            <th className="border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-slate-900">A</th>
-                            <th className="border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-slate-900">B</th>
-                            <th className="border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-slate-900">C</th>
-                            <th className="border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-slate-900">D</th>
+                            {productDetail.versions[0]?.mekanizmaGovde ? (
+                              <>
+                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Versiyon</th>
+                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Mekanizma Gövde</th>
+                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Mekanizma Lama</th>
+                                <th className="border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-slate-900">A</th>
+                                <th className="border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-slate-900">B</th>
+                                <th className="border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-slate-900">C</th>
+                                <th className="border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-slate-900">D</th>
+                              </>
+                            ) : productDetail.versions[0]?.malzeme ? (
+                              <>
+                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Versiyon</th>
+                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Malzeme</th>
+                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Yüzey</th>
+                                <th className="border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">Dil</th>
+                              </>
+                            ) : null}
                           </tr>
                         </thead>
                         <tbody>
                           {productDetail.versions.map((version, index) => (
                             <tr key={index} className="hover:bg-slate-50 transition-colors">
                               <td className="border border-slate-200 px-4 py-3 text-sm font-medium text-slate-900">{version.version}</td>
-                              <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.mekanizmaGovde}</td>
-                              <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.mekanizmaLama}</td>
-                              <td className="border border-slate-200 px-4 py-3 text-sm text-center text-slate-700">{version.A}</td>
-                              <td className="border border-slate-200 px-4 py-3 text-sm text-center text-slate-700">{version.B}</td>
-                              <td className="border border-slate-200 px-4 py-3 text-sm text-center text-slate-700">{version.C}</td>
-                              <td className="border border-slate-200 px-4 py-3 text-sm text-center text-slate-700">{version.D}</td>
+                              {version.mekanizmaGovde ? (
+                                <>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.mekanizmaGovde}</td>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.mekanizmaLama}</td>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm text-center text-slate-700">{version.A}</td>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm text-center text-slate-700">{version.B}</td>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm text-center text-slate-700">{version.C}</td>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm text-center text-slate-700">{version.D}</td>
+                                </>
+                              ) : version.malzeme ? (
+                                <>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.malzeme}</td>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.yuzey}</td>
+                                  <td className="border border-slate-200 px-4 py-3 text-sm text-slate-700">{version.dil}</td>
+                                </>
+                              ) : null}
                             </tr>
                           ))}
                         </tbody>

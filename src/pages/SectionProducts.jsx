@@ -86,7 +86,18 @@ const lockSections = [
   },
   {
     title: 'T Kollu Kabin Kilitleri',
-    items: [],
+    items: [
+      '214 > "T" Kollu Kabin Kilidi',
+      '214 > T Kollu Kabin Kilidi',
+      '014 > "T" Kollu Kabin Kilidi',
+      '114 > Mini \'T\' Kollu Kabin Kilidi',
+      '315 > "T" Kollu Kabin Kilidi',
+      '215 > "T" Kollu Kabin Kilidi',
+      '115 > "T" Kollu Kabin Kilidi',
+      '015 > T Kollu Kabin Kilidi',
+      '018 > Trafo Kilidi',
+      '118 > Trafo Kilidi',
+    ],
   },
   {
     title: 'KİLİMA SANTRAL ÜRÜNLERİ',
@@ -623,6 +634,28 @@ function SectionProducts() {
       if (kabinKilitImageMap[code]) {
         return kabinKilitImageMap[code]
       }
+    }
+    
+    // T Kollu Kabin Kilitleri için özel resim mapping
+    if (code && (itemName.includes('T Kollu') || itemName.includes('"T" Kollu') || itemName.includes('\'T\' Kollu') || itemName.includes('Trafo Kilidi'))) {
+      const tKolluKabinKilitImageMap = {
+        '014': '/014tkollukabinkilidi.jpg',
+        '015': '/015tkollukabinkilidi.jpg',
+        '114': '/114tkollukabinkilidi.jpg',
+        '115': '/115tkollukabinkilidi.jpg',
+        '118': '/118tkollukabinkilidi.jpg',
+        '214': itemName.includes('"T"') ? '/214tkollukabinkilidi.jpg' : '/214-2tkollukabinkilidi.jpg',
+        '215': '/215tkollukabinkilidi.jpg',
+        '315': '/315tkollukabinkilidi.jpg',
+        '018': '/018tkollukabinkilidi.jpg',
+      }
+      
+      if (tKolluKabinKilitImageMap[code]) {
+        return tKolluKabinKilitImageMap[code]
+      }
+      
+      // Kod bulunamazsa genel resim
+      return '/t_kollu_kabinkilitleri.jpg'
     }
     
     // İspanyolet ürünleri için özel resim mapping
