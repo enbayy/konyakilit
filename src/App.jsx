@@ -304,9 +304,6 @@ function App() {
                   <span className="inline-flex items-center gap-1">
                     📞 0 506 875 03 58
                   </span>
-                  <span className="inline-flex items-center gap-1">
-                    📞 0 506 092 03 42
-                  </span>
                 </div>
                 <span className="inline-flex items-center gap-1">
                   ✉️ info@konyakilit.com
@@ -325,7 +322,7 @@ function App() {
                   </svg>
                 </a>
                 <a
-                  href="https://wa.me/905060920342"
+                  href="https://wa.me/905068750358"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/20 text-white transition hover:bg-white/30 hover:text-white"
@@ -781,7 +778,7 @@ function App() {
                     </svg>
                   </a>
                   <a
-                    href="https://wa.me/905060920342"
+                    href="https://wa.me/905068750358"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-white/5 text-white transition-all hover:border-[#166534] hover:bg-[#166534]/20 hover:scale-110"
@@ -863,7 +860,7 @@ function App() {
                     </svg>
                   </a>
                   <a
-                    href="https://wa.me/905060920342"
+                    href="https://wa.me/905068750358"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20 hover:scale-110"
@@ -987,12 +984,6 @@ function App() {
                       className="transition hover:text-white hover:underline"
                     >
                       📞 0 506 875 03 58
-                    </a>
-                    <a
-                      href="tel:+905060920342"
-                      className="transition hover:text-white hover:underline"
-                    >
-                      📞 0 506 092 03 42
                     </a>
                   </li>
                   <li className="flex items-center gap-3 justify-center md:justify-start">
