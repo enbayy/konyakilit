@@ -154,9 +154,9 @@ function Contact() {
               <p className="text-xs uppercase tracking-[0.12em] text-slate-500">Ofis</p>
               <h3 className="text-lg font-semibold text-slate-900">Çalışma Saatleri</h3>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li className="flex items-center justify-between">
+              <li className="flex items-center justify-between">
                   <span>Pazartesi - Cuma</span>
-                  <span className="font-semibold text-slate-900">07:00 - 17:00</span>
+                  <span className="font-semibold text-slate-900">08:00 - 17:30</span>
                 </li>
               </ul>
             </div>

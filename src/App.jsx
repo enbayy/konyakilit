@@ -998,7 +998,7 @@ function App() {
                   <li className="flex items-start gap-3 pt-1 justify-center md:justify-start">
                     <span className="mt-0.5 text-white">🕒</span>
                     <span>
-                      <span className="font-semibold text-white">Pazartesi - Cuma:</span> 07:00 - 17:00
+                      <span className="font-semibold text-white">Pazartesi - Cuma:</span> 08:00 - 17:30
                     </span>
                   </li>
                 </ul>
