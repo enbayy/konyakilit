@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from 'react'
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
+import { HashRouter, NavLink, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import InfoPage from './pages/InfoPage'
 import ProductDetail from './pages/ProductDetail'
@@ -298,7 +298,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="min-h-screen bg-slate-50 text-slate-900">
         <header className="relative z-40 backdrop-blur bg-[#1a1a1a]/95 shadow-sm shadow-slate-200/70">
           <div className="border-b border-[#2d2d2d]">
@@ -1021,7 +1021,7 @@ function App() {
           </div>
         </footer>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
