@@ -21,29 +21,33 @@ const navItems = [
 const pageContent = {
   hakkimizda: {
     title: 'Hakkımızda',
-    subtitle: '1978\'den bu yana hidrolik ve pnömatik sektöründe güçlü markalar ve mühendislik çözümleri sunuyoruz.',
+    subtitle: '2006 yılından bu yana kilit, menteşe ve aksesuar sektöründe faaliyet gösteren firmamız, kalite, güven ve tecrübeyi bir araya getirerek müşterilerine en doğru ürün ve çözümleri sunmaktadır. Sektördeki gelişmeleri yakından takip ederek, her zaman daha iyisini hedefliyoruz.',
     sections: [
       {
         heading: 'Şirketimiz',
-        body: 'Konya Kilit, 1978 yılından beri hidrolik ve pnömatik sektöründe faaliyet gösteren köklü bir firmadır. Yılların getirdiği deneyim ve uzman kadromuzla, endüstriyel ve mobil uygulamalar için en kaliteli ürünleri ve çözümleri sunmaktayız.',
+        body: 'Konya Kilit, Konya’da faaliyet gösteren ve Mesan Kilit’in ana bayisi olarak hizmet veren köklü bir firmadır. Kurulduğumuz günden bu yana, müşterilerimize kaliteli ve kullanışlı ürünler sunarak maksimum müşteri memnuniyeti sağlamayı amaçlıyoruz.',
+      },
+      {
+        heading: 'Geniş Ürün ve Hizmet Ağı',
+        body: 'Geniş ürün yelpazemiz, güçlü tedarik ağımız ve sektörel tecrübemiz ile hem bireysel hem de kurumsal müşterilerimize hızlı ve güvenilir çözümler sunmaktayız.',
       },
       {
         heading: 'Misyonumuz',
-        body: 'Müşterilerimize en yüksek kalitede hidrolik ve pnömatik ürünleri sunarak, sektörde öncü bir konumda yer almak. Teknik destek ve mühendislik çözümlerimizle müşteri memnuniyetini en üst seviyede tutmak.',
+        body: 'Müşterilerimize kaliteli, dayanıklı ve güvenilir ürünler sunarak ihtiyaçlarına en doğru çözümleri sağlamak ve satış öncesi ile sonrası hizmetlerimizle maksimum memnuniyet oluşturmak.',
       },
       {
         heading: 'Vizyonumuz',
-        body: 'Türkiye\'nin önde gelen hidrolik ve pnömatik sistem tedarikçisi olmak, uluslararası standartlarda hizmet vermek ve sürekli gelişen teknolojiye ayak uydurarak sektörde lider konumda kalmak.',
+        body: 'Sektörde güvenilirliği ve kalite anlayışı ile öne çıkan, Konya ve çevresinde lider, Türkiye genelinde ise tercih edilen bir marka olmak.',
       },
       {
         heading: 'Değerlerimiz',
         body: 'İşimizi yaparken öncelik verdiğimiz temel değerlerimiz:',
         items: [
-          'Kalite ve güvenilirlik',
-          'Müşteri odaklılık',
-          'Teknik uzmanlık',
+          'Kalite ve güven',
+          'Müşteri memnuniyeti',
+          'Dürüstlük ve etik değerler',
           'Sürekli gelişim',
-          'Etik değerler',
+          'Hızlı ve çözüm odaklı hizmet',
         ],
       },
     ],
@@ -306,7 +310,7 @@ function App() {
                   </span>
                 </div>
                 <span className="inline-flex items-center gap-1">
-                  ✉️ info@konyakilit.com
+                  ✉️ konyakilit@gmail.com
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -750,7 +754,7 @@ function App() {
                     <span className="font-medium">0506 092 03 42</span>
                   </a>
                   <a 
-                    href="mailto:info@konyakilit.com" 
+                    href="mailto:konyakilit@gmail.com" 
                     className="flex items-center gap-3 rounded-xl bg-white/5 px-4 py-3 text-sm text-white/90 transition-all hover:bg-white/10 hover:text-white"
                   >
                     <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#166534]/20">
@@ -758,7 +762,7 @@ function App() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <span className="font-medium">info@konyakilit.com</span>
+                    <span className="font-medium">konyakilit@gmail.com</span>
                   </a>
                 </div>
               </div>
@@ -989,16 +993,16 @@ function App() {
                   <li className="flex items-center gap-3 justify-center md:justify-start">
                     <span className="text-white">✉️</span>
                     <a
-                      href="mailto:info@konyakilit.com"
+                      href="mailto:konyakilit@gmail.com"
                       className="transition hover:text-white hover:underline"
                     >
-                      info@konyakilit.com
+                      konyakilit@gmail.com
                     </a>
                   </li>
                   <li className="flex items-start gap-3 pt-1 justify-center md:justify-start">
                     <span className="mt-0.5 text-white">🕒</span>
                     <span>
-                      <span className="font-semibold text-white">Pazartesi - Cuma:</span> 08:00 - 17:30
+                      <span className="font-semibold text-white">Pazartesi - Cuma:</span> 08:30 - 17:00
                     </span>
                   </li>
                 </ul>
